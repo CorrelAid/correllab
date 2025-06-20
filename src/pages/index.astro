@@ -1,0 +1,233 @@
+---
+import { Image, getImage } from 'astro:assets';
+
+import Layout from '@layouts/Layout.astro';
+import Hero from '@compositions/Hero.astro';
+import ColumnsSection from '@components/sections/ColumnsSection.astro';
+import BackgroundSection from '@components/sections/BackgroundSection.astro';
+import Blockquote from '@components/Blockquote.astro';
+import Carousel from '@components/Carousel.astro';
+import Persona from '@components/Persona.astro';
+import CardPlain from '@components/cards/CardPlain.astro';
+import PlainGrid from '@components/sections/PlainGrid.astro';
+import Banner from '@compositions/Banner.astro';
+import LinkButton from '@components/LinkButton.astro';
+import LabLinkButton from '@components/LabLinkButton.astro';
+import AidLinkButton from '@components/AidLinkButton.astro';
+
+import Illustration from '@assets/illustration.png';
+import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
+
+import ChartScatterIcon from '@assets/svg/icons/chart-scatter.svg';
+import CodeIcon from '@assets/svg/icons/code.svg';
+import TwelveIcon from '@assets/svg/icons/twelve.svg';
+
+const CarouselBackground = await getImage({
+  src: carouselBackgroundSvg,
+  format: 'webp',
+});
+
+const quotes = [
+  {
+    quote:
+      'Die Visualisierung unserer Daten hat unsere Arbeit bei Silbernetz revolutioniert. Unsere Gegenüber haben viel schneller und besser verstanden, was wir bewirken. Das Projekt war wirklich ein Game Changer für uns.',
+    cite: {
+      name: 'Elke Schilling',
+      role: 'Silbernetz e.V.',
+    },
+  },
+  {
+    quote:
+      "Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.",
+    cite: {
+      name: 'Guybrush Threepwood',
+      role: 'Monkey Island',
+    },
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut molestie augue, ut consectetur eros. Nullam dignissim sem in dui posuere, in ornare arcu vestibulum. Integer non mollis mauris. Aliquam erat volutpat. Aliquam lacinia felis sed dictum vestibulum. Vestibulum ultrices eros a accumsan hendrerit. Fusce tellus nulla, luctus in ligula quis, feugiat imperdiet mi.',
+    cite: {
+      name: 'Marcus Tullius Cicero',
+      role: 'Rom',
+    },
+  },
+];
+---
+
+<Layout title="Lab Demo">
+  <Hero>
+    <Fragment slot="subtitle">
+      Lernen, anwenden, bewirken –&nbsp;<strong>mit Daten Gutes schaffen</strong>.
+    </Fragment>
+    <Fragment slot="teaser">
+      Wir bringen Daten in die Zivilgesellschaft! CorrelAid hilft Non-Profits dabei, Daten kritisch
+      und reflektiert für ihre Ziele einzusetzen und ermöglicht Ehrenamtlichen ein wirksames
+      Engagement im Bereich Data4Good. Darüber hinaus setzen wir uns für die Teilhabe von
+      marginalisierten Gruppen innerhalb von Data Science ein.
+    </Fragment>
+    <Fragment slot="cta">
+      <LabLinkButton href="#start">Zum CorrelLab</LabLinkButton>
+      <AidLinkButton href="https://correlaid.org">Zu CorrelAid</AidLinkButton>
+    </Fragment>
+  </Hero>
+
+  <main id="start">
+    <div class="container">
+      <ColumnsSection center_title={false}>
+        <h2 slot="title" class="title">WILLKOMMEN IM CORRELLAB</h2>
+        <div slot="pre">
+          <Blockquote wide bare>
+            Gemeinnützige Organisationen lernen im CorrelLAB, wie sie Daten reflektiert und
+            wirkungsorientiert für ihre Ziele nutzen können. In unserem strukturierten Lern- und
+            Praxisprogramm bauen sie ihre Datenkompetenz auf, entwickeln konkrete Projektideen – und
+            setzen diese mit Unterstützung unserer ehrenamtlichen Data Scientists um.
+          </Blockquote>
+        </div>
+        <div slot="col1" class="flex rows gap-2">
+          <h4>Das erwartet euch</h4>
+          <p>
+            Das CorrelLab ist ein Programm von CorrelAid e. V., das euch beim Einstieg in die
+            datengestützte Arbeit unterstützt. In der 12-wöchigen Kursphase helfen wir euch in ca. 4
+            Stunden pro Woche dabei, den Nutzen von Daten zu erkennen und so intern eure
+            Datenkompetenz auf- und auszubauen. In der Praxisphase beraten und begleiten euch unsere
+            ehrenamtlichen Data Scientists und setzen mit euch innerhalb von 9 Monaten eure
+            Projektidee um.
+          </p>
+        </div>
+        <div slot="col2" class="flex rows gap-2">
+          <h4>Warum CorrelAid?</h4>
+          <p>
+            Mit über 10 Jahren Erfahrung und 2.400 Ehrenamtlichen unterstützen wir Non-Profits, ihre
+            Daten sinnvoll zu nutzen. Unsere Bilanz spricht für sich: über 85 erfolgreich umgesetzte
+            Datenprojekte, 230 Kursteilnehmende und rund 160 Datensprechstunden – gemeinsam mit und
+            für die Zivilgesellschaft.
+          </p>
+        </div>
+      </ColumnsSection>
+      <BackgroundSection
+        options={{ content_grid: true }}
+        asset={{ src: CarouselBackground.src, position: 'bottom right' }}
+      >
+        <Carousel slides={quotes} id="carousel">
+          {
+            quotes.map((quote, index) => (
+              <div class="carousel-content" data-step-id={index + 1}>
+                <Blockquote id={index + 1}>
+                  <Fragment>{quote.quote}</Fragment>
+                  <Fragment slot="cite">
+                    {' '}
+                    <span class="name txt-italic">{quote.cite.name}</span>
+                    <span class="role">{quote.cite.role}</span>
+                  </Fragment>
+                </Blockquote>
+              </div>
+            ))
+          }
+        </Carousel>
+      </BackgroundSection>
+
+      <!-- <PlainGrid options={{ gradient: 'b' }}> -->
+      <ColumnsSection>
+        <h2 slot="title">Euer Weg ins CorrelLab</h2>
+        <!-- <div style="height: 80vh" class="content-box"> -->
+        <CardPlain slot="col1">
+          <Fragment slot="card-title">Phase 1: Kursphase</Fragment>
+          <Fragment slot="subtitle">September bis November 2025</Fragment>
+          <Fragment slot="content">
+            <dl>
+              <li>
+                <ChartScatterIcon width="24" height="24" /> Von Datenschutz bis Datenmanagement für grundlegendes
+                Daten-Know-how
+              </li>
+              <li>
+                <CodeIcon width="24" height="24" /> Tipps und Tools für die angewandte Datenanalyse
+              </li>
+              <li>
+                <TwelveIcon width="24" height="24" /> 12 Wochen, 12 Module für gestärkte Datenkompetenz
+              </li>
+            </dl>
+            <p>parallel - modular - individuelle Beratung</p>
+          </Fragment>
+
+          <Fragment slot="footer">
+            <div>
+              <LinkButton href="/kurse/kurs1" classes="btn-secondary">Kurs 1</LinkButton><LinkButton
+                href="/kurse/kurs2"
+                classes="btn-secondary">Kurs 2</LinkButton
+              >
+            </div>
+          </Fragment>
+        </CardPlain>
+        <CardPlain slot="col2">
+          <Fragment slot="card-title">Phase 2: Praxisphase</Fragment>
+          <Fragment slot="subtitle">Dezember 2025 bis August 2026</Fragment>
+          <Fragment slot="content">
+            <dl>
+              <li>
+                <ChartScatterIcon width="24" height="24" /> Gemeinsame Arbeit mit 4 bis 5 Datenanalyst*
+                innen an eurem Datenprojekt
+              </li>
+              <li>
+                <CodeIcon width="24" height="24" />
+                z. B. Wirkungsmessung, Datenvisualisierung, Reportautomatisierungen, Vorhersagemodelle
+              </li>
+              <li>
+                <TwelveIcon width="24" height="24" /> begleitende 1:1-Datensprechstunden
+              </li>
+            </dl>
+            <p>praxisbezogen – bedarfsorientiert – pragmatisch</p>
+          </Fragment>
+          <Fragment slot="footer">
+            <div>
+              <LinkButton
+                href="https://correlaid.org/daten-nutzen/projekte/"
+                classes="btn-secondary">Mehr über Projekte</LinkButton
+              >
+            </div>
+          </Fragment>
+        </CardPlain>
+        <!-- </div> -->
+        <div class="subsection content-box narrow flex rows align-center">
+          <h2 class="text-center">Kurskosten & Förderungen</h2>
+          <p>
+            Dank aktueller Förderungen liegen die Kosten für die Kursphase in der ersten Kohorte bei
+            2.900 € pro Teilnehmer*in – sprecht mit uns sehr gerne über unsere Stipendientickets!
+            Euer Vorteil, wenn ihr euch bei der Anmeldung direkt verbindlich für die Praxisphase im
+            Anschluss an die Kursphase entscheidet: Ihr sichert euch einen von zehn Plätzen – und
+            könnt mit zwei Mitarbeitenden an der Kursphase teilnehmen.
+          </p>
+        </div>
+      </ColumnsSection>
+      <!-- </PlainGrid> -->
+
+      <!-- <PlainGrid>
+        <Image src={Illustration} alt="Correlab Logo" />
+      </PlainGrid> -->
+      <Banner />
+
+      <ColumnsSection center_title glue>
+        <h2 slot="title">Eure Ansprechpartner</h2>
+        <Persona
+          name="Max Mustermann"
+          role="Data Scientist"
+          slot="col1"
+          email="max@mustermann.de"
+        />
+        <Persona
+          name="Erika Mustermann"
+          role="Data Engineer"
+          slot="col2"
+          email="erika@mustermann.de"
+        />
+      </ColumnsSection>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* TODO: if re-occurring, move to utility classes */
+  .title {
+    color: var(--color-lab-blue-dark);
+  }
+</style>

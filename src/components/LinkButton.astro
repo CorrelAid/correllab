@@ -1,0 +1,7 @@
+---
+const { href, variant = '', classes = '', children } = Astro.props;
+---
+
+<a class="btn" href={href} class:list={[variant, classes]}><slot /></a>
+
+<style></style>

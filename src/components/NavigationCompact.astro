@@ -1,0 +1,83 @@
+---
+import Submenu from './Navigation/Submenu.astro';
+import CorrelLabLogoMin from '@assets/branding/lab/Main/CorrelLab C.svg';
+import CorrelLabLogoMinMono from '@assets/branding/lab/Monochrom/CorrelLab C.svg';
+
+const { pathname } = Astro.url;
+---
+
+<div class="nav-wrapper">
+  <nav class="nav-primary">
+    <dl>
+      <dt>
+        <a
+          href={pathname === '/' ? '#intro' : '/'}
+          class:list={[{ active: pathname === '/' }]}
+          aria-label="Zurück zur Startseite"
+        >
+          {
+            pathname === '/' ? (
+              <CorrelLabLogoMin height={'24'} />
+            ) : (
+              <CorrelLabLogoMinMono height={'24'} />
+            )
+          }
+          <span>Lab</span>
+        </a>
+      </dt>
+      <dt>
+        <a href="/kurse" class:list={[{ active: pathname.startsWith('/kurse') }]}>
+          <span>Kurse</span>
+        </a>
+      </dt>
+      <dt>
+        <a href="https://correlaid.org">
+          <span>CorrelAid</span>
+        </a>
+      </dt>
+    </dl>
+  </nav>
+</div>
+
+<style>
+  & nav {
+    display: flex;
+    color: var(--color-black-900);
+    text-decoration: none;
+
+    @container header (max-width: 768px) {
+      display: none;
+    }
+
+    & a {
+      color: var(--color-black-900);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      span {
+        border-bottom: 2px solid transparent;
+      }
+
+      &.active {
+        span {
+          border-bottom: 2px solid var(--color-black-900);
+        }
+      }
+    }
+
+    & dl {
+      display: flex;
+      gap: 1rem;
+
+      & dt {
+        white-space: nowrap;
+      }
+    }
+
+    &.nav-secondary {
+      font-size: 14px;
+    }
+  }
+</style>

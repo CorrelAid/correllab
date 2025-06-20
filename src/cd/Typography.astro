@@ -1,0 +1,324 @@
+---
+
+---
+
+<section class="section">
+  <h2>Typography</h2>
+
+  <div class="subsection">
+    <h3>Font Families</h3>
+    <div class="font-samples">
+      <div class="font-sample">
+        <h4>Sans Serif (Default)</h4>
+        <p class="font-sans">The quick brown fox jumps over the lazy dog</p>
+        <code>font-family: var(--font-family-inter)</code>
+      </div>
+      <div class="font-sample">
+        <h4>Monospace</h4>
+        <p class="font-mono">The quick brown fox jumps over the lazy dog</p>
+        <code>font-family: var(--font-family-mono)</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Font Sizes</h3>
+    <div class="font-sizes">
+      <div class="size-sample">
+        <span class="text-xs">Extra Small (12px)</span>
+        <code>--font-size-xs</code>
+      </div>
+      <div class="size-sample">
+        <span class="text-sm">Small (14px)</span>
+        <code>--font-size-sm</code>
+      </div>
+      <div class="size-sample">
+        <span class="text-base">Base (16px)</span>
+        <code>--font-size-base</code>
+      </div>
+      <div class="size-sample">
+        <span class="text-lg">Large (18px)</span>
+        <code>--font-size-lg</code>
+      </div>
+      <div class="size-sample">
+        <span class="text-xl">Extra Large (20px)</span>
+        <code>--font-size-xl</code>
+      </div>
+      <div class="size-sample">
+        <span class="text-2xl">2X Large (24px)</span>
+        <code>--font-size-2xl</code>
+      </div>
+      <div class="size-sample">
+        <span class="text-3xl">3X Large (30px)</span>
+        <code>--font-size-3xl</code>
+      </div>
+      <div class="size-sample">
+        <span class="text-4xl">4X Large (36px)</span>
+        <code>--font-size-4xl</code>
+      </div>
+      <div class="size-sample">
+        <span class="text-5xl">5X Large (48px)</span>
+        <code>--font-size-5xl</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Font Weights</h3>
+    <div class="font-weights">
+      <div class="weight-sample">
+        <span class="font-light">Light (300)</span>
+        <code>--font-weight-light</code>
+      </div>
+      <div class="weight-sample">
+        <span class="font-normal">Normal (400)</span>
+        <code>--font-weight-normal</code>
+      </div>
+      <div class="weight-sample">
+        <span class="font-medium">Medium (500)</span>
+        <code>--font-weight-medium</code>
+      </div>
+      <div class="weight-sample">
+        <span class="font-semibold">Semibold (600)</span>
+        <code>--font-weight-semibold</code>
+      </div>
+      <div class="weight-sample">
+        <span class="font-bold">Bold (700)</span>
+        <code>--font-weight-bold</code>
+      </div>
+      <div class="weight-sample">
+        <span class="font-black">Black (800)</span>
+        <code>--font-weight-black</code>
+      </div>
+      <div class="weight-sample">
+        <span class="font-heavy">Heavy (900)</span>
+        <code>--font-weight-heavy</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Line Heights</h3>
+    <div class="line-heights">
+      <div class="line-height-sample">
+        <h4>Tight (1.25)</h4>
+        <p class="leading-tight">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+        <code>--line-height-tight</code>
+      </div>
+      <div class="line-height-sample">
+        <h4>Normal (1.5)</h4>
+        <p class="leading-normal">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+        <code>--line-height-normal</code>
+      </div>
+      <div class="line-height-sample">
+        <h4>Relaxed (1.625)</h4>
+        <p class="leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+        <code>--line-height-relaxed</code>
+      </div>
+      <div class="line-height-sample">
+        <h4>Loose (2)</h4>
+        <p class="leading-loose">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+        <code>--line-height-loose</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Headings</h3>
+    <div class="headings">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+    </div>
+  </div>
+</section>
+
+<style>
+  .subsection {
+    margin-bottom: var(--space-12);
+    padding: var(--space-6);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .subsection h3 {
+    color: var(--color-gray-800);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-2);
+  }
+
+  .font-samples {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .font-sample {
+    padding: var(--space-4);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-base);
+  }
+
+  .font-sample h4 {
+    margin-bottom: var(--space-2);
+    color: var(--color-gray-700);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .font-sample p {
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .font-sample code {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+    background: var(--color-gray-100);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+  }
+
+  .font-sizes {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .size-sample {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-base);
+  }
+
+  .font-weights {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .weight-sample {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-base);
+  }
+
+  .weight-sample span {
+    font-size: var(--font-size-lg);
+  }
+
+  .line-heights {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .line-height-sample {
+    padding: var(--space-4);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-base);
+  }
+
+  .line-height-sample h4 {
+    margin-bottom: var(--space-2);
+    color: var(--color-gray-700);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .line-height-sample p {
+    margin-bottom: var(--space-2);
+    max-width: none;
+  }
+
+  /* Typography utility classes */
+  .font-sans {
+    font-family: var(--font-family-inter);
+  }
+  .font-mono {
+    font-family: var(--font-family-mono);
+  }
+
+  .text-xs {
+    font-size: var(--font-size-xs);
+  }
+  .text-sm {
+    font-size: var(--font-size-sm);
+  }
+  .text-base {
+    font-size: var(--font-size-base);
+  }
+  .text-lg {
+    font-size: var(--font-size-lg);
+  }
+  .text-xl {
+    font-size: var(--font-size-xl);
+  }
+  .text-2xl {
+    font-size: var(--font-size-2xl);
+  }
+  .text-3xl {
+    font-size: var(--font-size-3xl);
+  }
+  .text-4xl {
+    font-size: var(--font-size-4xl);
+  }
+  .text-5xl {
+    font-size: var(--font-size-5xl);
+  }
+
+  .font-light {
+    font-weight: var(--font-weight-light);
+  }
+  .font-normal {
+    font-weight: var(--font-weight-normal);
+  }
+  .font-medium {
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    font-weight: var(--font-weight-semibold);
+  }
+  .font-bold {
+    font-weight: var(--font-weight-bold);
+  }
+  .font-black {
+    font-weight: var(--font-weight-black);
+  }
+  .font-heavy {
+    font-weight: var(--font-weight-heavy);
+  }
+
+  .leading-tight {
+    line-height: var(--line-height-tight);
+  }
+  .leading-normal {
+    line-height: var(--line-height-normal);
+  }
+  .leading-relaxed {
+    line-height: var(--line-height-relaxed);
+  }
+  .leading-loose {
+    line-height: var(--line-height-loose);
+  }
+</style>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 807.4601 700">
+  <defs>
+    <style>
+      .circles-fill-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .circles-fill-2 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .circles-fill-3 {
+        fill: #a095d2;
+      }
+
+      .circles-fill-4 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-3846.6135" y1="904.7409" x2="-3846.6135" y2="902.9664" gradientTransform="translate(-559132.6091 685830.8667) rotate(116.0067) scale(223.9718 -223.9718)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2c7db" />
+      <stop offset="1" stop-color="#a598d3" />
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-3811.0346" y1="877.4962" x2="-3811.0346" y2="875.7218" gradientTransform="translate(405063.7652 -79035.8997) rotate(-24.0157) scale(105.4931 -105.4931)" xlink:href="#linear-gradient" />
+    <linearGradient id="linear-gradient-3" x1="-3856.6344" y1="873.9854" x2="-3856.6344" y2="872.2109" gradientTransform="translate(-276521.7443 -493653.2692) rotate(-132) scale(143.232 -143.232)" xlink:href="#linear-gradient" />
+  </defs>
+  <circle id="Ellipse_1" data-name="Ellipse 1" class="circles-fill-4" cx="568.6085" cy="298.672" r="198.7101" />
+  <circle id="Ellipse_3" data-name="Ellipse 3" class="circles-fill-1" cx="192.107" cy="117.0759" r="93.5946" />
+  <path class="circles-fill-3" d="M185.0101,210.4173l-11.8721,196.2592,4.9902.3027,11.8755-196.3159c-1.6694-.0386-3.3347-.1183-4.9937-.246Z" />
+  <path class="circles-fill-3" d="M395.8924,396.9467l-120.1821,70.4993,2.5293,4.3125,120.1748-70.4949c-.8599-1.4289-1.6992-2.8683-2.522-4.3169Z" />
+  <circle id="Ellipse_2" data-name="Ellipse 2" class="circles-fill-2" cx="167.1745" cy="533.5621" r="127.0769" />
+  <path class="circles-fill-3" d="M276.6312,157.2638c-.7148,1.505-1.4717,2.9905-2.2661,4.4569l112.5562,56.4806,2.2422-4.4688-112.5322-56.4688Z" />
+</svg>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 807.4601 700">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #e1f1ea;
+        stroke-miterlimit: 4;
+        stroke-width: 5px;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-3845.6859" y1="100.7369" x2="-3845.6859" y2="100.0394" gradientTransform="translate(-2121948.2914 -166369.7656) rotate(-177) scale(553.416 -553.416)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4787e5" stop-opacity="0"/>
+      <stop offset="1" stop-color="#e1f1ea"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-3836.0315" y1="91.767" x2="-3836.0315" y2="91.0694" gradientTransform="translate(842971.6335 -1064494.0852) rotate(-53) scale(353.872 -353.872)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-3831.2527" y1="108.2425" x2="-3831.2527" y2="107.5449" gradientTransform="translate(550526.9633 834037.4203) rotate(54.9843) scale(260.6301 -260.6301)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Gruppe_32" data-name="Gruppe 32">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-4" cx="491.5203" cy="495.2432" r="193.023"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-1" cx="193.2236" cy="156.0546" r="123.4251"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-2" cx="594.9265" cy="102.6405" r="90.9038"/>
+    <line id="Linie_2" data-name="Linie 2" class="cls-3" x1="570.3746" y1="190.1347" x2="536.9538" y2="307.776"/>
+    <line id="Linie_3" data-name="Linie 3" class="cls-3" x1="505.3569" y1="117.7758" x2="316.2419" y2="146.897"/>
+    <line id="Linie_4" data-name="Linie 4" class="cls-3" x1="364.547" y1="349.9076" x2="274.6355" y2="248.7334"/>
+  </g>
+</svg>

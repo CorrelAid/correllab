@@ -1,0 +1,42 @@
+---
+import CorrelLabKompaktDynamic from '@assets/branding/lab/Monochrom/CorrelLab kompakt_dynamic_fill.svg';
+import LinkButton from '@components/LinkButton.astro';
+---
+
+<div class="container">
+  <div class="brand">
+    <CorrelLabKompaktDynamic height={'80'} color="var(--color-lab-muted)" />
+  </div>
+  <div class="prose content-box narrow">
+    <h2 class="light">Interessiert?</h2>
+    <div class="body">
+      <p class="light">
+        hr habt Fragen, z. B. zum Stipendienticket oder wollt direkt im CorrelLAB durchstarten?
+        Schreibt uns einfach eine kurze Nachricht, wir freuen uns auf euch!
+      </p>
+    </div>
+    <LinkButton variant="btn-light" href="#">NACHRICHT SCHREIBEN 📧</LinkButton>
+  </div>
+
+  <style>
+    .container {
+      background: var(--color-lab-blue-dark);
+      width: 100%;
+      color: var(--color-white);
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      align-items: center;
+      padding: var(--padding);
+      gap: var(--padding);
+
+      & .prose {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</div>

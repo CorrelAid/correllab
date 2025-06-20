@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Invertiert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4787e5;
+      }
+
+      .cls-2 {
+        fill: #2467b8;
+      }
+
+      .cls-3 {
+        fill: #fc356f;
+      }
+
+      .cls-4 {
+        fill: #ffa4be;
+      }
+
+      .cls-5 {
+        fill: #d19dc8;
+      }
+
+      .cls-6 {
+        fill: #fe6d97;
+      }
+
+      .cls-7 {
+        fill: #a396d2;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="390 325.79 390 434.68 275.26 392.96 390 325.79"/>
+  <polygon class="cls-2" points="375.37 440 194.9 440 264.05 399.52 375.37 440"/>
+  <polygon class="cls-2" points="251.84 395.08 198.92 426.06 223.09 384.63 251.84 395.08"/>
+  <polygon class="cls-1" points="380.1 320 263.05 388.52 228.21 375.85 260.79 320 380.1 320"/>
+  <polygon class="cls-1" points="213.54 381.15 181.29 436.44 68.92 328.57 213.54 381.15"/>
+  <polygon class="cls-7" points="251.34 316.34 218.66 372.37 73.35 319.54 198.79 263.79 251.34 316.34"/>
+  <polygon class="cls-5" points="195 205.47 195 254.53 60 314.53 60 145.47 195 205.47"/>
+  <polygon class="cls-3" points="375.37 20 264.05 60.48 194.9 20 375.37 20"/>
+  <polygon class="cls-6" points="390 25.32 390 134.21 275.26 67.04 390 25.32"/>
+  <polygon class="cls-3" points="251.84 64.92 223.09 75.37 198.92 33.94 251.84 64.92"/>
+  <polygon class="cls-6" points="380.1 140 260.79 140 228.21 84.15 263.05 71.48 380.1 140"/>
+  <polygon class="cls-4" points="251.34 143.66 198.79 196.21 73.35 140.46 218.66 87.63 251.34 143.66"/>
+  <polygon class="cls-6" points="213.54 78.85 68.92 131.44 181.29 23.56 213.54 78.85"/>
+</svg>

@@ -1,0 +1,139 @@
+---
+import SocialLinks from '@compositions/SocialLinks.astro';
+import Columns from '@compositions/Footer/Columns.astro';
+import GoldenColumns from '@/components/GoldenColumns.astro';
+import CorrelAidLogoMuted from '@assets/branding/aid/Monochrom/CorrelAid horizontal.svg';
+import LinksSection from '@compositions/Footer/LinksSection.astro';
+
+const footer_links = [
+  {
+    title: 'Daten nutzen',
+    links: [
+      { href: '#', label: 'Data4Good Projekte' },
+      { href: '#', label: 'Projktdatenbank' },
+      { href: '#', label: 'Beratung' },
+      { href: '#', label: 'Hackathons & Datendialoge' },
+    ],
+  },
+  {
+    title: 'Bildung',
+    links: [
+      { href: '#', label: 'Grundkurs Daten' },
+      { href: '#', label: 'R Lernen' },
+      { href: '#', label: 'Mentoring' },
+      { href: '#', label: 'Tidy Tuesday' },
+      { href: '#', label: 'Bildungsresourcen' },
+    ],
+  },
+  {
+    title: 'Mitmachen',
+    links: [
+      { href: '#', label: 'Engagiere dich vor Ort' },
+      { href: '#', label: 'Trete einem Team bei' },
+      { href: '#', label: 'Vereinsmitglied werden' },
+      { href: '#', label: 'Gründe eine Lokalgruppe' },
+    ],
+  },
+  {
+    title: 'Über uns',
+    links: [
+      { href: '#', label: 'Unsere Wirkung' },
+      { href: '#', label: 'Team' },
+      { href: '#', label: 'Unsere Werte' },
+      { href: '#', label: 'Partner' },
+    ],
+  },
+];
+
+const footer_footer_links = [
+  { href: '#', label: 'Impressum' },
+  { href: '#', label: 'Code of Conduct' },
+  { href: '#', label: 'Code of Ethics' },
+  { href: '#', label: 'Team' },
+  { href: '#', label: 'Jobs' },
+];
+---
+
+<footer class="content-box">
+  <div class="footer-inner">
+    <!-- <GoldenColumns> -->
+    <!-- <div slot="col1"> -->
+    <div class="column flex rows">
+      <CorrelAidLogoMuted />
+      <SocialLinks color="var(--color-gray-600)" />
+    </div>
+    <!-- </div> -->
+    <div class="column">
+      <Columns>
+        <LinksSection section={footer_links[0]} />
+        <LinksSection section={footer_links[1]} />
+        <LinksSection section={footer_links[2]} />
+        <LinksSection section={footer_links[3]} />
+      </Columns>
+    </div>
+    <!-- </GoldenColumns> -->
+  </div>
+  <div class="footer-footer">
+    <div class="copyright">CorrelAid. © {new Date().getFullYear()}</div>
+    <aside>
+      <span>Deutsch</span>
+      {footer_footer_links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </aside>
+  </div>
+</footer>
+
+<style>
+  footer {
+    container: footer / inline-size;
+    padding: 0 var(--padding);
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: calc(var(--padding) * 2);
+    font-size: 1rem;
+    line-height: 1;
+
+    & .footer-inner {
+      padding-top: calc(var(--padding) * 2);
+      border-top: 2px solid var(--color-gray-muted);
+      display: grid;
+      /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+      /* 2 columns, first has a max width of 200px, second should be auto */
+      grid-template-columns: minmax(150px, 250px) auto;
+      gap: var(--padding);
+
+      & .column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      @container footer (width < 400px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    & .footer-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap-reverse;
+      gap: 1rem;
+      padding: 1rem 0;
+      /* border-top: 2px solid var(--color-gray-muted); */
+
+      & .copyright {
+      }
+
+      & aside {
+        display: flex;
+        gap: 0.2rem 1rem;
+        flex-wrap: wrap;
+        font-size: 0.8rem;
+
+        & a {
+          color: var(--color-gray-muted);
+        }
+      }
+    }
+  }
+</style>

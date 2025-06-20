@@ -1,0 +1,39 @@
+---
+export interface Props {
+  section?: boolean;
+  center_title?: boolean;
+  glue?: boolean;
+}
+
+import Columns from '@/components/Columns.astro';
+
+let { center_title = true, section = true, glue = false } = Astro.props;
+
+let Element = section ? 'section' : 'div';
+---
+
+<Element class="content-box">
+  <div class="columns-header" class:list={[center_title && 'text-center']}>
+    <slot name="title" />
+  </div>
+  <slot name="pre" />
+  <Columns glue={glue}>
+    <Fragment slot="col1">
+      <slot name="col1" />
+    </Fragment>
+    <Fragment slot="col2">
+      <slot name="col2" />
+    </Fragment>
+  </Columns>
+  <slot />
+</Element>
+
+<style>
+  .content-box {
+    --content-width: 1200px;
+
+    & .columns-header {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

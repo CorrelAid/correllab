@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 807.4601 700">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #c4e38a;
+        stroke-miterlimit: 4;
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-2919.8457" y1="901.0292" x2="-2919.8457" y2="899.2548" gradientTransform="translate(-467371.0113 499643.494) rotate(116.0067) scale(223.9718 -223.9718)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#89cc96" stop-opacity="0"/>
+      <stop offset="1" stop-color="#c4e38a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-2927.3562" y1="878.7844" x2="-2927.3562" y2="877.01" gradientTransform="translate(-186948.0657 -395198.8853) rotate(-132) scale(143.232 -143.232)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-2894.0865" y1="881.0647" x2="-2894.0865" y2="879.2902" gradientTransform="translate(316858.9342 -39323.5657) rotate(-24.0157) scale(105.4931 -105.4931)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Gruppe_13" data-name="Gruppe 13">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-4" cx="568.6085" cy="298.672" r="198.7101"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-1" cx="167.1745" cy="533.5621" r="127.0769"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-3" cx="192.107" cy="117.0759" r="93.5946"/>
+    <line id="Linie_2" data-name="Linie 2" class="cls-2" x1="275.4387" y1="159.4624" x2="388.0422" y2="215.9669"/>
+    <line id="Linie_3" data-name="Linie 3" class="cls-2" x1="189.3957" y1="210.5544" x2="181.3067" y2="407.3489"/>
+    <line id="Linie_4" data-name="Linie 4" class="cls-2" x1="397.1365" y1="399.1284" x2="277.2478" y2="469.3289"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 700">
+  <defs>
+    <linearGradient id="linear-gradient" x1="738.3177" y1="268.1915" x2="-167.8293" y2="459.0933" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c4e38a" />
+      <stop offset=".9963" stop-color="#4787e5" />
+    </linearGradient>
+  </defs>
+  <circle fill="url(#linear-gradient)" cx="350" cy="350" r="350" />
+</svg>

@@ -1,0 +1,33 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^7.1.0",
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/roboto": "^5.2.6",
+    "@tabler/icons-webfont": "^3.19.0",
+    "astro": "^5.10.0",
+    "svelte": "^5.34.7",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "postcss-html": "^1.8.0",
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1",
+    "sharp": "^0.34.2",
+    "stylelint": "^16.21.0",
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^38.0.0",
+    "vite-plugin-devtools-json": "^0.2.0"
+  }
+}

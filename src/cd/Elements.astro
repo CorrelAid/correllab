@@ -1,0 +1,333 @@
+---
+// import '@styles/dev.css';
+import LinkButton from '@/components/LinkButton.astro';
+---
+
+<section class="section">
+  <h2>Elements</h2>
+
+  <div class="subsection">
+    <h3>Buttons</h3>
+    <div class="button-groups">
+      <div class="button-group">
+        <h4>LinkButton</h4>
+        <div class="button-row">
+          <LinkButton href="#">Default</LinkButton>
+          <LinkButton href="#" variant="btn-primary">Primary</LinkButton>
+          <LinkButton href="#" variant="btn-secondary">Secondary</LinkButton>
+          <LinkButton href="#" variant="outline">Outline</LinkButton>
+          <LinkButton href="#" variant="btn-ghost">Ghost</LinkButton>
+          <LinkButton href="#" variant="link">Link</LinkButton>
+        </div>
+      </div>
+      <div class="button-group">
+        <h4>LinkButton Sizes</h4>
+        <div class="button-row">
+          <LinkButton href="#" variant="btn-sm">Small</LinkButton>
+          <LinkButton href="#">Default</LinkButton>
+          <LinkButton href="#" variant="btn-lg">Large Button</LinkButton>
+        </div>
+      </div>
+      <div class="button-group">
+        <h4>LinkButton Light</h4>
+        <div class="button-row" style="background: darkblue;">
+          <LinkButton href="#" variant="btn-light">Light</LinkButton>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <h4>Primary Buttons</h4>
+        <div class="button-row">
+          <button class="btn btn-primary btn-sm">Small</button>
+          <button class="btn btn-primary">Default</button>
+          <button class="btn btn-primary btn-lg">Large</button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <h4>Secondary Buttons</h4>
+        <div class="button-row">
+          <button class="btn btn-secondary btn-sm">Small</button>
+          <button class="btn btn-secondary">Default</button>
+          <button class="btn btn-secondary btn-lg">Large</button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <h4>Outline Buttons</h4>
+        <div class="button-row">
+          <button class="btn btn-outline btn-sm">Small</button>
+          <button class="btn btn-outline">Default</button>
+          <button class="btn btn-outline btn-lg">Large</button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <h4>Ghost Buttons</h4>
+        <div class="button-row">
+          <button class="btn btn-ghost btn-sm">Small</button>
+          <button class="btn btn-ghost">Default</button>
+          <button class="btn btn-ghost btn-lg">Large</button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <h4>Semantic Buttons</h4>
+        <div class="button-row">
+          <button class="btn btn-success">Success</button>
+          <button class="btn btn-warning">Warning</button>
+          <button class="btn btn-error">Error</button>
+          <button class="btn btn-info">Info</button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <h4>Button States</h4>
+        <div class="button-row">
+          <button class="btn btn-primary">Normal</button>
+          <button class="btn btn-primary" disabled>Disabled</button>
+          <button class="btn btn-primary btn-loading">Loading</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Lists</h3>
+    <div class="list-groups">
+      <div class="list-group">
+        <h4>Unordered List</h4>
+        <ul class="list-default">
+          <li>First item with some content</li>
+          <li>Second item with more content</li>
+          <li>
+            Third item with nested content
+            <ul>
+              <li>Nested item one</li>
+              <li>Nested item two</li>
+            </ul>
+          </li>
+          <li>Fourth item to complete the list</li>
+        </ul>
+      </div>
+
+      <div class="list-group">
+        <h4>Ordered List</h4>
+        <ol class="list-default">
+          <li>First step in the process</li>
+          <li>Second step with details</li>
+          <li>
+            Third step with sub-steps
+            <ol>
+              <li>Sub-step one</li>
+              <li>Sub-step two</li>
+            </ol>
+          </li>
+          <li>Final step to completion</li>
+        </ol>
+      </div>
+
+      <div class="list-group">
+        <h4>Clean List</h4>
+        <ul class="list-clean">
+          <li>Item without bullets</li>
+          <li>Another clean item</li>
+          <li>Third clean item</li>
+          <li>Final clean item</li>
+        </ul>
+      </div>
+
+      <div class="list-group">
+        <h4>Spaced List</h4>
+        <ul class="list-spaced">
+          <li>Item with more spacing</li>
+          <li>Another spaced item with longer content that might wrap to multiple lines</li>
+          <li>Third spaced item</li>
+          <li>Final spaced item</li>
+        </ul>
+      </div>
+
+      <div class="list-group">
+        <h4>Interactive List</h4>
+        <ul class="list-interactive">
+          <li><a href="#">Clickable list item</a></li>
+          <li><a href="#">Another interactive item</a></li>
+          <li><a href="#">Third interactive item</a></li>
+          <li><a href="#">Final interactive item</a></li>
+        </ul>
+      </div>
+
+      <div class="list-group">
+        <h4>Definition List</h4>
+        <dl class="definition-list">
+          <dt>Term One</dt>
+          <dd>Definition for the first term with detailed explanation</dd>
+          <dt>Term Two</dt>
+          <dd>Definition for the second term</dd>
+          <dt>Term Three</dt>
+          <dd>Definition for the third term with more content</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .button-groups {
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  .button-group {
+    padding: var(--space-6);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .button-group h4 {
+    margin-bottom: var(--space-4);
+    color: var(--color-gray-700);
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .button-row {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* List Styles */
+  .list-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .list-group {
+    padding: var(--space-6);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .list-group h4 {
+    margin-bottom: var(--space-4);
+    color: var(--color-gray-700);
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .list-default {
+    margin-left: var(--space-6);
+  }
+
+  .list-default li {
+    margin-bottom: var(--space-2);
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .list-default ul,
+  .list-default ol {
+    margin-top: var(--space-2);
+    margin-left: var(--space-4);
+  }
+
+  .list-clean {
+    list-style: none;
+  }
+
+  .list-clean li {
+    margin-bottom: var(--space-2);
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+    padding-left: var(--space-4);
+    position: relative;
+  }
+
+  .list-clean li::before {
+    content: '•';
+    color: var(--color-primary-500);
+    position: absolute;
+    left: 0;
+    font-weight: var(--font-weight-bold);
+  }
+
+  .list-spaced {
+    list-style: none;
+  }
+
+  .list-spaced li {
+    margin-bottom: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-base);
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+    border-left: 3px solid var(--color-primary-500);
+  }
+
+  .list-interactive {
+    list-style: none;
+  }
+
+  .list-interactive li {
+    border-radius: var(--radius-base);
+    transition: var(--transition-base);
+  }
+
+  .list-interactive li:hover {
+    background: var(--color-gray-50);
+  }
+
+  .list-interactive a {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    color: var(--color-gray-700);
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .list-interactive a:hover {
+    color: var(--color-primary-600);
+  }
+
+  .definition-list {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .definition-list dt {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-800);
+    margin-bottom: var(--space-1);
+  }
+
+  .definition-list dd {
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+    margin-left: var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .definition-list dd:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    /* .button-row {
+      flex-direction: column;
+      align-items: stretch;
+    } */
+
+    .list-groups {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

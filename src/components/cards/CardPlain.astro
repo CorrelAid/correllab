@@ -1,0 +1,57 @@
+---
+
+---
+
+<div class="card-plain">
+  <div class="card-header">
+    <h4 class="card-title"><slot name="card-title" /></h4>
+    <div class="card-subtitle"><slot name="subtitle" /></div>
+  </div>
+  <div class="card-content">
+    <slot name="content" />
+  </div>
+  <div class="card-footer">
+    <slot name="footer" />
+  </div>
+</div>
+
+<style>
+  .card-plain {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--color-lab-pink-light);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    height: 100%;
+
+    & .card-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+
+      & h4.card-title {
+        color: var(--color-grey-900);
+        font-weight: var(--font-weight-bold);
+      }
+
+      & .card-subtitle {
+        color: var(--color-grey-900);
+        font-weight: var(--font-weight-semibold);
+      }
+    }
+
+    & .card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 1;
+    }
+
+    & .card-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>

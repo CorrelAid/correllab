@@ -1,0 +1,54 @@
+---
+import Layout from './Layout.astro';
+import Hero from '@compositions/Hero.astro';
+
+import LabLinkButton from '@components/LabLinkButton.astro';
+import LinkButton from '@components/LinkButton.astro';
+
+const { children } = Astro.props;
+---
+
+<Layout>
+  <slot name="announcement-banner" />
+  <Hero>
+    <Fragment slot="subtitle">
+      Lernen, anwenden, bewirken –&nbsp;<strong>mit Daten Gutes schaffen</strong>.
+    </Fragment>
+    <Fragment slot="teaser">
+      Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse
+      Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse Kurse
+    </Fragment>
+    <Fragment slot="cta">
+      <LabLinkButton href="#start">Zum Kurs</LabLinkButton>
+      <LinkButton href="/">Zurück zur Übersicht</LinkButton>
+    </Fragment>
+  </Hero>
+  <article class="container" id="start">
+    <!-- <section class="prose">
+      <h1>Kurse</h1>
+    </section> -->
+
+    <slot />
+    <div class="section-footer">
+      <LinkButton href="/">Zurück zur Übersicht</LinkButton>
+    </div>
+
+    <slot name="banner" />
+  </article>
+</Layout>
+
+<style>
+  .container {
+    padding-bottom: calc(2 * var(--padding));
+  }
+
+  /* TODO: if good, move to main css */
+  .section-footer {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+  }
+</style>

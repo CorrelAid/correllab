@@ -1,0 +1,43 @@
+---
+const { section } = Astro.props;
+const { title, links } = section;
+---
+
+<div class="links-section">
+  <h5>{title}</h5>
+  <dl>
+    {
+      links.map((link) => (
+        <dt>
+          <a href={link.href}>{link.label}</a>
+        </dt>
+      ))
+    }
+  </dl>
+</div>
+
+<style>
+  .links-section {
+    --gap: 8px;
+
+    text-wrap: balance;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    line-height: 1;
+    font-size: var(--font-size-sm);
+
+    & h5 {
+      font-size: 1rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1;
+      color: var(--color-gray-muted);
+    }
+
+    & dl {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+    }
+  }
+</style>

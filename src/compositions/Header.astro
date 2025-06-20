@@ -1,0 +1,68 @@
+---
+const { pathname } = Astro.url;
+// import CorrelAidLogoWide from '@assets/branding/aid/Main/CorrelAid horizontal.svg';
+import CorrelLabLogoWide from '@assets/branding/lab/Main/CorrelLab horizontal.svg';
+import NavigationMain from '@/components/NavigationMain.astro';
+import NavigationCompact from '@/components/NavigationCompact.astro';
+import LinkButton from '@/components/LinkButton.astro';
+---
+
+<header>
+  <div class="brand">
+    <!-- <CorrelaidLogoMin height={'60'} /> -->
+    <a href={pathname === '/' ? '#intro' : '/'} aria-label="Zurück zur Startseite">
+      <CorrelLabLogoWide height={'36'} />
+    </a>
+    <!-- <Image src={CorrelAidLogoWidePng} alt="CorrelAid Logo" width={400} /> -->
+  </div>
+  <!-- <NavigationMain /> -->
+  <NavigationCompact />
+  <div class="corner">
+    <LinkButton href="#">Unterstützen</LinkButton>
+  </div>
+</header>
+
+<style>
+  header {
+    container: header / inline-size;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+
+    & .brand {
+      min-width: 0;
+      min-height: auto;
+      max-height: 50px;
+      background: white;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    & .corner {
+      display: flex;
+      gap: 0rem;
+
+      & button {
+        all: unset;
+        padding: 0.25rem 0.5rem;
+      }
+
+      & button:first-of-type {
+        background-color: var(--color-lab-blue-light);
+        color: #fff;
+        border-radius: 0.5rem 0 0 0.5rem;
+      }
+
+      & button:last-of-type {
+        background-color: var(--color-lab-pink-medium);
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+    }
+  }
+</style>

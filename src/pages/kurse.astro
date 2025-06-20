@@ -1,0 +1,80 @@
+---
+import KursLayout from '@layouts/KursLayout.astro';
+import Banner from '@compositions/Banner.astro';
+import BackgroundSection from '@components/sections/BackgroundSection.astro';
+import ColumnsSection from '@components/sections/ColumnsSection.astro';
+import CardPlain from '@components/cards/CardPlain.astro';
+import LinkButton from '@components/LinkButton.astro';
+import Persona from '@components/Persona.astro';
+import CorrelLabLogoWide from '@assets/branding/lab/Main/CorrelLab horizontal.svg';
+
+import SvelteBanner from '@components/svelte/Banner.svelte';
+---
+
+<KursLayout>
+  <SvelteBanner client:idle slot="announcement-banner" top={'var(--header-height)'}>
+    <CorrelLabLogoWide height={'36'} style="position: absolute; left: 0;" />
+    <div style="margin: 0 auto;">Announcement Announcement Announcement!!!</div>
+  </SvelteBanner>
+  <section class="prose">
+    <h3>Kurse Kurse</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+  </section>
+  <BackgroundSection options={{ gradient: 'b' }}>
+    <ColumnsSection section={false}>
+      <h2 slot="title">Demo: Background-Section with Gradient ("B")</h2>
+      <!-- <div style="height: 80vh" class="content-box"> -->
+      <CardPlain slot="col1">
+        <Fragment slot="card-title">Phase 1: Kursphase</Fragment>
+        <Fragment slot="subtitle">September bis November 2025</Fragment>
+        <ul slot="content">
+          <li>Von Datenschutz bis Datenmanagement für grundlegendes Daten-Know-how</li>
+          <li>Tipps und Tools für die angewandte Datenanalyse</li>
+          <li>12 Wochen, 12 Module für gestärkte Datenkompetenz</li>
+        </ul>
+        <Fragment slot="footer">
+          <p>parallel - modular - individuelle Beratung</p>
+          <div>
+            <LinkButton href="/kurse/kurs1" classes="btn-secondary">Kurs 1</LinkButton>
+            <LinkButton href="/kurse/kurs2" classes="btn-secondary">Kurs 2</LinkButton>
+          </div>
+        </Fragment>
+      </CardPlain>
+      <CardPlain slot="col2">
+        <Fragment slot="card-title">Phase 2: Praxisphase</Fragment>
+        <Fragment slot="subtitle">Dezember 2025 bis August 2026</Fragment>
+        <ul slot="content">
+          <li>Gemeinsame Arbeit mit 4 bis 5 Datenanalyst* innen an eurem Datenprojekt</li>
+          <li>
+            z. B. Wirkungsmessung, Datenvisualisierung, Reportautomatisierungen, Vorhersagemodelle
+          </li>
+          <li>begleitende 1:1-Datensprechstunden</li>
+        </ul>
+        <Fragment slot="footer">
+          <p>praxisbezogen – bedarfsorientiert – pragmatisch</p>
+          <div>
+            <LinkButton href="https://correlaid.org/daten-nutzen/projekte/" classes="btn-secondary"
+              >Mehr über Projekte</LinkButton
+            >
+          </div>
+        </Fragment>
+      </CardPlain>
+      <!-- </div> -->
+    </ColumnsSection>
+  </BackgroundSection>
+  <section class="prose">
+    <h3>Kurs 1</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+  </section>
+
+  <ColumnsSection center_title>
+    <h2 slot="title">Eure Ansprechpartner</h2>
+    <Persona name="Max Mustermann" role="Data Scientist" slot="col1" email="max@mustermann.de" />
+    <Persona name="Erika Mustermann" role="Data Engineer" slot="col2" email="erika@mustermann.de" />
+  </ColumnsSection>
+  <Banner slot="banner" />
+</KursLayout>

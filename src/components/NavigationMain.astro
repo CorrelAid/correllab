@@ -1,0 +1,75 @@
+---
+import Submenu from './Navigation/Submenu.astro';
+---
+
+<div class="nav-wrapper">
+  <nav class="nav-secondary">
+    <dl>
+      <dt>
+        <a href="/">
+          <span>Veranstaltungen</span>
+        </a>
+      </dt>
+      <dt>
+        <a href="/">
+          <span>Blog</span>
+        </a>
+      </dt>
+      <dt>
+        <a href="/">
+          <span>Podcast</span>
+        </a>
+      </dt>
+      <a href="/">
+        <span>Newsletter</span>
+      </a>
+    </dl>
+  </nav>
+  <nav class="nav-primary">
+    <dl>
+      <dt>
+        <Submenu title="Daten nutzen" />
+      </dt>
+      <dt>
+        <Submenu title="Mitmachen" />
+      </dt>
+      <dt>
+        <Submenu title="Über uns" />
+      </dt>
+      <dt>
+        <Submenu title="Bildung" />
+      </dt>
+    </dl>
+  </nav>
+</div>
+
+<style>
+  & nav {
+    display: flex;
+    gap: 1rem;
+    color: var(--color-black-900);
+    text-decoration: none;
+
+    @container header (max-width: 768px) {
+      display: none;
+    }
+
+    & a {
+      color: var(--color-black-900);
+      text-decoration: none;
+    }
+
+    & dl {
+      display: flex;
+      gap: 1rem;
+
+      & dt {
+        white-space: nowrap;
+      }
+    }
+
+    &.nav-secondary {
+      font-size: 14px;
+    }
+  }
+</style>

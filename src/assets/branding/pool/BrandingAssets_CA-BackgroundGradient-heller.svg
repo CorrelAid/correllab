@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 628.3497">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #c4e38a;
+        stroke-miterlimit: 4;
+        stroke-width: 5px;
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="8.6839" y1="-1092.7454" x2="8.6839" y2="-1094.2004" gradientTransform="translate(-155593.135 -187789.1308) rotate(-39.3882) scale(223.9718 -223.9718)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#89cc96" stop-opacity="0"/>
+      <stop offset="1" stop-color="#c4e38a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-13.1687" y1="-1093.139" x2="-13.1687" y2="-1094.594" gradientTransform="translate(151775.664 -44820.7673) rotate(72.6051) scale(143.232 -143.232)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-.8431" y1="-1121.0286" x2="-.8431" y2="-1122.4836" gradientTransform="translate(233.1988 118850.9632) rotate(-179.4105) scale(105.4931 -105.4931)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="1.768" y1="-1104.4607" x2=".659" y2="-1103.3247" gradientTransform="translate(-1355 -696238.4551) scale(1920 -631)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4787e5"/>
+      <stop offset="1" stop-color="#89cc96" stop-opacity=".561"/>
+    </linearGradient>
+  </defs>
+  <g id="Gruppe_13" data-name="Gruppe 13">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-5" cx="1320.9032" cy="256.693" r="162.9395"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-1" cx="1700.3786" cy="218.6294" r="104.2013"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-3" cx="1539.5976" cy="520.6203" r="76.7462"/>
+    <line id="Linie_2" data-name="Linie 2" class="cls-4" x1="1498.075" y1="458.3408" x2="1427.2844" y2="379.9996"/>
+    <line id="Linie_3" data-name="Linie 3" class="cls-4" x1="1561.6812" y1="448.5163" x2="1652.3829" y2="307.5894"/>
+    <line id="Linie_4" data-name="Linie 4" class="cls-4" x1="1476.8517" y1="232.8974" x2="1596.3856" y2="228.937"/>
+  </g>
+  <rect id="Rechteck_13" data-name="Rechteck 13" class="cls-2" x="0" y="-2.6503" width="1920" height="631"/>
+</svg>

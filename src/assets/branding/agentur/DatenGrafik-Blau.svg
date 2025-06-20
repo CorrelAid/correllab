@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 807.4601 700">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #4787e5;
+        stroke-miterlimit: 4;
+        stroke-width: 5px;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-2916.6764" y1="112.784" x2="-2916.6764" y2="111.0096" gradientTransform="translate(-308391.5354 576416.221) rotate(116.0067) scale(223.9718 -223.9718)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#89cc96" stop-opacity="0"/>
+      <stop offset="1" stop-color="#4787e5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-2931.454" y1="92.6826" x2="-2931.454" y2="90.9082" gradientTransform="translate(-271015.1327 -320294.3529) rotate(-132) scale(143.232 -143.232)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-2897.1335" y1="84.4347" x2="-2897.1335" y2="82.6603" gradientTransform="translate(282949.8353 -116218.4484) rotate(-24.0157) scale(105.4931 -105.4931)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Gruppe_13" data-name="Gruppe 13">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-4" cx="568.6085" cy="298.672" r="198.7101"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-1" cx="167.1745" cy="533.5621" r="127.0769"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-2" cx="192.107" cy="117.0759" r="93.5946"/>
+    <line id="Linie_2" data-name="Linie 2" class="cls-3" x1="275.4387" y1="159.4624" x2="388.0422" y2="215.9669"/>
+    <line id="Linie_3" data-name="Linie 3" class="cls-3" x1="189.3957" y1="210.5544" x2="181.3067" y2="407.3489"/>
+    <line id="Linie_4" data-name="Linie 4" class="cls-3" x1="397.1365" y1="399.1284" x2="277.2478" y2="469.3289"/>
+  </g>
+</svg>

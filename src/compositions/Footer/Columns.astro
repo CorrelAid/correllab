@@ -1,0 +1,20 @@
+---
+
+---
+
+<div class="columns">
+  <slot />
+</div>
+
+<style>
+  .columns {
+    /* max-width: 520px; */
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+    gap: 2rem;
+    /* justify-content: flex-start; */
+    justify-content: center;
+  }
+</style>

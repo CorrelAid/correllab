@@ -1,0 +1,321 @@
+@import "./reset.css";
+@import "./tokens.css";
+@import "./utils.css";
+@import "./hacks.css";
+@import "./a11y.css";
+
+html {
+  --root-font-size: var(--font-size-base);
+  --content-max-width: 1920px;
+  --prose-max-width: 65ch;
+  --header-height: 86px;
+  --inner-height: calc(100dvh - var(--header-height));
+  --content-width: 1100px;
+  --narrow-content-width: 650px;
+  --padding: 2rem;
+
+  font-size: var(--root-font-size);
+  scroll-behavior: smooth;
+
+  @media screen and (max-width: 650px) {
+    --padding: 1rem;
+    --root-font-size: 16px;
+  }
+}
+
+body {
+  font-family: var(--font-family-roboto);
+  line-height: var(--line-height-normal);
+  color: var(--color-gray-800);
+  /* background: var(--color-gray-50); */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-key);
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+blockquote .quote,
+button,
+.btn {
+  font-family: var(--font-family-inter);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* color: var(--color-key); */
+  font-family: var(--font-family-inter);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-semibold);
+  /* margin-bottom: var(--space-4); TODO: remove */
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-heavy);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+}
+
+p {
+  line-height: var(--line-height-normal);
+  color: var(--color-gray-800);
+  max-width: 65ch;
+
+  &:not(:last-child) {
+    margin-bottom: var(--space-4);
+  }
+}
+
+li {
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--space-1); /* TODO: TBC */
+}
+
+cite {
+  font-style: normal;
+}
+
+section {
+  position: relative;
+  padding-top: calc(var(--padding) * 2);
+  padding-bottom: calc(var(--padding) * 2);
+
+  & .subsection {
+    padding: var(--padding) 0 0 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+}
+/* Utility Classes */
+
+.container {
+  min-height: 300px;
+  max-width: 1500px;
+  margin: 0 auto;
+  /* padding: var(--space-8); */
+
+  display: flex;
+  flex-direction: column;
+  /* gap: var(--padding); */
+}
+
+.contained {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-box {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+
+  &.narrow {
+    max-width: var(--narrow-content-width);
+  }
+}
+
+.prose {
+  display: grid;
+  gap: 1rem;
+  max-width: var(--prose-max-width);
+  margin: 0 auto;
+
+  p {
+    margin-bottom: 0;
+  }
+  /* & p:not(:last-child) {
+    margin-bottom: var(--space-4);
+  } */
+}
+
+.txt-italic {
+  font-style: italic;
+}
+
+/* core UI */
+
+/* button,
+.btn {
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  line-height: 1;
+} */
+
+button,
+a.btn {
+  --border-color: var(--color-key);
+  --color: var(--color-key);
+  --bg-color: var(--color-primary-50);
+  --btn-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* min-height: var(--btn-height); */
+  height: var(--btn-height);
+  max-height: var(--btn-height);
+  cursor: pointer;
+  padding: 1px 1rem 0 1rem;
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 0.85rem; /* correction because of uppercase */
+  border-radius: 96px;
+  border: 2px solid var(--border-color);
+  color: var(--color);
+  background: var(--bg-color);
+  transition:
+    color 0.1s ease-in-out,
+    background-color 0.1s ease-in-out,
+    border-color 0.1s ease-in-out;
+
+  &:hover,
+  &:focus {
+    --color: var(--color-white);
+    --bg-color: var(--color-primary-500);
+    --border-color: var(--color-primary-500);
+  }
+
+  &.btn-primary {
+    --border-color: var(--color-primary-500);
+    --color: var(--color-white);
+    --bg-color: var(--color-primary-500);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-primary-700);
+      border-color: var(--color-primary-700);
+      /* transform: translateY(-1px); */
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  &.btn-secondary {
+    --bg-color: var(--color-white);
+    --color: var(--color-primary-600);
+    --border-color: var(--color-primary-600);
+    --border-width: 1px;
+
+    &:hover,
+    &:focus {
+      --color: var(--color-primary-900);
+      --border-color: var(--color-primary-900);
+    }
+  }
+
+  &.btn-ghost {
+    --bg-color: transparent;
+    --border-color: transparent;
+
+    &:hover,
+    &:focus {
+      --color: var(--color-primary-700);
+      --bg-color: inherit;
+      --border-color: var(--color-primary-700);
+    }
+  }
+
+  &.btn-light {
+    --bg-color: transparent;
+    --color: var(--color-white);
+
+    border: 1px solid var(--color-white);
+    white-space: nowrap; /* TODO: make util */
+
+    &:hover,
+    &:focus {
+      --color: var(--color-white);
+      --bg-color: var(--color-primary-700);
+      --border-color: var(--color-primary-700);
+    }
+  }
+
+  /* Button Sizes */
+  &.btn-sm {
+    --btn-height: 36px;
+
+    padding: 2px var(--space-3) 0 var(--space-3);
+    font-size: var(--font-size-xs);
+  }
+
+  &.btn-lg {
+    --btn-height: 52px;
+    /* font-size: 1.15rem; */
+    padding: 0 var(--space-8);
+    font-size: var(--font-size-lg);
+  }
+
+  &.btn-icon {
+    --btn-height: 44px;
+    --icon-size: 36px;
+
+    padding: 1px 1rem 0 0.5rem;
+    gap: 4px;
+
+    &.btn-icon-lab {
+      padding-left: 3px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      --btn-hover-color: white;
+    }
+  }
+}
+
+svg.icon {
+  display: inline;
+}

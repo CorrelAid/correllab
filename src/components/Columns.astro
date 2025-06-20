@@ -1,0 +1,32 @@
+---
+const { min_width = '310px', max_width = '1fr', flex_start = false, glue = false } = Astro.props;
+---
+
+<div class="columns" class:list={[flex_start && 'flex-start', glue && 'glue']}>
+  <div class="columns-content">
+    <slot name="col1" />
+  </div>
+  <div class="columns-content">
+    <slot name="col2" />
+  </div>
+</div>
+
+<style define:vars={{ 'min-width': min_width, 'max-width': max_width }}>
+  .columns {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-width), var(--max-width)));
+    gap: 2rem;
+    justify-content: center;
+
+    &.flex-start {
+      justify-content: flex-start;
+    }
+
+    &.glue {
+      gap: 0;
+    }
+  }
+</style>

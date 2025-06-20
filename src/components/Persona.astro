@@ -1,0 +1,114 @@
+---
+export interface Props {
+  name: string;
+  role: string;
+  image: string;
+  email?: string;
+}
+
+import LinkButton from '@components/LinkButton.astro';
+const { name, role, image, email } = Astro.props;
+---
+
+<div class="persona">
+  <div class="persona-image">
+    {image && <img src={image} alt={name} />}
+    {!image && <div class="persona-image-placeholder" />}
+  </div>
+  <div class="persona-content">
+    <h4>{name}</h4>
+    <p class="persona-role">{role}</p>
+    {
+      email && (
+        <LinkButton href={`mailto:${email}`} classes={'btn btn-sm email-button'}>
+          MAIL AN {name.split(' ')[0].toUpperCase()} ✉️
+        </LinkButton>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .persona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 1rem;
+
+    .persona-image {
+      width: 100%;
+
+      img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: cover;
+
+        /* &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 500px;
+          padding: 10px;
+          background: linear-gradient(45deg, red, blue);
+          mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          mask-composite: exclude;
+        } */
+      }
+
+      .persona-image-placeholder {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1;
+        background: var(--color-gray-200);
+        border-radius: 50%;
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 500px;
+          padding: 10px;
+          background: linear-gradient(
+            45deg,
+            var(--color-lab-pink-medium),
+            var(--color-lab-blue-medium)
+          );
+          mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          mask-composite: exclude;
+        }
+      }
+    }
+
+    .persona-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      h4 {
+        font-size: 2rem;
+        margin: 0 auto;
+        line-height: 1.1;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--color-key);
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+  }
+</style>

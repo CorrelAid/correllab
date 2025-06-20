@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 782.4117">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        isolation: isolate;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        opacity: .6;
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-7);
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-8);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+        opacity: .8;
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1.6794" y1="-1867.7736" x2=".5704" y2="-1866.6376" gradientTransform="translate(-1185 -1459757.2103) scale(1920 -782)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4787e5"/>
+      <stop offset="1" stop-color="#89cc96" stop-opacity=".561"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="8.6869" y1="-1852.0066" x2="8.6869" y2="-1853.0066" gradientTransform="translate(92427.3005 332618.9121) rotate(164.9911) scale(186.022 -186.022)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4787e5"/>
+      <stop offset="1" stop-color="#89cc96" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="164.9031" y1="218" x2="164.9031" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4787e5" stop-opacity="0"/>
+      <stop offset="1" stop-color="#89cc96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="1423.3517" y1="782.4118" x2="1423.3517" y2="499.0853" gradientTransform="matrix(1,0,0,1,0,0)" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-5" x1="174.9267" y1="782.4117" x2="174.9267" y2="660.2964" gradientTransform="matrix(1,0,0,1,0,0)" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-6" x1="1596.6693" y1="276.4619" x2="1502.5834" y2="605.5417" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4787e5"/>
+      <stop offset="1" stop-color="#85bfb9"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="1840.8925" y1="745.901" x2="1840.8925" y2="280.8896" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4787e5"/>
+      <stop offset="1" stop-color="#89cc96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="1674.9332" y1="230.5407" x2="1847.0556" y2="374.9822" xlink:href="#linear-gradient-6"/>
+  </defs>
+  <rect id="Rechteck_37" data-name="Rechteck 37" class="cls-3" y=".4117" width="1920" height="782"/>
+  <circle id="Ellipse_16" data-name="Ellipse 16" class="cls-4" cx="1623.8129" cy="186.4217" r="93.011"/>
+  <path class="cls-5" d="M0,0v204.2815c25.6428,8.8804,53.1732,13.7185,81.837,13.7185,127.2293,0,232.2587-95.0413,247.9692-218H0Z"/>
+  <path class="cls-1" d="M1792.0891,782.4118c-41.4097-155.6604-179.2653-273.9099-348.7864-282.7942-183.4469-9.614-343.399,112.0193-388.6884,282.7942h737.4747Z"/>
+  <path class="cls-6" d="M86.5821,782.4117h176.6978c5.4905-16.6284,6.3599-34.9905,1.4861-53.1682-13.3029-49.6162-64.3088-79.054-113.925-65.751-49.6161,13.3027-79.0539,64.3088-65.751,113.9248.4529,1.6892.9534,3.3528,1.4921,4.9944Z"/>
+  <path class="cls-8" d="M1533.4148,515.2414l68.5334-238.3997c-3.1221-.7578-6.1938-1.6792-9.2067-2.75l-.3773-.1084-68.5664,238.5137c3.2227.8762,6.4302,1.7869,9.6169,2.7444Z"/>
+  <path class="cls-2" d="M1920,280.8896c-7.2971,2.8916-14.5276,6.1331-21.6621,9.7681-123.0214,62.6843-171.9342,213.2285-109.25,336.25,28.8094,56.54,76.1871,97.4006,130.9121,118.9934v-465.0115Z"/>
+  <path class="cls-7" d="M1697.6001,243.0443c-1.9929,2.6011-4.1227,5.1025-6.3875,7.488l-.1013.1208,126.0798,105.7854c2.0876-2.5916,4.2344-5.1426,6.4319-7.6567l-126.0229-105.7375Z"/>
+</svg>

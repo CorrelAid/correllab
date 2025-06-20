@@ -1,0 +1,44 @@
+header .brand img {
+  height: 100%;
+  max-height: 40px;
+  width: auto;
+}
+
+.carousel-content {
+  display: none;
+}
+
+/* .carousel[data-current="1"] .carousel-content[data-step-id="1"] {
+  display: block;
+}
+
+.carousel[data-current="2"] .carousel-content[data-step-id="2"] {
+  display: block;
+}
+
+.carousel[data-current="3"] .carousel-content[data-step-id="3"] {
+  display: block;
+} */
+
+.carousel[data-current="1"] .carousel-content:nth-child(1),
+.carousel[data-current="2"] .carousel-content:nth-child(2),
+.carousel[data-current="3"] .carousel-content:nth-child(3),
+.carousel[data-current="4"] .carousel-content:nth-child(4),
+.carousel[data-current="5"] .carousel-content:nth-child(5),
+.carousel[data-current="6"] .carousel-content:nth-child(6) {
+  display: block;
+}
+
+/* FIXME: icon lists */
+dl {
+  & li {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    align-items: center;
+
+    & .icon {
+      min-width: 24px;
+    }
+  }
+}

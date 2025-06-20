@@ -1,0 +1,107 @@
+---
+export interface Props {
+  containerId: string;
+  steps: number;
+  currentStep: number;
+  style?: string;
+}
+
+const { containerId, steps = 4, currentStep = 1, style = '' } = Astro.props;
+
+// Validate currentStep
+const activeStep = Math.max(1, Math.min(currentStep, steps));
+
+// Generate step array
+const stepArray = Array.from({ length: steps }, (_, i) => i + 1);
+---
+
+<aside style={style}>
+  <div class="progress-stepper">
+    {
+      stepArray.map((step, index) => (
+        <div class="step-container">
+          <button class={`step-circle ${step == activeStep ? 'active' : ''}`} data-slide={step} />
+          {index < stepArray.length - 1 && <div class="step-connector" />}
+        </div>
+      ))
+    }
+  </div>
+</aside>
+
+<script define:vars={{ containerId }}>
+  const btns = document.querySelectorAll('.step-circle');
+  const container = document.getElementById(containerId);
+
+  btns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      console.log('clicked', e.currentTarget.dataset.slide);
+      clear_state();
+      if (container) {
+        container.dataset.current = e.currentTarget.dataset.slide;
+      }
+      e.currentTarget.classList.add('active');
+    });
+  });
+
+  function clear_state() {
+    btns.forEach((btn) => {
+      btn.classList.remove('active');
+    });
+  }
+</script>
+
+<style>
+  aside {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    & .progress-stepper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 300px;
+      /* margin: 0 auto; */
+
+      & .step-container {
+        display: flex;
+        align-items: center;
+        height: 22px;
+        max-height: 22px;
+        flex: 1;
+        /* &:last-child {
+          flex: 0;
+        } */
+
+        & .step-circle {
+          padding: 6px;
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          max-width: 22px;
+          max-height: 22px;
+          border-radius: 50%;
+          border: 3px solid var(--color-lab-blue-medium);
+          background: transparent;
+          transition: all 0.2s ease;
+          /* flex-shrink: 0; */
+          &.active {
+            background: var(--color-lab-blue-medium);
+            border-color: var(--color-lab-blue-medium);
+          }
+        }
+
+        & .step-connector {
+          height: 3px;
+          background: var(--color-lab-blue-medium);
+          flex: 1;
+          margin: 0 8px;
+        }
+      }
+    }
+  }
+</style>

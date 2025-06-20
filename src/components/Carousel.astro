@@ -1,0 +1,24 @@
+---
+let { id = 'carousel', slides, currentStep = 1 } = Astro.props;
+
+const steps = slides?.length;
+
+import Stepper from './Stepper.astro';
+---
+
+<div class="carousel" id={id} data-current={currentStep}>
+  <slot />
+
+  {
+    steps && (
+      <Stepper
+        containerId={id}
+        steps={3}
+        currentStep={1}
+        style={'--max-width: var(--narrow-content-width)'}
+      />
+    )
+  }
+</div>
+
+<style></style>

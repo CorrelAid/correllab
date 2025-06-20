@@ -2,6 +2,7 @@
 import '@styles/main.css';
 import Header from '@compositions/Header.astro';
 import Footer from '@compositions/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
 
 export interface Props {
   title?: string;
@@ -23,6 +24,7 @@ const { title = 'Style Guide' } = Astro.props;
     />
     <link rel="stylesheet" href="/src/styles/tokens.css" />
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body>
     <Header />

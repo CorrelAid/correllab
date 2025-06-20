@@ -213,7 +213,7 @@ a.btn {
   cursor: pointer;
   padding: 0 1rem;
   text-decoration: none;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   line-height: 1;
   font-size: 0.85rem; /* correction because of uppercase */
@@ -229,8 +229,8 @@ a.btn {
   &:hover,
   &:focus {
     --color: var(--color-white);
-    --bg-color: var(--color-primary-500);
-    --border-color: var(--color-primary-500);
+    --bg-color: var(--color-key);
+    --border-color: var(--color-key);
   }
 
   &.btn-primary {
@@ -319,8 +319,32 @@ a.btn {
       --btn-hover-color: white;
     }
   }
+
+  &.btn-icon-lab {
+    --bg-color: white;
+    --color: var(--color-key);
+    --border-color: var(--color-key);
+
+    &:hover,
+    &:active,
+    &:focus {
+      --bg-color: var(--color-key);
+      --color: white;
+      --border-color: var(--color-key);
+    }
+  }
 }
 
 svg.icon {
   display: inline;
+}
+
+dl {
+  display: grid;
+  gap: 1rem;
+
+  & li {
+    line-height: var(--line-height-tight);
+    margin-bottom: 0;
+  }
 }

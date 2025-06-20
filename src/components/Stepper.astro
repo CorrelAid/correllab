@@ -34,7 +34,6 @@ const stepArray = Array.from({ length: steps }, (_, i) => i + 1);
 
   btns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      console.log('clicked', e.currentTarget.dataset.slide);
       clear_state();
       if (container) {
         container.dataset.current = e.currentTarget.dataset.slide;

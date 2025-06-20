@@ -1,0 +1,25 @@
+{
+  "landing": [
+    {
+      "quote": "Die Visualisierung unserer Daten hat unsere Arbeit bei Silbernetz revolutioniert. Unsere Gegenüber haben viel schneller und besser verstanden, was wir bewirken. Das Projekt war wirklich ein Game Changer für uns.",
+      "cite": {
+        "name": "Elke Schilling",
+        "role": "Silbernetz e.V."
+      }
+    },
+    {
+      "quote": "Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.",
+      "cite": {
+        "name": "Guybrush Threepwood",
+        "role": "Monkey Island"
+      }
+    },
+    {
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut molestie augue, ut consectetur eros. Nullam dignissim sem in dui posuere, in ornare arcu vestibulum. Integer non mollis mauris. Aliquam erat volutpat. Aliquam lacinia felis sed dictum vestibulum. Vestibulum ultrices eros a accumsan hendrerit. Fusce tellus nulla, luctus in ligula quis, feugiat imperdiet mi.",
+      "cite": {
+        "name": "Marcus Tullius Cicero",
+        "role": "Rom"
+      }
+    }
+  ]
+}

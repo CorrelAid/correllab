@@ -1,21 +1,14 @@
 ---
-import KursLayout from '@layouts/KursLayout.astro';
-import Banner from '@compositions/Banner.astro';
-import BackgroundSection from '@components/sections/BackgroundSection.astro';
-import ColumnsSection from '@components/sections/ColumnsSection.astro';
 import CardPlain from '@components/cards/CardPlain.astro';
 import LinkButton from '@components/LinkButton.astro';
 import Persona from '@components/Persona.astro';
-import CorrelLabLogoWide from '@assets/branding/lab/Main/CorrelLab horizontal.svg';
-
-import SvelteBanner from '@components/svelte/Banner.svelte';
+import BackgroundSection from '@components/sections/BackgroundSection.astro';
+import ColumnsSection from '@components/sections/ColumnsSection.astro';
+import Banner from '@compositions/Banner.astro';
+import KursLayout from '@layouts/KursLayout.astro';
 ---
 
 <KursLayout>
-  <SvelteBanner client:idle slot="announcement-banner" top={'var(--header-height)'}>
-    <CorrelLabLogoWide height={'36'} style="position: absolute; left: 0;" />
-    <div style="margin: 0 auto;">Announcement Announcement Announcement!!!</div>
-  </SvelteBanner>
   <section class="prose">
     <h3>Kurse Kurse</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
@@ -25,7 +18,6 @@ import SvelteBanner from '@components/svelte/Banner.svelte';
   <BackgroundSection options={{ gradient: 'b' }}>
     <ColumnsSection section={false}>
       <h2 slot="title">Demo: Background-Section with Gradient ("B")</h2>
-      <!-- <div style="height: 80vh" class="content-box"> -->
       <CardPlain slot="col1">
         <Fragment slot="card-title">Phase 1: Kursphase</Fragment>
         <Fragment slot="subtitle">September bis November 2025</Fragment>

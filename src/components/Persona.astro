@@ -7,6 +7,8 @@ export interface Props {
 }
 
 import LinkButton from '@components/LinkButton.astro';
+import MailIcon from '@assets/svg/icons/mail.svg';
+
 const { name, role, image, email } = Astro.props;
 ---
 
@@ -20,8 +22,8 @@ const { name, role, image, email } = Astro.props;
     <p class="persona-role">{role}</p>
     {
       email && (
-        <LinkButton href={`mailto:${email}`} classes={'btn btn-sm email-button'}>
-          MAIL AN {name.split(' ')[0].toUpperCase()} ✉️
+        <LinkButton href={`mailto:${email}`} classes={'btn btn-icon btn-sm email-button'}>
+          <MailIcon height={'20'} /> Mail an {name.split(' ')[0].toUpperCase()}
         </LinkButton>
       )
     }

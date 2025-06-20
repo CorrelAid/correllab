@@ -1,6 +1,7 @@
 ---
 import CorrelLabKompaktDynamic from '@assets/branding/lab/Monochrom/CorrelLab kompakt_dynamic_fill.svg';
 import LinkButton from '@components/LinkButton.astro';
+import MailIcon from '@assets/svg/icons/mail.svg';
 ---
 
 <div class="container">
@@ -15,7 +16,9 @@ import LinkButton from '@components/LinkButton.astro';
         Schreibt uns einfach eine kurze Nachricht, wir freuen uns auf euch!
       </p>
     </div>
-    <LinkButton variant="btn-light" href="#">NACHRICHT SCHREIBEN 📧</LinkButton>
+    <LinkButton variant="btn-light" href="mailto:lab@correlaid.org" classes="btn-icon"
+      ><MailIcon height={'20'} /> Nachricht schreiben</LinkButton
+    >
   </div>
 
   <style>

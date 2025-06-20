@@ -126,9 +126,9 @@ section {
     padding: var(--padding) 0 0 0;
   }
 
-  &:last-of-type {
+  /* &:last-of-type {
     padding-bottom: 0;
-  }
+  } */
 
   &.prose {
     padding-left: 1rem;

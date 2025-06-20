@@ -26,7 +26,11 @@ const { pathname } = Astro.url;
         </a>
       </dt>
       <dt>
-        <a href="/kurse" class:list={[{ active: pathname.startsWith('/kurse') }]}>
+        <a
+          href="/kurse"
+          class:list={[{ active: pathname.startsWith('/kurse') }]}
+          data-astro-prefetch
+        >
           <span>Kurse</span>
         </a>
       </dt>

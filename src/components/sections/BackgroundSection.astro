@@ -1,47 +1,77 @@
 ---
-const { asset = {src: null, position: 'center center'},  options = { gradient: 'a', clip: false, content_grid: false } } = Astro.props;
+const {
+  asset = { src: null, position: 'center center' },
+  options = { gradient: 'a', clip: false, content_grid: false, full_height: false, center: false },
+} = Astro.props;
 ---
 
-<section class="background-section">
-  {asset?.src && <div class="background background-asset" style={`background-image: url(${asset.src}); background-position: ${asset.position};`}></div>}
-  {!asset?.src && <div class="background" class:list={[`gradient-${options.gradient}`, `clip-${options.clip}`]}></div>}
+<section
+  class="background-section"
+  class:list={[options.full_height && 'full', options.center && 'center']}
+>
+  {
+    asset?.src && (
+      <div
+        class="background background-asset"
+        style={`background-image: url(${asset.src}); background-position: ${asset.position};`}
+      />
+    )
+  }
+  {
+    !asset?.src && (
+      <div
+        class="background"
+        class:list={[`gradient-${options.gradient}`, `clip-${options.clip}`]}
+      />
+    )
+  }
   <div class:list={[options.content_grid && 'content-box']}>
     <slot />
   </div>
 </section>
 
 <style>
-.background-section {
-  width: 100%;
-  min-height: 200px;
-
-  & .background {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .background-section {
     width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.66;
+    min-height: 200px;
 
-    &.background-asset {
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
+    &.full {
+      min-height: var(--inner-height);
     }
 
-    &.gradient-a {
-      background: transparent linear-gradient(250deg, #a396d2 0%, #5097ff 100%) 0% 0% no-repeat
-        padding-box;
+    &.center {
+      display: grid;
+      place-items: center;
     }
 
-    &.gradient-b {
-      background: transparent linear-gradient(55deg, #4787e5 0%, #ffa4be 100%) 0% 0% no-repeat
-        padding-box;
-    }
+    & .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.66;
 
-    &.clip-both {
-      clip-path: ellipse(2000px 85% at 30% 0%);
+      &.background-asset {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      &.gradient-a {
+        background: transparent linear-gradient(250deg, #a396d2 0%, #5097ff 100%) 0% 0% no-repeat
+          padding-box;
+      }
+
+      &.gradient-b {
+        background: transparent linear-gradient(55deg, #4787e5 0%, #ffa4be 100%) 0% 0% no-repeat
+          padding-box;
+      }
+
+      &.clip-both {
+        clip-path: ellipse(2000px 85% at 30% 0%);
+      }
+    }
   }
-}
 </style>

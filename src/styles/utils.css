@@ -100,3 +100,7 @@
 [id]:target {
   scroll-margin-top: var(--header-height);
 }
+
+.full {
+  min-height: var(--inner-height);
+}

@@ -129,6 +129,11 @@ section {
   &:last-of-type {
     padding-bottom: 0;
   }
+
+  &.prose {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 /* Utility Classes */
 

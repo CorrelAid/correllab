@@ -1,4 +1,10 @@
 ---
+export interface Props {
+  id?: string | number | null;
+  wide?: boolean;
+  bare?: boolean;
+}
+
 import QuoteIcon from '@assets/svg/icons/quote.svg';
 const { id, wide, bare } = Astro.props;
 ---

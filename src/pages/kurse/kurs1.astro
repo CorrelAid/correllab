@@ -12,6 +12,7 @@ import LabLinkButton from '@components/LabLinkButton.astro';
 import Blockquote from '@/components/Blockquote.astro';
 import Carousel from '@components/Carousel.astro';
 import MailIcon from '@assets/svg/icons/mail.svg';
+import PeopleSection from '@compositions/People.astro';
 
 import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
 const CarouselBackground = await getImage({
@@ -22,7 +23,7 @@ const CarouselBackground = await getImage({
 import kurs1 from '@data/kurs1.json';
 import quotes from '@data/quotes.json';
 import * as KostenContent from '@content/landing/kosten.md';
-import FlyerKurs1 from '@assets/images/correllab-flyer-kurs1.png';
+import FlyerKurs from '@assets/images/correllab-flyer-kurs1.png';
 
 import ImageZoe from '@assets/images/wolter-zoe.jpg';
 import ImageAntje from '@assets/images/relitz-antje.png';
@@ -33,13 +34,13 @@ const people = [
     name: 'Zoé Wolter',
     role: 'Geschäftsführung und Bildung',
     image: ImageZoe.src,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Ann-Kristin%2C',
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
   },
   {
     name: 'Antje Relitz',
     role: 'Bildung',
     image: ImageAntje.src,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Emma%2C',
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Antje%2C',
   },
   {
     name: 'Emma Morlock',
@@ -178,7 +179,7 @@ const people = [
     </section>
     <section>
       <figure>
-        <Image src={FlyerKurs1} alt="Flyer Kurs 1" />
+        <Image src={FlyerKurs} alt="Flyer Kurs 1" />
         <figcaption>TODO: Flyer</figcaption>
       </figure>
       <div class="subsection content-box narrow flex rows align-center">
@@ -193,21 +194,8 @@ const people = [
     </LabLinkButton>
   </section>
 
-  <section>
-    <h3 class="text-center">Das ist unser Team</h3>
-    <div class="subsection content-box narrow flex cols align-center">
-      {
-        people.map((person) => (
-          <Persona
-            name={person.name}
-            role={person.role}
-            image={person.image}
-            email={person.email}
-          />
-        ))
-      }
-    </div>
-  </section>
+  <PeopleSection people={people} />
+
   <Banner slot="banner">
     <Fragment slot="title">Interessiert?</Fragment>
     <Fragment slot="body">

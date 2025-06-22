@@ -1,0 +1,28 @@
+---
+import Persona from '@components/Persona.astro';
+
+const { people } = Astro.props;
+---
+
+<section>
+  <h3 class="text-center">Das ist unser Team</h3>
+  <div class="subsection">
+    {
+      people.map((person) => (
+        <Persona name={person.name} role={person.role} image={person.image} email={person.email} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .subsection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    /* enforce same height */
+    align-items: stretch;
+    width: 100%;
+  }
+</style>

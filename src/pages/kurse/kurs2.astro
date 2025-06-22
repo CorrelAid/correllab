@@ -1,12 +1,238 @@
 ---
+import { getImage, Image } from 'astro:assets';
+
 import KursLayout from '@layouts/KursLayout.astro';
+import Banner from '@compositions/Banner.astro';
+import BackgroundSection from '@components/sections/BackgroundSection.astro';
+import ColumnsSection from '@components/sections/ColumnsSection.astro';
+import CardPlain from '@components/cards/CardPlain.astro';
+import LinkButton from '@components/LinkButton.astro';
+import Persona from '@components/Persona.astro';
+import LabLinkButton from '@components/LabLinkButton.astro';
+import Blockquote from '@/components/Blockquote.astro';
+import Carousel from '@components/Carousel.astro';
+import MailIcon from '@assets/svg/icons/mail.svg';
+import PeopleSection from '@compositions/People.astro';
+
+import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
+const CarouselBackground = await getImage({
+  src: carouselBackgroundSvg,
+  format: 'webp',
+});
+
+import kurs2 from '@data/kurs2.json';
+import quotes from '@data/quotes.json';
+import * as KostenContent from '@content/landing/kosten.md';
+import FlyerKurs from '@assets/images/correllab-flyer-kurs2.png';
+
+import ImageZoe from '@assets/images/wolter-zoe.jpg';
+import ImageAntje from '@assets/images/relitz-antje.png';
+import ImageJonas from '@assets/images/lorenz-jonas.png';
+
+const people = [
+  {
+    name: 'Zoé Wolter',
+    role: 'Geschäftsführung und Bildung',
+    image: ImageZoe.src,
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
+  },
+  {
+    name: 'Antje Relitz',
+    role: 'Bildung',
+    image: ImageAntje.src,
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Antje%2C',
+  },
+  {
+    name: 'Jonas Lorenz',
+    role: 'Werkstudent Bildung',
+    image: ImageJonas.src,
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Jonas%2C',
+  },
+];
 ---
 
 <KursLayout>
-  <section class="prose">
-    <h3>Kurs 2</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+  <h4 slot="subtitle">
+    Kurs 2: Daten nutzen<br />&ndash;&nbsp;Tools und Methoden praktisch anwenden
+  </h4>
+  <p slot="teaser">
+    Daten helfen erst, wenn man sie richtig nutzt. Aber wie startet ihr? Welche Tools sind gut für
+    den Anfang?
+  </p>
+  <Fragment slot="cta">
+    <LabLinkButton href="#start">Kursüberblick</LabLinkButton>
+    <LinkButton href="/">Zurück zur Übersicht</LinkButton>
+  </Fragment>
+
+  <Fragment>
+    <section class="prose">
+      <Blockquote bare wide>
+        Im Kurs „Daten nutzen: Tools und Methoden praktisch anwenden“ lernt ihr, wie ihr aus Daten
+        greifbare Erkenntnisse gewinnt.
+      </Blockquote>
+
+      <p>
+        Ihr lernt zentrale Werkzeuge für Datenorganisation, -analyse und -visualisierung kennen –
+        von Excel bis KI – und wendet sie direkt an.
+      </p><p>
+        Ob automatisierte Auswertungen, anschauliche Dashboards oder strukturiertes Datenmanagement:
+        Praxisnah, verständlich und direkt für euren Alltag in der gemeinnützigen Arbeit.
+      </p>
+    </section>
+
+    <ColumnsSection center_title>
+      <Fragment slot="col1">
+        <h4>Der Kurs ist für dich richtig, wenn…</h4>
+        <ul>
+          <li>
+            … du bereits Grundkenntnisse zu Daten hast – zum Beispiel aus unserem Kurs “<a
+              href="/kurse/kurs1">Daten verstehen: Grundlagenwissen entdecken</a
+            >” – und diese nun praktisch anwenden möchtest.
+          </li>
+          <li>
+            … du konkrete Datenprojekte in deiner Organisation planen und umsetzen willst – von der
+            ersten Idee bis zur nachhaltigen Nutzung.
+          </li>
+          <li>
+            … du lernen möchtest, wie du Daten erheben, organisieren und qualitativ hochwertig
+            aufbereiten und analysieren kannst.
+          </li>
+          <li>… du Daten professionell visualisieren und überzeugend kommunizieren willst.</li>
+          <li>
+            … du wissen willst, wie du KI-Tools sinnvoll in deine Datenarbeit integrieren kannst.
+          </li>
+        </ul>
+      </Fragment>
+
+      <Fragment slot="col2">
+        <h4>Im Kurs lernst du…</h4>
+        <ul>
+          <li>… Datenprojekte strategisch zu planen, umzusetzen und ihre Wirkung zu messen.</li>
+          <li>
+            … verschiedene Datenquellen zu erschließen: Umfragen zu erstellen, Open Data zu nutzen
+            und APIs anzubinden.
+          </li>
+          <li>… Daten zu organisieren und datenschutzkonform aufzubereiten.</li>
+          <li>
+            … Daten zu bereinigen, statistische Analysen durchzuführen und KI-Tools sinnvoll
+            einzusetzen.
+          </li>
+          <li>
+            … überzeugende Visualisierungen und Dashboards erstellen und Daten erfolgreich zu
+            kommunizieren.
+          </li>
+        </ul>
+      </Fragment>
+    </ColumnsSection>
+
+    <BackgroundSection
+      options={{ content_grid: true, full_height: true, center: true }}
+      asset={{ src: CarouselBackground.src, position: 'bottom right' }}
+    >
+      <Carousel slides={quotes.landing.filter((quote) => quote.k === 2)} id="carousel">
+        {
+          quotes.landing
+            .filter((quote) => quote.k === 2)
+            .map((quote, index) => (
+              <div class="carousel-content" data-step-id={index + 1}>
+                <Blockquote id={index + 1}>
+                  <Fragment>{quote.quote}</Fragment>
+                  <Fragment slot="cite">
+                    {' '}
+                    <span class="name txt-italic">{quote.cite.name}</span>
+                    <span class="role">{quote.cite.role}</span>
+                  </Fragment>
+                </Blockquote>
+              </div>
+            ))
+        }
+      </Carousel>
+    </BackgroundSection>
+    <section class="prose">
+      <CardPlain>
+        <h4 slot="card-title">Wie läuft der Kurs ab?</h4>
+        <ul slot="content">
+          <li>Zeitraum: 12 Wochen vom 12. September bis 12. Dezember 2025</li>
+          <li>Zeitaufwand: 2 bis 4 Stunden / Woche</li>
+          <li>Format: Integriertes Lernformat mit</li>
+          <ul>
+            <li>interaktiver Lernplattform,</li>
+            <li>
+              wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor*innen, immer
+              freitags zu den oben genannten Terminen von 13:30 bis 14:30 Uhr,
+            </li>
+            <li>gemeinsamem Lernen in kleinen Gruppen,</li>
+            <li>
+              individueller Beratung in Datensprechstunden zu den Herausforderungen eurer eigenen
+              Organisation.
+            </li>
+          </ul>
+        </ul>
+      </CardPlain>
+    </section>
+
+    <section class="prose">
+      <CardPlain>
+        <h4 slot="card-title">Die Themen</h4>
+        <table slot="content">
+          <tbody>
+            {
+              kurs2.map((item) => (
+                <tr>
+                  <td>{item.date}</td>
+                  <td>{item.topic}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </CardPlain>
+    </section>
+    <section>
+      <figure>
+        <Image src={FlyerKurs} alt="Flyer Kurs 1" />
+        <figcaption>TODO: Flyer</figcaption>
+      </figure>
+      <div class="subsection content-box narrow flex rows align-center">
+        <Fragment set:html={await KostenContent.compiledContent()} />
+      </div>
+    </section>
+  </Fragment>
+
+  <section class="sticky sticky-bottom">
+    <LabLinkButton href="https://pretix.eu/control/event/correlaid/correllab-1-dl/">
+      Hier geht es zur Anmeldung!
+    </LabLinkButton>
   </section>
+
+  <PeopleSection people={people} />
+
+  <Banner slot="banner">
+    <Fragment slot="title">Interessiert?</Fragment>
+    <Fragment slot="body">
+      <p class="light">
+        Wir sind immer auf der Suche nach ehrenamtlichen Tutor*innen für unseren nächsten Kurs!
+      </p>
+      <p class="light">Melde dich dazu einfach kurz bei unserem Bildungsteam.</p>
+    </Fragment>
+    <LinkButton
+      variant="btn-light"
+      href="mailto:education@correlaid.org"
+      classes="btn-icon"
+      slot="cta"><MailIcon height={'20'} /> Nachricht schreiben</LinkButton
+    >
+  </Banner>
+
+  <style>
+    .sticky-bottom {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      background-color: var(--color-background);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </KursLayout>

@@ -18,12 +18,14 @@ const { name, role, image, email } = Astro.props;
     {!image && <div class="persona-image-placeholder vignette" />}
   </div>
   <div class="persona-content">
-    <h4>{name}</h4>
-    <p class="persona-role">{role}</p>
+    <div class="flex rows gap-2">
+      <h4>{name}</h4>
+      <p class="persona-role">{role}</p>
+    </div>
     {
       email && (
         <LinkButton href={`mailto:${email}`} classes={'btn btn-icon btn-sm email-button'}>
-          <MailIcon height={'20'} /> Mail an {name.split(' ')[0].toUpperCase()}
+          <MailIcon height={'20'} /> Mail an lab@correlaid.org
         </LinkButton>
       )
     }
@@ -108,6 +110,7 @@ const { name, role, image, email } = Astro.props;
         font-size: 2rem;
         margin: 0 auto;
         line-height: 1.1;
+        white-space: nowrap;
       }
 
       p {
@@ -115,6 +118,7 @@ const { name, role, image, email } = Astro.props;
         color: var(--color-key);
         margin: 0;
         font-weight: 500;
+        line-height: 1;
       }
     }
   }

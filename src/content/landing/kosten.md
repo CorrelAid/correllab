@@ -1,3 +1,7 @@
 <h2 class="text-center">Kurskosten & Förderungen</h2>
 
- Dank aktueller Förderungen liegen die Kosten für die Kursphase in der ersten Kohorte bei 2.900 € pro Teilnehmer*in – sprecht mit uns sehr gerne über unsere Stipendientickets! Euer Vorteil, wenn ihr euch bei der Anmeldung direkt verbindlich für die Praxisphase im Anschluss an die Kursphase entscheidet: Ihr sichert euch einen von zehn Plätzen – und könnt mit zwei Mitarbeitenden an der Kursphase teilnehmen.
+Dank aktueller Förderungen kostet die Kursphase in der ersten Kohorte für euch 2.900 € pro Teilnehmer*in.
+
+Wir unterstützen euch bei der Suche nach Fördermöglichkeiten und haben auch eine begrenzte Anzahl an Stipendien – sprecht uns gerne an!
+
+Wenn ihr euch bei der Anmeldung direkt verbindlich für die anschließende Praxisphase entscheidet, sichert ihr euch einen von nur zehn Plätzen in der Praxisphase – und könnt sogar bereits mit zwei Mitarbeitenden an der Kursphase teilnehmen.

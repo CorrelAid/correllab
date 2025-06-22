@@ -103,9 +103,9 @@ p {
   color: var(--color-gray-800);
   max-width: 65ch;
 
-  &:not(:last-child) {
+  /* &:not(:last-child) {
     margin-bottom: var(--space-4);
-  }
+  } */
 }
 
 li {
@@ -214,7 +214,7 @@ a.btn {
   padding: 0 1rem;
   text-decoration: none;
   font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   line-height: 1;
   font-size: 0.85rem; /* correction because of uppercase */
   border-radius: 96px;
@@ -345,6 +345,25 @@ dl {
 
   & li {
     line-height: var(--line-height-tight);
+  }
+
+  > li {
     margin-bottom: 0;
+
+    & ul {
+      margin-top: var(--space-2);
+      margin-left: 0.5rem;
+      padding-left: 1rem;
+      list-style: disc;
+
+      & li {
+        display: list-item;
+        padding-left: 0.25rem;
+      }
+
+      & li:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 }

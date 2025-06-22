@@ -1,18 +1,18 @@
 ---
 export interface Props {
   containerId: string;
-  steps: number;
+  n_steps: number;
   currentStep: number;
   style?: string;
 }
 
-const { containerId, steps = 4, currentStep = 1, style = '' } = Astro.props;
+const { containerId, n_steps = 4, currentStep = 1, style = '' } = Astro.props;
 
 // Validate currentStep
-const activeStep = Math.max(1, Math.min(currentStep, steps));
+const activeStep = Math.max(1, Math.min(currentStep, n_steps));
 
 // Generate step array
-const stepArray = Array.from({ length: steps }, (_, i) => i + 1);
+const stepArray = Array.from({ length: n_steps }, (_, i) => i + 1);
 ---
 
 <aside style={style}>

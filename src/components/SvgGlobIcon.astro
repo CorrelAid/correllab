@@ -1,0 +1,20 @@
+---
+export interface SvgIconFauxProps {
+  // icon is a keyed object of svg icons
+  icon: Record<string, object>;
+  width?: string; // default 24
+  height?: string; // default 24
+  alt: string;
+  color?: string; // per convention we operate on currentColor
+}
+import { glob_to_ids } from '@utils/vite';
+
+const icons_glob = import.meta.glob('@assets/svg/icons/*.svg', { eager: true });
+const icons = await glob_to_ids(icons_glob, '/src/assets/svg/icons/');
+
+const { icon, width = '24', height = '24', alt = 'TODO: Icon', color } = Astro.props;
+
+const Component = icons[icon];
+---
+
+{Component && <Component width={width} height={height} {alt} {color} />}

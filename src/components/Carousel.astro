@@ -1,7 +1,7 @@
 ---
 let { id = 'carousel', slides, currentStep = 1 } = Astro.props;
 
-const steps = slides?.length;
+const n_steps = slides?.length;
 
 import Stepper from './Stepper.astro';
 ---
@@ -10,10 +10,10 @@ import Stepper from './Stepper.astro';
   <slot />
 
   {
-    steps && (
+    n_steps && (
       <Stepper
         containerId={id}
-        steps={3}
+        n_steps={n_steps}
         currentStep={1}
         style={'--max-width: var(--narrow-content-width)'}
       />

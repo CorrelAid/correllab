@@ -5,20 +5,15 @@ import AidLinkButton from '@components/AidLinkButton.astro';
 import Blockquote from '@components/Blockquote.astro';
 import Carousel from '@components/Carousel.astro';
 import LabLinkButton from '@components/LabLinkButton.astro';
-import LinkButton from '@components/LinkButton.astro';
 import Persona from '@components/Persona.astro';
-import CardPlain from '@components/cards/CardPlain.astro';
 import BackgroundSection from '@components/sections/BackgroundSection.astro';
 import ColumnsSection from '@components/sections/ColumnsSection.astro';
 import Banner from '@compositions/Banner.astro';
+import CoursesCards from '@compositions/CoursesCards.astro';
 import Hero from '@compositions/Hero.astro';
 import Layout from '@layouts/Layout.astro';
 
 import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
-
-import ChartScatterIcon from '@assets/svg/icons/chart-scatter.svg';
-import CodeIcon from '@assets/svg/icons/code.svg';
-import TwelveIcon from '@assets/svg/icons/twelve.svg';
 
 import ImageAnnKristin from '@assets/images/ann_kristin_vester.webp';
 import ImageZoe from '@assets/images/zoe_wolter.webp';
@@ -32,7 +27,6 @@ import * as HeroContent from '@content/landing/hero.md';
 import * as IntroContent from '@content/landing/intro.md';
 import * as IntroColumnsContent1 from '@content/landing/intro_columns_1.md';
 import * as IntroColumnsContent2 from '@content/landing/intro_columns_2.md';
-import * as KostenContent from '@content/landing/kosten.md';
 import quotes from '@data/quotes.json';
 import { strip_tag } from '@utils/md';
 ---
@@ -42,7 +36,7 @@ import { strip_tag } from '@utils/md';
     <Fragment slot="subtitle" set:html={HeroContent.frontmatter.title} />
     <Fragment slot="teaser" set:html={HeroContent.compiledContent()} />
     <Fragment slot="cta">
-      <LabLinkButton href="#start">Zum CorrelLab</LabLinkButton>
+      <LabLinkButton href="#start">Zum CorrelLAB</LabLinkButton>
       <AidLinkButton href="https://correlaid.org">Zu CorrelAid</AidLinkButton>
     </Fragment>
   </Hero>
@@ -50,7 +44,7 @@ import { strip_tag } from '@utils/md';
   <main id="start">
     <div class="container">
       <ColumnsSection center_title={false}>
-        <h2 slot="title" class="title">Willkommen im CorrelLab</h2>
+        <h2 slot="title" class="title">Willkommen im CorrelLAB</h2>
         <div slot="pre">
           <Blockquote wide bare>
             <Fragment set:text={await strip_tag(IntroContent.compiledContent)} />
@@ -63,6 +57,7 @@ import { strip_tag } from '@utils/md';
           <Fragment set:html={await IntroColumnsContent2.compiledContent()} />
         </div>
       </ColumnsSection>
+
       <BackgroundSection
         options={{ content_grid: true, full_height: true, center: true }}
         asset={{ src: CarouselBackground.src, position: 'bottom right' }}
@@ -85,84 +80,25 @@ import { strip_tag } from '@utils/md';
         </Carousel>
       </BackgroundSection>
 
-      <ColumnsSection>
-        <h2 slot="title">Euer Weg ins CorrelLab</h2>
-        <CardPlain slot="col1">
-          <Fragment slot="card-title">Phase 1: Kursphase</Fragment>
-          <Fragment slot="subtitle">September bis November 2025</Fragment>
-          <Fragment slot="content">
-            <dl>
-              <li>
-                <ChartScatterIcon width="24" height="24" /> Von Datenschutz bis Datenmanagement für grundlegendes
-                Daten-Know-how
-              </li>
-              <li>
-                <CodeIcon width="24" height="24" /> Tipps und Tools für die angewandte Datenanalyse
-              </li>
-              <li>
-                <TwelveIcon width="24" height="24" /> 12 Wochen, 12 Module für gestärkte Datenkompetenz
-              </li>
-            </dl>
-            <p>parallel - modular - individuelle Beratung</p>
-          </Fragment>
-
-          <Fragment slot="footer">
-            <div>
-              <LabLinkButton href="/kurse/kurs1">Kurs 1</LabLinkButton>
-              <LabLinkButton href="/kurse/kurs2">Kurs 2</LabLinkButton>
-            </div>
-          </Fragment>
-        </CardPlain>
-        <CardPlain slot="col2">
-          <Fragment slot="card-title">Phase 2: Praxisphase</Fragment>
-          <Fragment slot="subtitle">Dezember 2025 bis August 2026</Fragment>
-          <Fragment slot="content">
-            <dl>
-              <li>
-                <ChartScatterIcon width="24" height="24" /> Gemeinsame Arbeit mit 4 bis 5 Datenanalyst*
-                innen an eurem Datenprojekt
-              </li>
-              <li>
-                <CodeIcon width="24" height="24" />
-                z. B. Wirkungsmessung, Datenvisualisierung, Reportautomatisierungen, Vorhersagemodelle
-              </li>
-              <li>
-                <TwelveIcon width="24" height="24" /> begleitende 1:1-Datensprechstunden
-              </li>
-            </dl>
-            <p>praxisbezogen – bedarfsorientiert – pragmatisch</p>
-          </Fragment>
-          <Fragment slot="footer">
-            <div>
-              <LinkButton
-                href="https://correlaid.org/daten-nutzen/projekte/"
-                classes="btn-secondary">Mehr zur Praxis</LinkButton
-              >
-            </div>
-          </Fragment>
-        </CardPlain>
-        <div class="subsection content-box narrow flex rows align-center">
-          <Fragment set:html={await KostenContent.compiledContent()} />
-        </div>
-      </ColumnsSection>
+      <CoursesCards />
 
       <Banner />
 
       <ColumnsSection center_title glue>
         <h2 slot="title">Eure Ansprechpartner</h2>
         <Persona
-          name="Max Mustermann"
-          role="Data Scientist"
+          name="Ann-Kristin Vester"
+          role="Geschäftsführung"
           slot="col1"
           image={ImageAnnKristin.src}
-          email="lab@correlaid.org?subject=CorrelLab&body=Hi%20Zo%C3%A9%2C"
+          email="lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C"
         />
         <Persona
-          name="Erika Mustermann"
-          role="Data Engineer"
+          name="Zoé Wolter"
+          role="Geschäftsführung und Bildung"
           slot="col2"
           image={ImageZoe.src}
-          email="lab@correlaid.org?subject=CorrelLab&body=Hi%20Ann-Kristin%2C"
+          email="lab@correlaid.org?subject=CorrelLAB&body=Hi%20Ann-Kristin%2C"
         />
       </ColumnsSection>
     </div>

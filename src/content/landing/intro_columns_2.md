@@ -1,3 +1,5 @@
-#### Warum CorrelAid?
+#### CorrelAid wirkt
 
-Mit über 10 Jahren Erfahrung und 2.400 Ehrenamtlichen unterstützen wir Non-Profits, ihre Daten sinnvoll zu nutzen. Unsere Bilanz spricht für sich: über 85 erfolgreich umgesetzte Datenprojekte, 230 Kursteilnehmende und rund 160 Datensprechstunden – gemeinsam mit und für die Zivilgesellschaft.
+Mit über 10 Jahren Erfahrung und unserem Netzwerk aus 2.400 ehrenamtlichen Datenexpert*innen unterstützen wir euch dabei, eure Daten zu nutzen.
+
+Unsere Bilanz spricht für sich: über 85 erfolgreich abgeschlossene Datenprojekte, 230 Teilnehmende in unseren Kursen und rund 180 Datensprechstunden – gemeinsam mit und für die Zivilgesellschaft.

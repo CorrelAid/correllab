@@ -1,0 +1,143 @@
+---
+import ColumnsSection from '@components/sections/ColumnsSection.astro';
+import CardPlain from '@components/cards/CardPlain.astro';
+import LabLinkButton from '@components/LabLinkButton.astro';
+import LinkButton from '@components/LinkButton.astro';
+import ChartScatterIcon from '@assets/svg/icons/chart-scatter.svg';
+import CodeIcon from '@assets/svg/icons/code.svg';
+import TwelveIcon from '@assets/svg/icons/twelve.svg';
+import SvgGlobIcon from '@components/SvgGlobIcon.astro';
+
+import * as KostenContent from '@content/landing/kosten.md';
+
+const bullets = {
+  pillar1: [
+    {
+      icon: 'route-square',
+      alt: 'TODO: Icon',
+      text: '12 Wochen, 12 Module (u. a. Datenschutz, -strategie, Wirkungsmessung, Visualisierung und Storytelling uvm.)',
+    },
+
+    {
+      icon: 'hourglass-empty',
+      alt: 'TODO: Icon',
+      text: 'Flexibler Zeitaufwand: 2 – 4 Stunden pro Woche',
+    },
+    {
+      icon: 'brand-zoom',
+      alt: 'TODO: Icon',
+      text: 'Wöchentliche Live-Sessions mit Tutor*innen ',
+    },
+    { icon: 'device-desktop', alt: 'TODO: Icon', text: 'Interaktive Lernplattform' },
+    {
+      icon: 'users',
+      alt: 'TODO: Icon',
+      text: 'Lernen in kleinen Gruppen für Austausch und Reflexion',
+    },
+    { icon: 'bubble', alt: 'TODO: Icon', text: 'Individuelle Datensprechstunden' },
+  ],
+  pillar2: [
+    {
+      icon: 'heart-handshake',
+      alt: 'TODO: Icon',
+      text: 'Zusammenarbeit mit einem kleinen Team von 4 bis 5 Ehrenamtlichen',
+    },
+    {
+      icon: 'code',
+      alt: 'TODO: Icon',
+      text: 'Entwicklung und Umsetzung eines konkreten Datenprojekts, z. B.:',
+      subitems: [
+        { text: 'Wirkungsmessung und Feedbacksysteme' },
+        { text: 'Datenvisualisierung und Reporting' },
+        { text: 'Automatisierungen und Dashboards' },
+      ],
+    },
+    {
+      icon: 'bubble',
+      alt: 'TODO: Icon',
+      text: 'Begleitende Datensprechstunden und Projektcoaching',
+    },
+  ],
+};
+---
+
+<ColumnsSection>
+  <h2 slot="title">Euer Weg ins CorrelLAB</h2>
+  <CardPlain slot="col1">
+    <Fragment slot="card-title">Phase 1: Kursphase</Fragment>
+    <Fragment slot="subtitle">September bis November 2025</Fragment>
+    <Fragment slot="content">
+      <dl>
+        {
+          bullets.pillar1.map((bullet) => (
+            <li>
+              {bullet?.icon && <SvgGlobIcon icon={bullet.icon} alt={bullet.alt} />}
+              <span set:html={bullet.text} />
+              {bullet.subitems && (
+                <ul>
+                  {bullet.subitems.map((subitem) => (
+                    <li>{subitem.text}</li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))
+        }
+      </dl>
+      <p>
+        <strong>Ziel:</strong> Strategisches Datenverständnis aufbauen und erste Projektidee entwickeln
+      </p>
+    </Fragment>
+
+    <Fragment slot="footer">
+      <div>
+        <LabLinkButton href="/kurse/kurs1">Daten verstehen</LabLinkButton>
+        <LabLinkButton href="/kurse/kurs2">Daten nutzen</LabLinkButton>
+      </div>
+    </Fragment>
+  </CardPlain>
+  <CardPlain slot="col2">
+    <Fragment slot="card-title">Phase 2: Praxisphase</Fragment>
+    <Fragment slot="subtitle">Dezember 2025 bis August 2026</Fragment>
+    <Fragment slot="content">
+      <dl>
+        {
+          bullets.pillar2.map((bullet) => (
+            <li>
+              {bullet?.icon && <SvgGlobIcon icon={bullet.icon} alt={bullet.alt} />}
+              <span>
+                <Fragment set:html={bullet.text} />
+                {bullet.subitems && (
+                  <ul>
+                    {bullet.subitems.map((subitem) => (
+                      <li>{subitem.text}</li>
+                    ))}
+                  </ul>
+                )}
+              </span>
+            </li>
+          ))
+        }
+      </dl>
+      <p>
+        <strong>Ziel:</strong> Datenprojekte nachhaltig in der Organisation verankern und Wirkung steigern
+      </p>
+    </Fragment>
+    <Fragment slot="footer">
+      <div>
+        <LinkButton href="https://correlaid.org/daten-nutzen/projekte/" classes="btn-secondary"
+          >Mehr zur Praxisphase</LinkButton
+        >
+      </div>
+    </Fragment>
+  </CardPlain>
+  <div class="subsection content-box narrow flex rows align-center">
+    <Fragment set:html={await KostenContent.compiledContent()} />
+  </div>
+</ColumnsSection>
+
+<style>
+  /* dl > li {
+    align-items: center;
+  } */
+</style>

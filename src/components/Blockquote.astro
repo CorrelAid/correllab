@@ -1,15 +1,17 @@
 ---
+import QuoteIcon from '@assets/svg/icons/quote.svg';
 const { id, wide, bare } = Astro.props;
 ---
 
 <blockquote data-step-id={id || null} class:list={[wide && 'wide', bare && 'bare']}>
+  {!bare && <QuoteIcon width="96" height="96" class="marker" />}
   <div class="quote"><slot /></div>
   <cite>
     <slot name="cite" />
   </cite>
 </blockquote>
 
-<style>
+<style define:vars={{ iconurl: `url(${QuoteIcon.src})` }}>
   blockquote {
     /* ch is font-size-relative */
     max-width: var(--narrow-content-width);
@@ -30,24 +32,20 @@ const { id, wide, bare } = Astro.props;
     }
 
     &:not(.bare) {
-      &::before {
-      content: '“';
-      display: block;
-      font-size: 96px;
-      font-weight: var(--font-weight-black);
-      margin-bottom: -3rem;
-      color: var(--color-lab-blue-medium);
-    }
+      & cite {
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-light);
+        display: flex;
+        flex-direction: column;
+        gap: 0;
 
-    & cite {
-      font-size: var(--font-size-base);
-      font-weight: var(--font-weight-light);
-      display: flex;
-      flex-direction: column;
-      gap: 0rem;
+        & .name {
+          font-weight: var(--font-weight-bold);
+        }
+      }
 
-      & .name {
-        font-weight: var(--font-weight-bold);
+      & .marker {
+        transform: translateX(-0.5rem) scaleX(-1) scaleY(-1);
       }
     }
   }

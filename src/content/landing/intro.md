@@ -1,1 +1,3 @@
-Gemeinnützige Organisationen lernen im CorrelLAB, wie sie Daten reflektiert und wirkungsorientiert für ihre Ziele nutzen können. In unserem strukturierten Lern- und Praxisprogramm bauen sie ihre Datenkompetenz auf, entwickeln konkrete Projektideen – und setzen diese mit Unterstützung unserer ehrenamtlichen Data Scientists um.
+Lernt im CorrelLAB, wie ihr mit Daten mehr Wirkung erzielt.  
+
+In unserem Lern- und Praxisprogramm stärkt ihr Schritt für Schritt eure Datenkompetenzen, entwickelt eigene Projektideen – und setzt sie gemeinsam mit unseren ehrenamtlichen Data Scientists um.

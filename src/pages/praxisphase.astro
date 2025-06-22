@@ -1,0 +1,64 @@
+---
+import KursLayout from '@layouts/KursLayout.astro';
+import Blockquote from '@components/Blockquote.astro';
+import LabLinkButton from '@components/LabLinkButton.astro';
+import LinkButton from '@components/LinkButton.astro';
+import PeopleSection from '@compositions/People.astro';
+
+import * as content from '@content/praxisphase.md';
+import ImageZoe from '@assets/images/wolter-zoe.jpg';
+import ImageAntje from '@assets/images/relitz-antje.png';
+import ImageEmma from '@assets/images/morlock-emma.png';
+
+const people = [
+  {
+    name: 'Zoé Wolter',
+    role: 'Geschäftsführung und Bildung',
+    image: ImageZoe.src,
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
+  },
+  {
+    name: 'Antje Relitz',
+    role: 'Bildung',
+    image: ImageAntje.src,
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Antje%2C',
+  },
+  {
+    name: 'Emma Morlock',
+    role: 'Werkstudentin Data Literacy',
+    image: ImageEmma.src,
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Emma%2C',
+  },
+];
+---
+
+<KursLayout>
+  <h4 slot="subtitle">Praxisphase</h4>
+  <p slot="teaser">
+    Eure Organisation braucht Unterstützung beim Aufsetzen einer Datenbank, der Analyse von
+    Statistiken, der Erstellung eines Wirkungsberichts oder beim Einsatz von künstlicher
+    Intelligenz? Dann seid ihr hier genau richtig!
+  </p>
+  <Fragment slot="cta">
+    <LabLinkButton href="#start">Die Praxis</LabLinkButton>
+    <LinkButton href="/">Zurück zur Übersicht</LinkButton>
+  </Fragment>
+  <Fragment>
+    <section class="prose">
+      <Blockquote bare wide>
+        In der Praxisphase setzt ihr eure Projektidee in die Tat um – mit tatkräftiger Unterstützung
+        unserer ehrenamtlichen Data Scientists. Gemeinsam bringt ihr eure Organisation mit
+        datenbasierten Lösungen voran!
+      </Blockquote>
+
+      <p>
+        Wir verbinden Grundlagenwissen mit konkreten Anwendungen und schaffen Raum für Austausch,
+        Fragen und individuelle Begleitung – von und für die Zivilgesellschaft!
+      </p>
+    </section>
+    <section class="prose">
+      <div set:html={await content.compiledContent()} />
+    </section>
+    <PeopleSection people={people} />
+  </Fragment>
+</KursLayout>

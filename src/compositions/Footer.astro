@@ -9,48 +9,51 @@ const footer_links = [
   {
     title: 'Daten nutzen',
     links: [
-      { href: '#', label: 'Data4Good Projekte' },
-      { href: '#', label: 'Projktdatenbank' },
-      { href: '#', label: 'Beratung' },
-      { href: '#', label: 'Hackathons & Datendialoge' },
+      { href: 'https://correlaid.org/daten-nutzen/projekte', label: 'Data4Good Projekte' },
+      { href: 'https://correlaid.org/daten-nutzen/projektdatenbank', label: 'Projektdatenbank' },
+      { href: 'https://correlaid.org/daten-nutzen/beratung', label: 'Beratung' },
+      { href: 'https://correlaid.org/daten-nutzen/hackathons', label: 'Hackathons & Datendialoge' },
     ],
   },
   {
     title: 'Bildung',
     links: [
-      { href: '#', label: 'Grundkurs Daten' },
-      { href: '#', label: 'R Lernen' },
-      { href: '#', label: 'Mentoring' },
-      { href: '#', label: 'Tidy Tuesday' },
-      { href: '#', label: 'Bildungsresourcen' },
+      { href: 'https://correlaid.org/bildung/grundkurs-daten', label: 'Grundkurs Daten' },
+      { href: 'https://correlaid.org/bildung/r-lernen', label: 'R Lernen' },
+      { href: 'https://correlaid.org/bildung/mentoring', label: 'Mentoring' },
+      { href: 'https://correlaid.org/bildung/tidy-tuesday', label: 'Tidy Tuesday' },
+      { href: 'https://correlaid.org/bildung/ressourcen', label: 'Bildungsresourcen' },
     ],
   },
   {
     title: 'Mitmachen',
     links: [
-      { href: '#', label: 'Engagiere dich vor Ort' },
-      { href: '#', label: 'Trete einem Team bei' },
-      { href: '#', label: 'Vereinsmitglied werden' },
-      { href: '#', label: 'Gründe eine Lokalgruppe' },
+      { href: 'https://correlaid.org/mitmachen/correlaidx', label: 'Engagiere dich vor Ort' },
+      { href: 'https://correlaid.org/mitmachen/volunteer-teams', label: 'Trete einem Team bei' },
+      {
+        href: 'https://easyverein.com/public/correlaid/applicationform/7737',
+        label: 'Vereinsmitglied werden',
+      },
+      { href: 'https://correlaid.org/mitmachen/lc-gruenden', label: 'Gründe eine Lokalgruppe' },
     ],
   },
   {
     title: 'Über uns',
     links: [
-      { href: '#', label: 'Unsere Wirkung' },
-      { href: '#', label: 'Team' },
-      { href: '#', label: 'Unsere Werte' },
-      { href: '#', label: 'Partner' },
+      { href: 'https://correlaid.org/ueber/wirkung', label: 'Unsere Wirkung' },
+      { href: 'https://correlaid.org/ueber/team', label: 'Team' },
+      { href: 'https://correlaid.org/ueber/werte', label: 'Unsere Werte' },
+      { href: 'https://correlaid.org/ueber/partner', label: 'Partner' },
     ],
   },
 ];
 
 const footer_footer_links = [
-  { href: '#', label: 'Impressum' },
-  { href: '#', label: 'Code of Conduct' },
-  { href: '#', label: 'Code of Ethics' },
-  { href: '#', label: 'Team' },
-  { href: '#', label: 'Jobs' },
+  { href: 'https://correlaid.org/impressum', label: 'Impressum' },
+  { href: 'https://correlaid.org/codeofconduct', label: 'Code of Conduct' },
+  { href: 'https://correlaid.org/codeofethics', label: 'Code of Ethics' },
+  { href: 'https://correlaid.org/ueber/team', label: 'Team' },
+  { href: 'https://correlaid.org/jobs', label: 'Jobs' },
 ];
 ---
 
@@ -58,8 +61,8 @@ const footer_footer_links = [
   <div class="footer-inner">
     <!-- <GoldenColumns> -->
     <!-- <div slot="col1"> -->
-    <div class="column flex rows">
-      <CorrelAidLogoMuted />
+    <div class="column flex rows pb-4">
+      <a href="https://correlaid.org"><CorrelAidLogoMuted /></a>
       <SocialLinks color="var(--color-gray-600)" />
     </div>
     <!-- </div> -->

@@ -20,31 +20,7 @@ import FlyerKurs from '@assets/images/correllab-flyer-kurs1.png';
 import * as KostenContent from '@content/landing/kosten.md';
 import kurs1 from '@data/kurs1.json';
 import quotes from '@data/quotes.json';
-
-import ImageEmma from '@assets/images/morlock-emma.png';
-import ImageAntje from '@assets/images/relitz-antje.png';
-import ImageZoe from '@assets/images/wolter-zoe.jpg';
-
-const people = [
-  {
-    name: 'Zoé Wolter',
-    role: 'Geschäftsführung und Bildung',
-    image: ImageZoe,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
-  },
-  {
-    name: 'Antje Relitz',
-    role: 'Bildung',
-    image: ImageAntje,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Antje%2C',
-  },
-  {
-    name: 'Emma Morlock',
-    role: 'Werkstudentin Data Literacy',
-    image: ImageEmma,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Emma%2C',
-  },
-];
+import { people } from '@data/people';
 
 import * as KursColumns1 from '@content/kurse/kurs_1_columns_1.md';
 import * as KursColumns2 from '@content/kurse/kurs_1_columns_2.md';
@@ -160,7 +136,7 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
     </LabLinkButton>
   </section>
 
-  <PeopleSection people={people} />
+  <PeopleSection people={[people.zoe, people.antje, people.emma]} />
 
   <Banner slot="banner" />
 

@@ -20,31 +20,7 @@ import FlyerKurs from '@assets/images/correllab-flyer-kurs2.png';
 import * as KostenContent from '@content/landing/kosten.md';
 import kurs2 from '@data/kurs2.json';
 import quotes from '@data/quotes.json';
-
-import ImageJonas from '@assets/images/lorenz-jonas.png';
-import ImageAntje from '@assets/images/relitz-antje.png';
-import ImageZoe from '@assets/images/wolter-zoe.jpg';
-
-const people = [
-  {
-    name: 'Zoé Wolter',
-    role: 'Geschäftsführung und Bildung',
-    image: ImageZoe,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
-  },
-  {
-    name: 'Antje Relitz',
-    role: 'Bildung',
-    image: ImageAntje,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Antje%2C',
-  },
-  {
-    name: 'Jonas Lorenz',
-    role: 'Werkstudent Bildung',
-    image: ImageJonas,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Jonas%2C',
-  },
-];
+import { people } from '@data/people';
 
 import * as KursColumns1 from '@content/kurse/kurs_2_columns_1.md';
 import * as KursColumns2 from '@content/kurse/kurs_2_columns_2.md';
@@ -157,7 +133,7 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
     </LabLinkButton>
   </section>
 
-  <PeopleSection people={people} />
+  <PeopleSection people={[people.zoe, people.antje, people.jonas]} />
 
   <Banner slot="banner" />
   <div class="flex cols center gap-2 pad-8 wrap" slot="footer-links">

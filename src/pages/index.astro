@@ -14,9 +14,6 @@ import Layout from '@layouts/Layout.astro';
 
 import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
 
-import ImageAnnKristin from '@assets/images/vester-annkristin.jpeg';
-import ImageZoe from '@assets/images/wolter-zoe.jpg';
-
 const CarouselBackground = await getImage({
   src: carouselBackgroundSvg,
   format: 'webp',
@@ -28,21 +25,7 @@ import * as IntroColumnsContent1 from '@content/landing/intro_columns_1.md';
 import * as IntroColumnsContent2 from '@content/landing/intro_columns_2.md';
 import quotes from '@data/quotes.json';
 import { strip_tag } from '@utils/md';
-
-const people = [
-  {
-    name: 'Ann-Kristin Vester',
-    role: 'Geschäftsführung',
-    image: ImageAnnKristin,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
-  },
-  {
-    name: 'Zoé Wolter',
-    role: 'Geschäftsführung und Bildung',
-    image: ImageZoe,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Ann-Kristin%2C',
-  },
-];
+import { people } from '@data/people';
 ---
 
 <Layout title="Lab Demo">
@@ -97,17 +80,17 @@ const people = [
       <ColumnsSection center_title glue>
         <h2 slot="title">Eure Ansprech&shy;partner&shy;innen</h2>
         <Persona
-          name={people[0].name}
-          role={people[0].role}
-          image={people[0].image}
-          email={people[0].email}
+          name={people.annkristin.name}
+          role={people.annkristin.role}
+          image={people.annkristin.image}
+          email={people.annkristin.email}
           slot="col1"
         />
         <Persona
-          name={people[1].name}
-          role={people[1].role}
-          image={people[1].image}
-          email={people[1].email}
+          name={people.zoe.name}
+          role={people.zoe.role}
+          image={people.zoe.image}
+          email={people.zoe.email}
           slot="col2"
         />
       </ColumnsSection>

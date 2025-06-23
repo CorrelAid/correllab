@@ -48,7 +48,7 @@ import ScrollColumns from '@compositions/ScrollColumns.astro';
     <LabLinkButton href="#start">Die Praxis</LabLinkButton>
     <LinkButton href="/">Zurück zur Übersicht</LinkButton>
   </Fragment>
-  <section class="prose trim">
+  <section class="content-box trim">
     <Blockquote bare wide>
       In der Praxisphase setzt ihr eure Projektidee in die Tat um – mit tatkräftiger Unterstützung
       unserer ehrenamtlichen Data Scientists. Gemeinsam bringt ihr eure Organisation mit
@@ -57,10 +57,10 @@ import ScrollColumns from '@compositions/ScrollColumns.astro';
       und individuelle Begleitung – von und für die Zivilgesellschaft!
     </Blockquote>
   </section>
-  <section class="prose cap" set:html={await content.compiledContent()} />
+  <section class="prose" set:html={await content.compiledContent()} />
   <ScrollColumns stages={stages} />
   <section class="prose trim">
-    <h3>So seid ihr dabei</h3>
+    <h3 class="text-center">So seid ihr dabei</h3>
     <p>
       Für die Praxisphase haben wir in der ersten Kohorte nur zehn Plätze. Die Kosten der
       Praxisphase können durch eine externe Förderung oder eines unserer Stipendien gedeckt werden.

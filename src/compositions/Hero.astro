@@ -9,14 +9,21 @@ import AidLinkButton from '@components/AidLinkButton.astro';
   <Background />
   <div class="content-box">
     <div class="hero-inner">
-      <h1 class="hero-title flex align-center">
+      <h1 class="hero-title flex align-center" role="heading" aria-level="3">
         <span class="brand">
           <!-- <CorrelaidLogoMin height={'4rem'} /> -->
-          <CorrelLabLogoWide fill="white" height={'4rem'} class="bg-contrast-shadow" />
+          <CorrelLabLogoWide
+            fill="white"
+            height={'4rem'}
+            class="bg-contrast-shadow"
+            alt="CorrelLAB Logo"
+          />
         </span>
         <!-- CorrelLAB -->
       </h1>
-      <h3 class="hero-subtitle"><slot name="subtitle" /></h3>
+      <h3 class="hero-subtitle" role="heading" aria-level="1">
+        <slot name="subtitle" />
+      </h3>
       <div class="hero-teaser txt-stroke-dark flex rows gap-2">
         <slot name="teaser" />
       </div>

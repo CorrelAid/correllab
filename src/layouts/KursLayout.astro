@@ -25,21 +25,22 @@ import LinkButton from '@components/LinkButton.astro';
   <article class="container" id="start">
     <slot />
     <slot name="banner" />
+    <slot name="footer-links" />
   </article>
-
-  <style>
-    .container {
-      padding-bottom: calc(var(--padding));
-    }
-
-    /* TODO: if good, move to main css */
-    .section-footer {
-      margin-top: var(--space-5);
-      margin-bottom: var(--space-5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: var(--space-4);
-    }
-  </style>
 </Layout>
+
+<style>
+  /* .container {
+      padding-bottom: calc(var(--padding));
+    } */
+
+  /* TODO: if good, move to main css */
+  .section-footer {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+  }
+</style>

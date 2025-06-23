@@ -3,19 +3,24 @@ export interface Props {
   section?: boolean;
   center_title?: boolean;
   glue?: boolean;
+  subsection?: boolean;
 }
 
 import Columns from '@/components/Columns.astro';
 
-let { center_title = true, section = true, glue = false } = Astro.props;
+let { center_title = true, section = true, glue = false, subsection = false } = Astro.props;
 
 let Element = section ? 'section' : 'div';
 ---
 
-<Element class="content-box">
-  <div class="columns-header" class:list={[center_title && 'text-center']}>
-    <slot name="title" />
-  </div>
+<Element class:list={['content-box', subsection && 'subsection']}>
+  {
+    Astro.slots.has('title') && (
+      <div class="columns-header" class:list={[center_title && 'text-center']}>
+        <slot name="title" />
+      </div>
+    )
+  }
   <slot name="pre" />
   <Columns glue={glue}>
     <Fragment slot="col1">

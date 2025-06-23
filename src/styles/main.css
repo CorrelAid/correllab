@@ -126,6 +126,10 @@ section {
     padding: var(--padding) 0 0 0;
   }
 
+  &.cap {
+    padding-top: 0;
+  }
+
   /* &:last-of-type {
     padding-bottom: 0;
   } */
@@ -133,6 +137,14 @@ section {
   &.prose {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+}
+
+figure {
+  & figcaption {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    padding: 0.5rem 1rem 1rem 1rem;
   }
 }
 /* Utility Classes */

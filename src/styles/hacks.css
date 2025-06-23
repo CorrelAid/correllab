@@ -42,3 +42,8 @@ dl {
     }
   }
 }
+
+.subsection .persona {
+  margin-left: 0;
+  margin-right: 0;
+}

@@ -47,6 +47,46 @@
   gap: var(--space-5);
 }
 
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pad-0 {
+  padding: 0;
+}
+
+.pad-1 {
+  padding: var(--space-1);
+}
+
+.pad-2 {
+  padding: var(--space-2);
+}
+
+.pad-3 {
+  padding: var(--space-3);
+}
+
+.pad-4 {
+  padding: var(--space-4);
+}
+
+.pad-5 {
+  padding: var(--space-5);
+}
+
+.pad-6 {
+  padding: var(--space-6);
+}
+
+.pad-7 {
+  padding: var(--space-7);
+}
+
+.pad-8 {
+  padding: var(--space-8);
+}
+
 .light {
   color: var(--color-white);
 }

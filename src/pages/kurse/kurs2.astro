@@ -61,117 +61,117 @@ const people = [
   </p>
   <Fragment slot="cta">
     <LabLinkButton href="#start">Kursüberblick</LabLinkButton>
-    <LinkButton href="/">Zurück zur Übersicht</LinkButton>
+    <LabLinkButton href="/kurse/kurs1">zu Kurs 1</LabLinkButton>
   </Fragment>
 
-  <Fragment>
-    <section class="prose">
+  <ColumnsSection center_title>
+    <Fragment slot="pre">
       <Blockquote bare wide>
         Im Kurs „Daten nutzen: Tools und Methoden praktisch anwenden“ lernt ihr, wie ihr aus Daten
-        greifbare Erkenntnisse gewinnt.
-      </Blockquote>
-
-      <p>
-        Ihr lernt zentrale Werkzeuge für Datenorganisation, -analyse und -visualisierung kennen –
-        von Excel bis KI – und wendet sie direkt an.
-      </p><p>
+        greifbare Erkenntnisse gewinnt.<br /><br />
+        Ihr lernt zentrale Werkzeuge für Datenorganisation, -analyse und -visualisierung kennen – von
+        Excel bis KI – und wendet sie direkt an.<br /><br />
         Ob automatisierte Auswertungen, anschauliche Dashboards oder strukturiertes Datenmanagement:
         Praxisnah, verständlich und direkt für euren Alltag in der gemeinnützigen Arbeit.
-      </p>
-    </section>
+      </Blockquote>
+    </Fragment>
+    <div class="flex rows gap-2" slot="col1">
+      <h4>Der Kurs ist für dich richtig, wenn…</h4>
+      <ul>
+        <li>
+          … du bereits Grundkenntnisse zu Daten hast – zum Beispiel aus unserem Kurs “<a
+            href="/kurse/kurs1">Daten verstehen: Grundlagenwissen entdecken</a
+          >” – und diese nun praktisch anwenden möchtest.
+        </li>
+        <li>
+          … du konkrete Datenprojekte in deiner Organisation planen und umsetzen willst – von der
+          ersten Idee bis zur nachhaltigen Nutzung.
+        </li>
+        <li>
+          … du lernen möchtest, wie du Daten erheben, organisieren und qualitativ hochwertig
+          aufbereiten und analysieren kannst.
+        </li>
+        <li>… du Daten professionell visualisieren und überzeugend kommunizieren willst.</li>
+        <li>
+          … du wissen willst, wie du KI-Tools sinnvoll in deine Datenarbeit integrieren kannst.
+        </li>
+      </ul>
+    </div>
 
-    <ColumnsSection center_title>
-      <Fragment slot="col1">
-        <h4>Der Kurs ist für dich richtig, wenn…</h4>
+    <div class="flex rows gap-2" slot="col2">
+      <h4>Im Kurs lernst du…</h4>
+      <ul>
+        <li>… Datenprojekte strategisch zu planen, umzusetzen und ihre Wirkung zu messen.</li>
+        <li>
+          … verschiedene Datenquellen zu erschließen: Umfragen zu erstellen, Open Data zu nutzen und
+          APIs anzubinden.
+        </li>
+        <li>… Daten zu organisieren und datenschutzkonform aufzubereiten.</li>
+        <li>
+          … Daten zu bereinigen, statistische Analysen durchzuführen und KI-Tools sinnvoll
+          einzusetzen.
+        </li>
+        <li>
+          … überzeugende Visualisierungen und Dashboards erstellen und Daten erfolgreich zu
+          kommunizieren.
+        </li>
+      </ul>
+    </div>
+  </ColumnsSection>
+
+  <BackgroundSection
+    options={{ content_grid: true, full_height: true, center: true }}
+    asset={{ src: CarouselBackground.src, position: 'bottom right' }}
+  >
+    <Carousel slides={quotes.landing.filter((quote) => quote.k === 2)} id="carousel">
+      {
+        quotes.landing
+          .filter((quote) => quote.k === 2)
+          .map((quote, index) => (
+            <div class="carousel-content" data-step-id={index + 1}>
+              <Blockquote id={index + 1}>
+                <Fragment>{quote.quote}</Fragment>
+                <Fragment slot="cite">
+                  {' '}
+                  <span class="name txt-italic">{quote.cite.name}</span>
+                  <span class="role">{quote.cite.role}</span>
+                </Fragment>
+              </Blockquote>
+            </div>
+          ))
+      }
+    </Carousel>
+  </BackgroundSection>
+
+  <section class="prose">
+    <CardPlain>
+      <h4 slot="card-title">Wie läuft der Kurs ab?</h4>
+      <ul slot="content">
+        <li>Zeitraum: 12 Wochen vom 12. September bis 12. Dezember 2025</li>
+        <li>Zeitaufwand: 2 bis 4 Stunden / Woche</li>
+        <li>Format: Integriertes Lernformat mit</li>
         <ul>
+          <li>interaktiver Lernplattform,</li>
           <li>
-            … du bereits Grundkenntnisse zu Daten hast – zum Beispiel aus unserem Kurs “<a
-              href="/kurse/kurs1">Daten verstehen: Grundlagenwissen entdecken</a
-            >” – und diese nun praktisch anwenden möchtest.
+            wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor*innen, immer freitags
+            zu den oben genannten Terminen von 13:30 bis 14:30 Uhr,
           </li>
+          <li>gemeinsamem Lernen in kleinen Gruppen,</li>
           <li>
-            … du konkrete Datenprojekte in deiner Organisation planen und umsetzen willst – von der
-            ersten Idee bis zur nachhaltigen Nutzung.
-          </li>
-          <li>
-            … du lernen möchtest, wie du Daten erheben, organisieren und qualitativ hochwertig
-            aufbereiten und analysieren kannst.
-          </li>
-          <li>… du Daten professionell visualisieren und überzeugend kommunizieren willst.</li>
-          <li>
-            … du wissen willst, wie du KI-Tools sinnvoll in deine Datenarbeit integrieren kannst.
+            individueller Beratung in Datensprechstunden zu den Herausforderungen eurer eigenen
+            Organisation.
           </li>
         </ul>
-      </Fragment>
+      </ul>
+    </CardPlain>
+  </section>
 
-      <Fragment slot="col2">
-        <h4>Im Kurs lernst du…</h4>
-        <ul>
-          <li>… Datenprojekte strategisch zu planen, umzusetzen und ihre Wirkung zu messen.</li>
-          <li>
-            … verschiedene Datenquellen zu erschließen: Umfragen zu erstellen, Open Data zu nutzen
-            und APIs anzubinden.
-          </li>
-          <li>… Daten zu organisieren und datenschutzkonform aufzubereiten.</li>
-          <li>
-            … Daten zu bereinigen, statistische Analysen durchzuführen und KI-Tools sinnvoll
-            einzusetzen.
-          </li>
-          <li>
-            … überzeugende Visualisierungen und Dashboards erstellen und Daten erfolgreich zu
-            kommunizieren.
-          </li>
-        </ul>
-      </Fragment>
-    </ColumnsSection>
-
-    <BackgroundSection
-      options={{ content_grid: true, full_height: true, center: true }}
-      asset={{ src: CarouselBackground.src, position: 'bottom right' }}
-    >
-      <Carousel slides={quotes.landing.filter((quote) => quote.k === 2)} id="carousel">
-        {
-          quotes.landing
-            .filter((quote) => quote.k === 2)
-            .map((quote, index) => (
-              <div class="carousel-content" data-step-id={index + 1}>
-                <Blockquote id={index + 1}>
-                  <Fragment>{quote.quote}</Fragment>
-                  <Fragment slot="cite">
-                    {' '}
-                    <span class="name txt-italic">{quote.cite.name}</span>
-                    <span class="role">{quote.cite.role}</span>
-                  </Fragment>
-                </Blockquote>
-              </div>
-            ))
-        }
-      </Carousel>
-    </BackgroundSection>
-    <section class="prose">
-      <CardPlain>
-        <h4 slot="card-title">Wie läuft der Kurs ab?</h4>
-        <ul slot="content">
-          <li>Zeitraum: 12 Wochen vom 12. September bis 12. Dezember 2025</li>
-          <li>Zeitaufwand: 2 bis 4 Stunden / Woche</li>
-          <li>Format: Integriertes Lernformat mit</li>
-          <ul>
-            <li>interaktiver Lernplattform,</li>
-            <li>
-              wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor*innen, immer
-              freitags zu den oben genannten Terminen von 13:30 bis 14:30 Uhr,
-            </li>
-            <li>gemeinsamem Lernen in kleinen Gruppen,</li>
-            <li>
-              individueller Beratung in Datensprechstunden zu den Herausforderungen eurer eigenen
-              Organisation.
-            </li>
-          </ul>
-        </ul>
-      </CardPlain>
-    </section>
-
-    <section class="prose">
+  <section class="pt-0">
+    <figure>
+      <Image src={FlyerKurs} alt="Flyer Kurs 2" />
+      <figcaption class="contained">TODO: Flyer</figcaption>
+    </figure>
+    <div class="subsection prose pad-6">
       <CardPlain>
         <h4 slot="card-title">Die Themen</h4>
         <table slot="content">
@@ -187,17 +187,11 @@ const people = [
           </tbody>
         </table>
       </CardPlain>
-    </section>
-    <section>
-      <figure>
-        <Image src={FlyerKurs} alt="Flyer Kurs 1" />
-        <figcaption>TODO: Flyer</figcaption>
-      </figure>
-      <div class="subsection content-box narrow flex rows align-center">
-        <Fragment set:html={await KostenContent.compiledContent()} />
-      </div>
-    </section>
-  </Fragment>
+    </div>
+    <div class="subsection content-box narrow flex rows align-center">
+      <Fragment set:html={await KostenContent.compiledContent()} />
+    </div>
+  </section>
 
   <section class="sticky sticky-bottom">
     <LabLinkButton href="https://pretix.eu/control/event/correlaid/correllab-1-dl/">
@@ -222,17 +216,21 @@ const people = [
       slot="cta"><MailIcon height={'20'} /> Nachricht schreiben</LinkButton
     >
   </Banner>
-
-  <style>
-    .sticky-bottom {
-      position: sticky;
-      bottom: 0;
-      width: 100%;
-      background-color: var(--color-background);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
+  <div class="flex cols center gap-2 pad-8" slot="footer-links">
+    <LabLinkButton href="/kurse/kurs1">zu Kurs 1</LabLinkButton>
+    <LabLinkButton href="/praxisphase">Praxisphase</LabLinkButton>
+  </div>
 </KursLayout>
+
+<style>
+  .sticky-bottom {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

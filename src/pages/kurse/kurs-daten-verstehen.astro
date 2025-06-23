@@ -91,12 +91,10 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
     options={{ content_grid: true, center: true }}
     asset={{ src: CarouselBackground.src, position: 'bottom right' }}
   >
-    <!-- <Carousel slides={quotes.landing.filter((quote) => quote.k === 1)} id="carousel"> -->
     {
       quotes.landing
         .filter((quote) => quote.k === 1)
         .map((quote, index) => (
-          // <div class="carousel-content" data-step-id={index + 1}>
           <Blockquote id={index + 1}>
             <Fragment>{quote.quote}</Fragment>
             <Fragment slot="cite">
@@ -105,10 +103,8 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
               <span class="role">{quote.cite.role}</span>
             </Fragment>
           </Blockquote>
-          // </div>
         ))
     }
-    <!-- </Carousel> -->
   </BackgroundSection>
 
   <section class="prose">

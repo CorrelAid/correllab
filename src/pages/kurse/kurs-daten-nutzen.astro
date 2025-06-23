@@ -84,7 +84,7 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
 
   <section class="prose">
     <CardPlain>
-      <h4 slot="card-title">Wie läuft der Kurs ab?</h4>
+      <Fragment slot="card-title">Wie läuft der Kurs ab?</Fragment>
       <Fragment slot="content" set:html={await KursSchedule.compiledContent()} />
     </CardPlain>
   </section>
@@ -104,7 +104,7 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
           <summary>Die Themen in Tabellenform</summary>
           <div class="subsection prose cap pt-4" style="color: var(--color-gray-800)">
             <CardPlain>
-              <h4 slot="card-title">Die Themen</h4>
+              <Fragment slot="card-title">Die Themen</Fragment>
               <table slot="content" id="kurs-timeline">
                 <tbody>
                   {

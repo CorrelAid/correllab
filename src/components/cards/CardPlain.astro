@@ -10,9 +10,13 @@
   <div class="card-content">
     <slot name="content" />
   </div>
-  <div class="card-footer">
-    <slot name="footer" />
-  </div>
+  {
+    Astro.slots.has('footer') && (
+      <div class="card-footer">
+        <slot name="footer" />
+      </div>
+    )
+  }
 </div>
 
 <style>

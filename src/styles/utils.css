@@ -15,6 +15,10 @@
   flex-direction: row;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 .center {
   justify-content: center;
 }

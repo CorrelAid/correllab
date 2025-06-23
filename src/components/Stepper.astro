@@ -20,7 +20,11 @@ const stepArray = Array.from({ length: n_steps }, (_, i) => i + 1);
     {
       stepArray.map((step, index) => (
         <div class="step-container">
-          <button class={`step-circle ${step == activeStep ? 'active' : ''}`} data-slide={step} />
+          <button
+            class={`step-circle ${step == activeStep ? 'active' : ''}`}
+            data-slide={step}
+            aria-label={`Schritt ${index + 1}`}
+          />
           {index < stepArray.length - 1 && <div class="step-connector" />}
         </div>
       ))

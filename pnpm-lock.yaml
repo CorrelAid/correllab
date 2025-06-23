@@ -17,9 +17,6 @@ importers:
       '@fontsource/roboto':
         specifier: ^5.2.6
         version: 5.2.6
-      '@tabler/icons-webfont':
-        specifier: ^3.19.0
-        version: 3.34.0
       astro:
         specifier: ^5.10.0
         version: 5.10.0(@types/node@24.0.1)(rollup@4.42.0)(typescript@5.8.3)
@@ -775,12 +772,6 @@ packages:
 
   '@swc/helpers@0.5.17':
     resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
-
-  '@tabler/icons-webfont@3.34.0':
-    resolution: {integrity: sha512-ft2oePnW2YTXZtHWdgnlNtFqRbhwnizPdaE1393qXfb1xS+d2K79cN7//IkGbnpttA3p5EJG6C6F3Ar60L1bhw==}
-
-  '@tabler/icons@3.34.0':
-    resolution: {integrity: sha512-jtVqv0JC1WU2TTEBN32D9+R6mc1iEBuPwLnBsWaR02SIEciu9aq5806AWkCHuObhQ4ERhhXErLEK7Fs+tEZxiA==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -3001,13 +2992,6 @@ snapshots:
   '@swc/helpers@0.5.17':
     dependencies:
       tslib: 2.8.1
-
-  '@tabler/icons-webfont@3.34.0':
-    dependencies:
-      '@tabler/icons': 3.34.0
-      sharp: 0.34.2
-
-  '@tabler/icons@3.34.0': {}
 
   '@types/debug@4.1.12':
     dependencies:

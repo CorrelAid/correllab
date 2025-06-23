@@ -50,10 +50,6 @@ const people = [
   <Hero>
     <Fragment slot="subtitle" set:html={HeroContent.frontmatter.title} />
     <Fragment slot="teaser" set:html={HeroContent.compiledContent()} />
-    <Fragment slot="cta">
-      <LabLinkButton href="#start">Zum CorrelLAB</LabLinkButton>
-      <AidLinkButton href="https://correlaid.org">Zu CorrelAid</AidLinkButton>
-    </Fragment>
   </Hero>
 
   <main id="start">
@@ -100,7 +96,7 @@ const people = [
       <Banner />
 
       <ColumnsSection center_title glue>
-        <h2 slot="title">Eure Ansprechpartner</h2>
+        <h2 slot="title">Eure Ansprechpartnerinnen</h2>
         <Persona
           name={people[0].name}
           role={people[0].role}
@@ -118,8 +114,8 @@ const people = [
       </ColumnsSection>
 
       <div class="flex cols center gap-2 pt-0 pad-8">
-        <LabLinkButton href="/kurse/kurs1">zu Kurs 1</LabLinkButton>
-        <LabLinkButton href="/kurse/kurs2">zu Kurs 2</LabLinkButton>
+        <LabLinkButton href="/kurse/kurs1">Kurs: Daten verstehen</LabLinkButton>
+        <LabLinkButton href="/kurse/kurs2">Kurs: Daten nutzen</LabLinkButton>
         <LabLinkButton href="/praxisphase">Praxisphase</LabLinkButton>
       </div>
     </div>

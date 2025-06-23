@@ -57,7 +57,7 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
 
 <KursLayout title="CorrelLAB: Kurs 2 - Daten nutzen">
   <h4 slot="subtitle">
-    Kurs 2: Daten nutzen<br />&ndash;&nbsp;Tools und Methoden praktisch anwenden
+    Kurs: Daten nutzen<br />&ndash;&nbsp;Tools und Methoden praktisch anwenden
   </h4>
   <p slot="teaser">
     Daten helfen erst, wenn man sie richtig nutzt. Aber wie startet ihr? Welche Tools sind gut für
@@ -65,7 +65,7 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
   </p>
   <Fragment slot="cta">
     <LabLinkButton href="#start">Kursüberblick</LabLinkButton>
-    <LabLinkButton href="/kurse/kurs1">zu Kurs 1</LabLinkButton>
+    <LabLinkButton href="/kurse/kurs1">Kurs: Daten verstehen</LabLinkButton>
   </Fragment>
 
   <ColumnsSection center_title>
@@ -80,7 +80,7 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
       </Blockquote>
     </Fragment>
     <div class="flex rows gap-2" slot="col1">
-      <h4>Der Kurs ist für dich richtig, wenn…</h4>
+      <h4>Der Kurs ist für dich, wenn…</h4>
       <Fragment set:html={await KursColumns1.compiledContent()} />
     </div>
 
@@ -94,24 +94,20 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
     options={{ content_grid: true, full_height: true, center: true }}
     asset={{ src: CarouselBackground.src, position: 'bottom right' }}
   >
-    <Carousel slides={quotes.landing.filter((quote) => quote.k === 2)} id="carousel">
-      {
-        quotes.landing
-          .filter((quote) => quote.k === 2)
-          .map((quote, index) => (
-            <div class="carousel-content" data-step-id={index + 1}>
-              <Blockquote id={index + 1}>
-                <Fragment>{quote.quote}</Fragment>
-                <Fragment slot="cite">
-                  {' '}
-                  <span class="name txt-italic">{quote.cite.name}</span>
-                  <span class="role">{quote.cite.role}</span>
-                </Fragment>
-              </Blockquote>
-            </div>
-          ))
-      }
-    </Carousel>
+    {
+      quotes.landing
+        .filter((quote) => quote.k === 2)
+        .map((quote, index) => (
+          <Blockquote id={index + 1}>
+            <Fragment>{quote.quote}</Fragment>
+            <Fragment slot="cite">
+              {' '}
+              <span class="name txt-italic">{quote.cite.name}</span>
+              <span class="role">{quote.cite.role}</span>
+            </Fragment>
+          </Blockquote>
+        ))
+    }
   </BackgroundSection>
 
   <section class="prose">
@@ -122,27 +118,38 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
   </section>
 
   <section class="pt-0">
-    <figure>
-      <Image src={FlyerKurs} alt="Flyer Kurs 2" />
-      <figcaption class="contained">TODO: Flyer</figcaption>
+    <figure aria-describedby="kurs-timeline">
+      <a href="/assets/CorrelLAB_Daten_nutzen_Onepager.pdf" target="_blank" download>
+        <Image src={FlyerKurs} alt="Flyer Kurs: Daten verstehen" /></a
+      >
+      <figcaption class="contained">
+        <div>
+          <a href="/assets/CorrelLAB_Daten_nutzen_Onepager.pdf" target="_blank" download
+            >Link zum One-Pager (PDF)</a
+          >
+        </div>
+        <details>
+          <summary>Die Themen in Tabellenform</summary>
+          <div class="subsection prose cap pt-4" style="color: var(--color-gray-800)">
+            <CardPlain>
+              <h4 slot="card-title">Die Themen</h4>
+              <table slot="content" id="kurs-timeline">
+                <tbody>
+                  {
+                    kurs2.map((item) => (
+                      <tr>
+                        <td>{item.date}</td>
+                        <td>{item.topic}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </CardPlain>
+          </div>
+        </details>
+      </figcaption>
     </figure>
-    <div class="subsection prose pad-6">
-      <CardPlain>
-        <h4 slot="card-title">Die Themen</h4>
-        <table slot="content">
-          <tbody>
-            {
-              kurs2.map((item) => (
-                <tr>
-                  <td>{item.date}</td>
-                  <td>{item.topic}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </CardPlain>
-    </div>
     <div class="subsection content-box narrow flex rows align-center">
       <Fragment set:html={await KostenContent.compiledContent()} />
     </div>
@@ -156,24 +163,10 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
 
   <PeopleSection people={people} />
 
-  <Banner slot="banner">
-    <Fragment slot="title">Interessiert?</Fragment>
-    <Fragment slot="body">
-      <p class="light">
-        Wir sind immer auf der Suche nach ehrenamtlichen Tutor*innen für unseren nächsten Kurs!
-      </p>
-      <p class="light">Melde dich dazu einfach kurz bei unserem Bildungsteam.</p>
-    </Fragment>
-    <LinkButton
-      variant="btn-light"
-      href="mailto:education@correlaid.org"
-      classes="btn-icon"
-      slot="cta"><MailIcon height={'20'} /> Nachricht schreiben</LinkButton
-    >
-  </Banner>
+  <Banner slot="banner" />
   <div class="flex cols center gap-2 pad-8" slot="footer-links">
-    <LabLinkButton href="/kurse/kurs1">zu Kurs 1</LabLinkButton>
-    <LabLinkButton href="/praxisphase">Praxisphase</LabLinkButton>
+    <LabLinkButton href="/kurse/kurs1">Kurs: Daten verstehen</LabLinkButton>
+    <LabLinkButton href="/praxisphase">Zur Praxisphase</LabLinkButton>
   </div>
 </KursLayout>
 

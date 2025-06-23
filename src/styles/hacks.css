@@ -52,3 +52,9 @@ svg.full-icon {
   width: 100%;
   height: auto;
 }
+
+figcaption {
+  & summary {
+    text-align: center;
+  }
+}

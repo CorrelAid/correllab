@@ -127,14 +127,6 @@ section {
     padding: var(--padding) 0 0 0;
   }
 
-  &.cap {
-    padding-top: 0;
-  }
-
-  &.trim {
-    padding-bottom: 0;
-  }
-
   /* &:last-of-type {
     padding-bottom: 0;
   } */
@@ -145,8 +137,23 @@ section {
   }
 }
 
+section,
+.subsection {
+  &.cap {
+    padding-top: 0;
+  }
+
+  &.trim {
+    padding-bottom: 0;
+  }
+}
+
 figure {
   & figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 0.5rem; */
     font-size: var(--font-size-sm);
     color: var(--color-gray-500);
     padding: 0.5rem 1rem 1rem 1rem;

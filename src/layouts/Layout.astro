@@ -18,12 +18,18 @@ const { title = 'CorrelLAB' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
-    />
-    <link rel="stylesheet" href="/src/styles/tokens.css" />
     <title>{title}</title>
+    <!-- og -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="CorrelLAB" />
+    <meta
+      property="og:image"
+      content={`${Astro.url.origin}/assets/correllab-social-og-image.png`}
+    />
+    <meta property="og:url" content="https://lab.correlaid.org" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="CorrelLAB" />
     <ClientRouter />
     <script defer data-domain="lab.correlaid.org" src="https://plausible.io/js/script.js"></script>
   </head>

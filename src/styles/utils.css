@@ -212,3 +212,27 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+.caps {
+  font-variant: all-small-caps;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .mobile {
+    display: block;
+  }
+}
+
+.desktop {
+  display: none;
+}
+
+@media screen and (min-width: 651px) {
+  .desktop {
+    display: block;
+  }
+}

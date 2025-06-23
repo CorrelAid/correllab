@@ -6,20 +6,21 @@ import NavigationMain from '@/components/NavigationMain.astro';
 import NavigationCompact from '@/components/NavigationCompact.astro';
 import LinkButton from '@/components/LinkButton.astro';
 import AidLinkButton from '@/components/AidLinkButton.astro';
+import EventTeaser from '@/components/EventTeaser.astro';
 ---
 
 <header>
   <div class="brand">
-    <!-- <CorrelaidLogoMin height={'60'} /> -->
     <a href={pathname === '/' ? '#intro' : '/'} aria-label="Zurück zur Startseite">
       <CorrelLabLogoWide height={'36'} />
     </a>
-    <!-- <Image src={CorrelAidLogoWidePng} alt="CorrelAid Logo" width={400} /> -->
   </div>
-  <!-- <NavigationMain /> -->
-  <!-- <NavigationCompact /> -->
+  <div class="desktop">
+    <EventTeaser />
+  </div>
+  {/* <NavigationMain /> */}
+  {/* <NavigationCompact /> */}
   <div class="corner">
-    <!-- <LinkButton href="#">Unterstützen</LinkButton> -->
     <AidLinkButton href="https://correlaid.org">Zu CorrelAid</AidLinkButton>
   </div>
 </header>
@@ -31,6 +32,7 @@ import AidLinkButton from '@/components/AidLinkButton.astro';
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    gap: 0.5rem;
     position: sticky;
     top: 0;
     z-index: 100;

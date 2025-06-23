@@ -1,0 +1,8 @@
+- Zeitraum: 12 Wochen vom 12. September bis 12. Dezember 2025
+- Zeitaufwand: 2 bis 4 Stunden / Woche
+- Format: Integriertes Lernformat mit
+  - interaktiver Lernplattform,
+  - wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor*innen, immer freitags
+    zu den oben genannten Terminen von 13:30 bis 14:30 Uhr,
+  - gemeinsamem Lernen in kleinen Gruppen,
+  - individueller Beratung in Datensprechstunden zu den Herausforderungen eurer eigenen Organisation.

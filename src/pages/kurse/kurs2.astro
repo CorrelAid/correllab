@@ -49,6 +49,10 @@ const people = [
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Jonas%2C',
   },
 ];
+
+import * as KursColumns1 from '@content/kurse/kurs_2_columns_1.md';
+import * as KursColumns2 from '@content/kurse/kurs_2_columns_2.md';
+import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
 ---
 
 <KursLayout>
@@ -77,45 +81,12 @@ const people = [
     </Fragment>
     <div class="flex rows gap-2" slot="col1">
       <h4>Der Kurs ist für dich richtig, wenn…</h4>
-      <ul>
-        <li>
-          … du bereits Grundkenntnisse zu Daten hast – zum Beispiel aus unserem Kurs “<a
-            href="/kurse/kurs1">Daten verstehen: Grundlagenwissen entdecken</a
-          >” – und diese nun praktisch anwenden möchtest.
-        </li>
-        <li>
-          … du konkrete Datenprojekte in deiner Organisation planen und umsetzen willst – von der
-          ersten Idee bis zur nachhaltigen Nutzung.
-        </li>
-        <li>
-          … du lernen möchtest, wie du Daten erheben, organisieren und qualitativ hochwertig
-          aufbereiten und analysieren kannst.
-        </li>
-        <li>… du Daten professionell visualisieren und überzeugend kommunizieren willst.</li>
-        <li>
-          … du wissen willst, wie du KI-Tools sinnvoll in deine Datenarbeit integrieren kannst.
-        </li>
-      </ul>
+      <Fragment set:html={await KursColumns1.compiledContent()} />
     </div>
 
     <div class="flex rows gap-2" slot="col2">
       <h4>Im Kurs lernst du…</h4>
-      <ul>
-        <li>… Datenprojekte strategisch zu planen, umzusetzen und ihre Wirkung zu messen.</li>
-        <li>
-          … verschiedene Datenquellen zu erschließen: Umfragen zu erstellen, Open Data zu nutzen und
-          APIs anzubinden.
-        </li>
-        <li>… Daten zu organisieren und datenschutzkonform aufzubereiten.</li>
-        <li>
-          … Daten zu bereinigen, statistische Analysen durchzuführen und KI-Tools sinnvoll
-          einzusetzen.
-        </li>
-        <li>
-          … überzeugende Visualisierungen und Dashboards erstellen und Daten erfolgreich zu
-          kommunizieren.
-        </li>
-      </ul>
+      <Fragment set:html={await KursColumns2.compiledContent()} />
     </div>
   </ColumnsSection>
 
@@ -146,23 +117,7 @@ const people = [
   <section class="prose">
     <CardPlain>
       <h4 slot="card-title">Wie läuft der Kurs ab?</h4>
-      <ul slot="content">
-        <li>Zeitraum: 12 Wochen vom 12. September bis 12. Dezember 2025</li>
-        <li>Zeitaufwand: 2 bis 4 Stunden / Woche</li>
-        <li>Format: Integriertes Lernformat mit</li>
-        <ul>
-          <li>interaktiver Lernplattform,</li>
-          <li>
-            wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor*innen, immer freitags
-            zu den oben genannten Terminen von 13:30 bis 14:30 Uhr,
-          </li>
-          <li>gemeinsamem Lernen in kleinen Gruppen,</li>
-          <li>
-            individueller Beratung in Datensprechstunden zu den Herausforderungen eurer eigenen
-            Organisation.
-          </li>
-        </ul>
-      </ul>
+      <Fragment slot="content" set:html={await KursSchedule.compiledContent()} />
     </CardPlain>
   </section>
 

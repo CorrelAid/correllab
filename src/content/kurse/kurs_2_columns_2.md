@@ -1,0 +1,5 @@
+- … Datenprojekte strategisch zu planen, umzusetzen und ihre Wirkung zu messen.
+- … verschiedene Datenquellen zu erschließen: Umfragen zu erstellen, Open Data zu nutzen und APIs anzubinden.
+- … Daten zu organisieren und datenschutzkonform aufzubereiten.
+- … Daten zu bereinigen, statistische Analysen durchzuführen und KI-Tools sinnvoll einzusetzen.
+- … überzeugende Visualisierungen und Dashboards erstellen und Daten erfolgreich zu kommunizieren.

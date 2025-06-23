@@ -49,6 +49,10 @@ const people = [
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Emma%2C',
   },
 ];
+
+import * as KursColumns1 from '@content/kurse/kurs_1_columns_1.md';
+import * as KursColumns2 from '@content/kurse/kurs_1_columns_2.md';
+import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
 ---
 
 <KursLayout>
@@ -74,36 +78,12 @@ const people = [
     </Fragment>
     <div class="flex rows gap-2" slot="col1">
       <h4>Der Kurs ist für dich richtig, wenn…</h4>
-      <ul>
-        <li>… du in die Welt der Daten einsteigen willst – ohne Vorkenntnisse.</li>
-        <li>
-          … du lernen möchtest, Themen wie Datenschutz, künstliche Intelligenz oder maschinelles
-          Lernen abwägend und kritisch zu beurteilen.
-        </li>
-        <li>
-          … du einen Überblick bekommen willst, wofür du Daten nutzen kannst: von Visualisierungen
-          und Data Storytelling über Wirkungsmessung bis hin zu automatisiertem Reporting.
-        </li>
-        <li>… du mehr aus den Daten machen möchtest, die in deiner Organisation vorliegen.</li>
-      </ul>
+      <Fragment set:html={await KursColumns1.compiledContent()} />
     </div>
 
     <div class="flex rows gap-2" slot="col2">
       <h4>Im Kurs lernst du…</h4>
-      <ul>
-        <li>
-          … relevante Daten zu identifizieren und erfährst, wofür du diese Daten nutzen kannst.
-        </li>
-        <li>
-          … Daten zu strukturieren und ihre Nutzung ethisch und datenschutzrechtlich zu beurteilen.
-        </li>
-        <li>
-          … Grundkenntnisse in Statistik, Künstlicher Intelligenz und Visualisierung selbstbewusst
-          anzuwenden.
-        </li>
-        <li>… welche Anwendungsfälle Daten in der Wirkungsmessung und im Reporting haben.</li>
-        <li>… wie du dein erstes Datenprojekt in der Praxis initiieren und planen kannst.</li>
-      </ul>
+      <Fragment set:html={await KursColumns2.compiledContent()} />
     </div>
   </ColumnsSection>
 
@@ -134,23 +114,7 @@ const people = [
   <section class="prose">
     <CardPlain>
       <h4 slot="card-title">Wie läuft der Kurs ab?</h4>
-      <ul slot="content">
-        <li>Zeitraum: 12 Wochen vom 12. September bis 12. Dezember 2025</li>
-        <li>Zeitaufwand: 2 bis 4 Stunden / Woche</li>
-        <li>Format: Integriertes Lernformat mit</li>
-        <ul>
-          <li>interaktiver Lernplattform,</li>
-          <li>
-            wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor*innen, immer freitags
-            zu den oben genannten Terminen von 12 bis 13 Uhr,
-          </li>
-          <li>gemeinsamem Lernen in kleinen Gruppen,</li>
-          <li>
-            individueller Beratung in Datensprechstunden zu den Herausforderungen eurer eigenen
-            Organisation.
-          </li>
-        </ul>
-      </ul>
+      <Fragment slot="content" set:html={await KursSchedule.compiledContent()} />
     </CardPlain>
   </section>
 

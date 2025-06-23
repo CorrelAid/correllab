@@ -1,0 +1,84 @@
+---
+export interface Props {
+  title: string;
+  body: string;
+  icon: string;
+  reverse?: boolean;
+}
+
+import SvgGlobIcon from '@components/SvgGlobIcon.astro';
+
+const { title, body, icon, reverse = false } = Astro.props;
+---
+
+<div class={`stage-item ${reverse ? 'reverse' : ''}`}>
+  <h4>{title}</h4>
+
+  <div class="content">
+    <div class="icon-container">
+      <SvgGlobIcon class="full-icon" icon={icon} width="80" height="80" color="var(--color-key)" />
+    </div>
+    <div class="text-content">
+      <div set:html={body} />
+    </div>
+  </div>
+</div>
+
+<style>
+  .stage-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    position: relative;
+    max-width: var(--prose-max-width);
+
+    & h4 {
+      position: sticky;
+      top: calc(var(--header-height));
+      z-index: 1;
+      background: white;
+      width: 100%;
+    }
+
+    & .content {
+      display: flex;
+      flex-direction: row;
+      gap: var(--padding);
+      align-items: center;
+      width: 100%;
+
+      & .text-content {
+        display: grid;
+        gap: 0.5rem;
+
+        & div {
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    &.reverse {
+      & .content {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      .content {
+        flex-direction: column !important;
+        gap: 30px !important;
+        /* text-align: center !important; */
+      }
+    }
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 26.6%;
+    width: 26.6%;
+    max-width: 26.6%;
+  }
+</style>

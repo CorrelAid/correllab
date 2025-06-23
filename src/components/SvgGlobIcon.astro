@@ -12,9 +12,16 @@ import { glob_to_ids } from '@utils/vite';
 const icons_glob = import.meta.glob('@assets/svg/icons/*.svg', { eager: true });
 const icons = await glob_to_ids(icons_glob, '/src/assets/svg/icons/');
 
-const { icon, width = '24', height = '24', alt = 'TODO: Icon', color } = Astro.props;
+const {
+  icon,
+  width = '24',
+  height = '24',
+  alt = 'TODO: Icon',
+  color,
+  class: className,
+} = Astro.props;
 
 const Component = icons[icon];
 ---
 
-{Component && <Component width={width} height={height} {alt} {color} />}
+{Component && <Component width={width} height={height} {alt} {color} class:list={className} />}

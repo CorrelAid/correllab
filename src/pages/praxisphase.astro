@@ -32,6 +32,9 @@ const people = [
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Emma%2C',
   },
 ];
+
+import stages from '@data/praxisphase.json';
+import ScrollColumns from '@compositions/ScrollColumns.astro';
 ---
 
 <KursLayout title="CorrelLAB: Praxisphase">
@@ -55,6 +58,15 @@ const people = [
     </Blockquote>
   </section>
   <section class="prose cap" set:html={await content.compiledContent()} />
+  <ScrollColumns stages={stages} />
+  <section class="prose trim">
+    <h3>So seid ihr dabei</h3>
+    <p>
+      Für die Praxisphase haben wir in der ersten Kohorte nur zehn Plätze. Die Kosten der
+      Praxisphase können durch eine externe Förderung oder eines unserer Stipendien gedeckt werden.
+      Wenn ihr mehr erfahren wollt, sprecht uns gerne an
+    </p>
+  </section>
   <section class="sticky sticky-bottom">
     <LabLinkButton href="https://pretix.eu/control/event/correlaid/correllab-1-dl/">
       Hier geht es zur Anmeldung!

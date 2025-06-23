@@ -1,0 +1,67 @@
+---
+import ProjectSection from './ScrollColumns/Column.astro';
+
+const { stages } = Astro.props;
+---
+
+<div class="stages-container">
+  <div class="stages-header">
+    <h3>Wie läuft die Praxisphase ab?</h3>
+  </div>
+
+  <div class="stages-list">
+    {
+      stages.map((stage, index) => (
+        <div class="stage-wrapper">
+          <ProjectSection
+            title={stage.title}
+            body={stage.body}
+            icon={stage.icon || 'decor-thinking'}
+            reverse={index % 2 === 0}
+          />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .stages-container {
+    /* --bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+
+    min-height: 100vh;
+    /* background: var(--bg); */
+    padding: calc(var(--padding) * 2) var(--padding);
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+
+    & .stages-header {
+      text-align: center;
+      /* margin-bottom: 80px; */
+
+      & h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--color-key);
+        margin: 0 0 var(--padding) 0;
+      }
+    }
+
+    & .stages-list {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--padding);
+      outline: 2px dashed;
+      padding: var(--padding);
+      border-radius: 1rem;
+
+      & .stage-wrapper {
+        position: relative;
+        display: grid;
+        justify-content: center;
+      }
+    }
+  }
+</style>

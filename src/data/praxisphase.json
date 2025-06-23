@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Ideenfindung und Scoping",
+    "icon": "decor-thinking",
+    "body": [
+      "<p>Die Projektidee entwickelt ihr in der Kursphase des CorrelLAB.</p>",
+      "<p>In einer individuellen Beratung wird diese Idee konkreter definiert.</p>",
+      "<p>Was uns dabei wichtig ist:</p>",
+      "<ul><li>Projekte solle eine positive gesellschaftliche Wirkung entfalten – Data4Good.</li><li>Im Mittelpunkt steht stets die Anwendung des Gelernten in der Praxis – für Non-Profits sowie Ehrenamtliche.</li><li>Eine datenethische und datenschutzkonforme Ausrichtung des Projekts – dafür haben wir auch einen <a href='https://correlaid.org/coe/'>Code of Ethics</a> und unsere <a href='https://correlaid.org/ueber/werte/'>Ethikkommission</a>.</li><li>Projekte sind in der vorgegebenen Zeit und mit ehrenamtlichen Kapazitäten realistisch umsetzbar.</li></ul>"
+    ]
+  },
+  {
+    "title": "Ausschreibung und Teamauswahl",
+    "icon": "decor-team",
+    "body": [
+      "<p>Die Projektbeschreibung schicken wir an unsere Community.</p>",
+      "<p>Ehrenamtliche Datenanalyst*innen können sich auf verschiedene Rollen im Projekt bewerben (Teamleitung, Teammitglieder und Teamtrainee).</p>",
+      "<p>Nach projektrelevanten Fähigkeiten sowie persönlicher Motivation für das Thema und die Lernbereitschaft wird ein passendes Team aus 3-7 Data Scientists ausgewählt.</p>"
+    ]
+  },
+  {
+    "title": "Kickoff und Projektarbeit",
+    "icon": "decor-engineer",
+    "body": [
+      "<p>Im Kickoff lernen sich Non-Profits und Ehrenamtliche kennen und gehen tiefer in die Projektplanung und legen die Spielregeln der Zusammenarbeit für die kommenden 5-7 Monate fest.</p>",
+      "<p>Während der Arbeitsphase treffen sich die Teams ca. alle 1-3 Wochen online, um sich abzustimmen und das Projekt Schritt für Schritt weiterzuentwickeln.</p>"
+    ]
+  },
+  {
+    "title": "Abschluss und Reflexion",
+    "icon": "decor-success",
+    "body": [
+      "<p>Am Ende der Praxisphase stehen eine verständliche Kommunikation der Ergebnisse und eine ausführliche, zugängliche Dokumentation – Ergebnisse sollen nachhaltig weitergenutzt werden.</p>",
+      "<p>Ganz im Sinne von “Erfolge soll man feiern” feiern wir den Projektabschluss mit einem Abschlussevent, bei dem wir auch die Zusammenarbeit in der Praxisphase noch einmal Revue passieren lassen und reflektieren.</p>"
+    ]
+  }
+]

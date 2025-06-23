@@ -47,3 +47,8 @@ dl {
   margin-left: 0;
   margin-right: 0;
 }
+
+svg.full-icon {
+  width: 100%;
+  height: auto;
+}

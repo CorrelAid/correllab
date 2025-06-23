@@ -68,7 +68,6 @@ h6 {
   font-family: var(--font-family-inter);
   line-height: var(--line-height-tight);
   font-weight: var(--font-weight-semibold);
-  /* margin-bottom: var(--space-4); TODO: remove */
 }
 
 h1 {

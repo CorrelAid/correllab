@@ -5,7 +5,7 @@ const { href, variant = '', classes = '', children } = Astro.props;
 ---
 
 <LinkButton href={href} variant={variant} classes={[...classes, 'btn-icon btn-icon-lab']}>
-  <CorrelAidLogo class="btn-icon-svg" />
+  <CorrelAidLogo class="btn-icon-svg" alt="CorrelAid Logo" />
   <span class="btn-text"><slot /></span>
 </LinkButton>
 

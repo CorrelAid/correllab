@@ -9,56 +9,7 @@ import TwelveIcon from '@assets/svg/icons/twelve.svg';
 import SvgGlobIcon from '@components/SvgGlobIcon.astro';
 
 import * as KostenContent from '@content/landing/kosten.md';
-
-const bullets = {
-  pillar1: [
-    {
-      icon: 'route-square',
-      alt: 'TODO: Icon',
-      text: '12 Wochen, 12 Module (u. a. Datenschutz, -strategie, Wirkungsmessung, Visualisierung und Storytelling uvm.)',
-    },
-
-    {
-      icon: 'hourglass-empty',
-      alt: 'TODO: Icon',
-      text: 'Flexibler Zeitaufwand: 2 – 4 Stunden pro Woche',
-    },
-    {
-      icon: 'brand-zoom',
-      alt: 'TODO: Icon',
-      text: 'Wöchentliche Live-Sessions mit Tutor*innen ',
-    },
-    { icon: 'device-desktop', alt: 'TODO: Icon', text: 'Interaktive Lernplattform' },
-    {
-      icon: 'users',
-      alt: 'TODO: Icon',
-      text: 'Lernen in kleinen Gruppen für Austausch und Reflexion',
-    },
-    { icon: 'bubble', alt: 'TODO: Icon', text: 'Individuelle Datensprechstunden' },
-  ],
-  pillar2: [
-    {
-      icon: 'heart-handshake',
-      alt: 'TODO: Icon',
-      text: 'Zusammenarbeit mit einem kleinen Team von 4 bis 5 Ehrenamtlichen',
-    },
-    {
-      icon: 'code',
-      alt: 'TODO: Icon',
-      text: 'Entwicklung und Umsetzung eines konkreten Datenprojekts, z. B.:',
-      subitems: [
-        { text: 'Wirkungsmessung und Feedbacksysteme' },
-        { text: 'Datenvisualisierung und Reporting' },
-        { text: 'Automatisierungen und Dashboards' },
-      ],
-    },
-    {
-      icon: 'bubble',
-      alt: 'TODO: Icon',
-      text: 'Begleitende Datensprechstunden und Projektcoaching',
-    },
-  ],
-};
+import bullets from '@data/landing-bullets.json';
 ---
 
 <ColumnsSection>

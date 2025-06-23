@@ -4,9 +4,11 @@ import Hero from '@compositions/Hero.astro';
 
 import LabLinkButton from '@components/LabLinkButton.astro';
 import LinkButton from '@components/LinkButton.astro';
+
+const { title = 'CorrelLAB' } = Astro.props;
 ---
 
-<Layout>
+<Layout title={title}>
   <Hero>
     <Fragment slot="subtitle"
       ><slot name="subtitle">

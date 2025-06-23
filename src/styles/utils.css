@@ -144,3 +144,14 @@
 .full {
   min-height: var(--inner-height);
 }
+
+.sticky-bottom {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-background);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

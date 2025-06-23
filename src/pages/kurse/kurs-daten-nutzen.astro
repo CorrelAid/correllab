@@ -20,14 +20,14 @@ const CarouselBackground = await getImage({
   format: 'webp',
 });
 
-import kurs1 from '@data/kurs1.json';
+import kurs2 from '@data/kurs2.json';
 import quotes from '@data/quotes.json';
 import * as KostenContent from '@content/landing/kosten.md';
-import FlyerKurs from '@assets/images/correllab-flyer-kurs1.png';
+import FlyerKurs from '@assets/images/correllab-flyer-kurs2.png';
 
 import ImageZoe from '@assets/images/wolter-zoe.jpg';
 import ImageAntje from '@assets/images/relitz-antje.png';
-import ImageEmma from '@assets/images/morlock-emma.png';
+import ImageJonas from '@assets/images/lorenz-jonas.png';
 
 const people = [
   {
@@ -43,37 +43,40 @@ const people = [
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Antje%2C',
   },
   {
-    name: 'Emma Morlock',
-    role: 'Werkstudentin Data Literacy',
-    image: ImageEmma.src,
-    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Emma%2C',
+    name: 'Jonas Lorenz',
+    role: 'Werkstudent Bildung',
+    image: ImageJonas.src,
+    email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Jonas%2C',
   },
 ];
 
-import * as KursColumns1 from '@content/kurse/kurs_1_columns_1.md';
-import * as KursColumns2 from '@content/kurse/kurs_1_columns_2.md';
-import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
+import * as KursColumns1 from '@content/kurse/kurs_2_columns_1.md';
+import * as KursColumns2 from '@content/kurse/kurs_2_columns_2.md';
+import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
 ---
 
-<KursLayout title="CorrelLAB: Kurs - Daten verstehen">
-  <h4 slot="subtitle">Kurs: Daten verstehen &ndash;Grundlagenwissen entdecken</h4>
+<KursLayout title="CorrelLAB: Kurs - Daten nutzen">
+  <h4 slot="subtitle">
+    Kurs: Daten nutzen<br />&ndash;&nbsp;Tools und Methoden praktisch anwenden
+  </h4>
   <p slot="teaser">
-    Viele Organisationen sammeln täglich Daten – doch nur wenige nutzen sie gezielt. Wie lassen sich
-    Daten strategisch für Entscheidungen nutzen? Was bedeuten Datenethik und Datenschutz konkret im
-    Alltag? Und wie gelingt der Einstieg, wenn im Team keine Statistikexpertise vorhanden ist?
+    Daten helfen erst, wenn man sie richtig nutzt. Aber wie startet ihr? Welche Tools sind gut für
+    den Anfang?
   </p>
   <Fragment slot="cta">
     <LabLinkButton href="#start">Kursüberblick</LabLinkButton>
-    <LabLinkButton href="/kurse/kurs2">Kurs: Daten nutzen</LabLinkButton>
+    <LabLinkButton href="/kurse/kurs-daten-verstehen">Kurs: Daten verstehen</LabLinkButton>
   </Fragment>
 
   <ColumnsSection center_title>
     <Fragment slot="pre">
       <Blockquote bare wide>
-        In unserem Kurs „Daten verstehen: Grundlagenwissen entdecken“ lernt ihr, Daten richtig
-        einzuschätzen, Wirkung messbar zu machen und datenbasierte Projekte sicher anzugehen – auch
-        ohne Vorwissen.<br /><br /> Wir verbinden Grundlagenwissen mit konkreten Anwendungen und schaffen
-        Raum für Austausch, Fragen und individuelle Begleitung – von und für die Zivilgesellschaft!
+        Im Kurs „Daten nutzen: Tools und Methoden praktisch anwenden“ lernt ihr, wie ihr aus Daten
+        greifbare Erkenntnisse gewinnt.<br /><br />
+        Ihr lernt zentrale Werkzeuge für Datenorganisation, -analyse und -visualisierung kennen – von
+        Excel bis KI – und wendet sie direkt an.<br /><br />
+        Ob automatisierte Auswertungen, anschauliche Dashboards oder strukturiertes Datenmanagement:
+        Praxisnah, verständlich und direkt für euren Alltag in der gemeinnützigen Arbeit.
       </Blockquote>
     </Fragment>
     <div class="flex rows gap-2" slot="col1">
@@ -91,12 +94,10 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
     options={{ content_grid: true, full_height: true, center: true }}
     asset={{ src: CarouselBackground.src, position: 'bottom right' }}
   >
-    <!-- <Carousel slides={quotes.landing.filter((quote) => quote.k === 1)} id="carousel"> -->
     {
       quotes.landing
-        .filter((quote) => quote.k === 1)
+        .filter((quote) => quote.k === 2)
         .map((quote, index) => (
-          // <div class="carousel-content" data-step-id={index + 1}>
           <Blockquote id={index + 1}>
             <Fragment>{quote.quote}</Fragment>
             <Fragment slot="cite">
@@ -105,10 +106,8 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
               <span class="role">{quote.cite.role}</span>
             </Fragment>
           </Blockquote>
-          // </div>
         ))
     }
-    <!-- </Carousel> -->
   </BackgroundSection>
 
   <section class="prose">
@@ -120,12 +119,12 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
 
   <section class="pt-0">
     <figure aria-describedby="kurs-timeline">
-      <a href="/assets/CorrelLAB_Daten_verstehen_Onepager.pdf" target="_blank" download>
+      <a href="/assets/CorrelLAB_Daten_nutzen_Onepager.pdf" target="_blank" download>
         <Image src={FlyerKurs} alt="Flyer Kurs: Daten verstehen" /></a
       >
       <figcaption class="contained">
         <div>
-          <a href="/assets/CorrelLAB_Daten_verstehen_Onepager.pdf" target="_blank" download
+          <a href="/assets/CorrelLAB_Daten_nutzen_Onepager.pdf" target="_blank" download
             >Link zum One-Pager (PDF)</a
           >
         </div>
@@ -137,7 +136,7 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
               <table slot="content" id="kurs-timeline">
                 <tbody>
                   {
-                    kurs1.map((item) => (
+                    kurs2.map((item) => (
                       <tr>
                         <td>{item.date}</td>
                         <td>{item.topic}</td>
@@ -164,26 +163,9 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
 
   <PeopleSection people={people} />
 
-  <Banner slot="banner">
-    {
-      /* <Fragment slot="title">Interessiert?</Fragment>
-    <Fragment slot="body">
-      <p class="light">
-        Wir sind immer auf der Suche nach ehrenamtlichen Tutor*innen für unseren nächsten Kurs!
-      </p>
-      <p class="light">Melde dich dazu einfach kurz bei unserem Bildungsteam.</p>
-    </Fragment>
-    <LinkButton
-      variant="btn-light"
-      href="mailto:education@correlaid.org"
-      classes="btn-icon"
-      slot="cta"><MailIcon height={'20'} /> Nachricht schreiben</LinkButton
-    >*/
-    }
-  </Banner>
-
+  <Banner slot="banner" />
   <div class="flex cols center gap-2 pad-8" slot="footer-links">
-    <LabLinkButton href="/kurse/kurs2">Kurs: Daten nutzen</LabLinkButton>
+    <LabLinkButton href="/kurse/kurs-daten-verstehen">Kurs: Daten verstehen</LabLinkButton>
     <LabLinkButton href="/praxisphase">Zur Praxisphase</LabLinkButton>
   </div>
 </KursLayout>

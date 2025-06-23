@@ -1,18 +1,14 @@
 ---
 import { getImage, Image } from 'astro:assets';
 
-import KursLayout from '@layouts/KursLayout.astro';
-import Banner from '@compositions/Banner.astro';
+import Blockquote from '@/components/Blockquote.astro';
+import CardPlain from '@components/cards/CardPlain.astro';
+import LabLinkButton from '@components/LabLinkButton.astro';
 import BackgroundSection from '@components/sections/BackgroundSection.astro';
 import ColumnsSection from '@components/sections/ColumnsSection.astro';
-import CardPlain from '@components/cards/CardPlain.astro';
-import LinkButton from '@components/LinkButton.astro';
-import Persona from '@components/Persona.astro';
-import LabLinkButton from '@components/LabLinkButton.astro';
-import Blockquote from '@/components/Blockquote.astro';
-import Carousel from '@components/Carousel.astro';
-import MailIcon from '@assets/svg/icons/mail.svg';
+import Banner from '@compositions/Banner.astro';
 import PeopleSection from '@compositions/People.astro';
+import KursLayout from '@layouts/KursLayout.astro';
 
 import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
 const CarouselBackground = await getImage({
@@ -20,14 +16,14 @@ const CarouselBackground = await getImage({
   format: 'webp',
 });
 
+import FlyerKurs from '@assets/images/correllab-flyer-kurs1.png';
+import * as KostenContent from '@content/landing/kosten.md';
 import kurs1 from '@data/kurs1.json';
 import quotes from '@data/quotes.json';
-import * as KostenContent from '@content/landing/kosten.md';
-import FlyerKurs from '@assets/images/correllab-flyer-kurs1.png';
 
-import ImageZoe from '@assets/images/wolter-zoe.jpg';
-import ImageAntje from '@assets/images/relitz-antje.png';
 import ImageEmma from '@assets/images/morlock-emma.png';
+import ImageAntje from '@assets/images/relitz-antje.png';
+import ImageZoe from '@assets/images/wolter-zoe.jpg';
 
 const people = [
   {

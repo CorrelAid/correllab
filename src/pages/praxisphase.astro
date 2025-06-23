@@ -1,14 +1,13 @@
 ---
-import KursLayout from '@layouts/KursLayout.astro';
 import Blockquote from '@components/Blockquote.astro';
 import LabLinkButton from '@components/LabLinkButton.astro';
 import LinkButton from '@components/LinkButton.astro';
-import PeopleSection from '@compositions/People.astro';
 import Banner from '@compositions/Banner.astro';
-import MailIcon from '@assets/svg/icons/mail.svg';
+import PeopleSection from '@compositions/People.astro';
+import KursLayout from '@layouts/KursLayout.astro';
 
-import * as content from '@content/praxisphase.md';
 import ImageAnnKristin from '@assets/images/vester-annkristin.jpeg';
+import * as content from '@content/praxisphase.md';
 
 const people = [
   {
@@ -19,8 +18,8 @@ const people = [
   },
 ];
 
-import stages from '@data/praxisphase.json';
 import ScrollColumns from '@compositions/ScrollColumns.astro';
+import stages from '@data/praxisphase.json';
 ---
 
 <KursLayout title="CorrelLAB: Praxisphase">

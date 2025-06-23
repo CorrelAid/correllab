@@ -33,19 +33,19 @@ const people = [
   {
     name: 'Zoé Wolter',
     role: 'Geschäftsführung und Bildung',
-    image: ImageZoe.src,
+    image: ImageZoe,
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
   },
   {
     name: 'Antje Relitz',
     role: 'Bildung',
-    image: ImageAntje.src,
+    image: ImageAntje,
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Antje%2C',
   },
   {
     name: 'Jonas Lorenz',
     role: 'Werkstudent Bildung',
-    image: ImageJonas.src,
+    image: ImageJonas,
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Jonas%2C',
   },
 ];
@@ -120,7 +120,7 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
   <section class="pt-0">
     <figure aria-describedby="kurs-timeline">
       <a href="/assets/CorrelLAB_Daten_nutzen_Onepager.pdf" target="_blank" download>
-        <Image src={FlyerKurs} alt="Flyer Kurs: Daten nutzen" /></a
+        <Image src={FlyerKurs} alt="Flyer Kurs: Daten nutzen" widths={[600, 900, 1200, 1600]} /></a
       >
       <figcaption class="contained">
         <div>

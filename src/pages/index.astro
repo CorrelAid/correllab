@@ -15,7 +15,7 @@ import Layout from '@layouts/Layout.astro';
 
 import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
 
-import ImageAnnKristin from '@assets/images/ann_kristin_vester.webp';
+import ImageAnnKristin from '@assets/images/vester-annkristin.jpeg';
 import ImageZoe from '@assets/images/wolter-zoe.jpg';
 
 const CarouselBackground = await getImage({
@@ -34,13 +34,13 @@ const people = [
   {
     name: 'Ann-Kristin Vester',
     role: 'Geschäftsführung',
-    image: ImageAnnKristin.src,
+    image: ImageAnnKristin,
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
   },
   {
     name: 'Zoé Wolter',
     role: 'Geschäftsführung und Bildung',
-    image: ImageZoe.src,
+    image: ImageZoe,
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Ann-Kristin%2C',
   },
 ];

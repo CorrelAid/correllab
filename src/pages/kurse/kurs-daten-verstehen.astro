@@ -33,19 +33,19 @@ const people = [
   {
     name: 'Zoé Wolter',
     role: 'Geschäftsführung und Bildung',
-    image: ImageZoe.src,
+    image: ImageZoe,
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C',
   },
   {
     name: 'Antje Relitz',
     role: 'Bildung',
-    image: ImageAntje.src,
+    image: ImageAntje,
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Antje%2C',
   },
   {
     name: 'Emma Morlock',
     role: 'Werkstudentin Data Literacy',
-    image: ImageEmma.src,
+    image: ImageEmma,
     email: 'lab@correlaid.org?subject=CorrelLAB&body=Hi%20Emma%2C',
   },
 ];
@@ -121,7 +121,11 @@ import * as KursSchedule from '@content/kurse/kurs_1_schedule.md';
   <section class="pt-0">
     <figure aria-describedby="kurs-timeline">
       <a href="/assets/CorrelLAB_Daten_verstehen_Onepager.pdf" target="_blank" download>
-        <Image src={FlyerKurs} alt="Flyer Kurs: Daten verstehen" /></a
+        <Image
+          src={FlyerKurs}
+          alt="Flyer Kurs: Daten verstehen"
+          widths={[600, 900, 1200, 1600]}
+        /></a
       >
       <figcaption class="contained">
         <div>

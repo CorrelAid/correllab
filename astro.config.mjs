@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  prefetch: false,
+  prefetch: true,
   site: "https://lab.correlaid.org",
   integrations: [
     svelte(),

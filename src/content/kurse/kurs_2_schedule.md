@@ -3,6 +3,6 @@
 - Format: Integriertes Lernformat mit
   - interaktiver Lernplattform,
   - wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor*innen, immer freitags
-    zu den oben genannten Terminen von 13:30 bis 14:30 Uhr,
+    zu den unten genannten Terminen von 13:30 bis 14:30 Uhr,
   - gemeinsamem Lernen in kleinen Gruppen,
   - individueller Beratung in Datensprechstunden zu den Herausforderungen eurer eigenen Organisation.

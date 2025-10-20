@@ -1,0 +1,131 @@
+{
+  "kurse": {
+    "meta": {
+      "period": "Februar bis Mai 2026",
+      "kurs1": {
+        "period": "12. September bis 12. Dezember 2025",
+        "timeline": [
+          { "date": "12.09.", "topic": "Kick-Off & Einführung" },
+          {
+            "date": "19.09.",
+            "topic": "Datenprojekte in der Zivilgesellschaft"
+          },
+          {
+            "date": "26.09.",
+            "topic": "Datenstrategie und Wirkungsmanagement"
+          },
+          {
+            "date": "10.10.",
+            "topic": "Datenschutz, Datenethik und Data Politics"
+          },
+          {
+            "date": "17.10.",
+            "topic": "Datenquellen, -formate und Datenmanagement"
+          },
+          { "date": "24.10.", "topic": "Grundlagen der Statistik " },
+          { "date": "07.11.", "topic": "KI in NPO" },
+          {
+            "date": "14.11.",
+            "topic": "Datenvisualisierungen und Data Storytelling"
+          },
+          {
+            "date": "21.11.",
+            "topic": "Wirkungsmessung, Feedback und Umfragen"
+          },
+          {
+            "date": "28.11.",
+            "topic": "Reports- und Automatisierungspotenziale"
+          },
+          { "date": "05.12.", "topic": "Grundlagen der Dateninfrastruktur" },
+          {
+            "date": "12.12.",
+            "topic": "Ein Datenprojekt identifizieren, planen und durchführen"
+          }
+        ]
+      },
+      "kurs2": {
+        "period": "12. September bis 12. Dezember 2025",
+        "timeline": [
+          { "date": "12.09.", "topic": "Kick-Off" },
+          {
+            "date": "19.09.",
+            "topic": "Datenprojekte in der Zivilgesellschaft "
+          },
+          { "date": "26.09.", "topic": "Datenquellen und -erhebung" },
+          { "date": "10.10.", "topic": "Datenschutz in der Praxis" },
+          { "date": "17.10.", "topic": "Effizientes Datenmanagement" },
+          { "date": "24.10.", "topic": "Datenqualität und -bereinigung" },
+          { "date": "07.11.", "topic": "Dateninfrastruktur für NPOs" },
+          {
+            "date": "14.11.",
+            "topic": "Statistische Grundlagen und Tools für die Datenanalyse"
+          },
+          { "date": "21.11.", "topic": "Künstliche Intelligenz verstehen" },
+          { "date": "28.11.", "topic": "Daten visualisieren" },
+          { "date": "05.12.", "topic": "Daten erfolgreich kommunizieren" },
+          { "date": "12.12.", "topic": "Daten nachhaltig nutzen" }
+        ]
+      }
+    },
+    "body": [
+      {
+        "icon": "route-square",
+        "alt": "icon",
+        "text": "12 Wochen, 12 Module (u. a. Datenschutz, -strategie, Wirkungsmessung, Visualisierung und Storytelling uvm.)"
+      },
+
+      {
+        "icon": "hourglass-empty",
+        "alt": "icon",
+        "text": "Flexibler Zeitaufwand: 2 – 4 Stunden pro Woche"
+      },
+      {
+        "icon": "brand-zoom",
+        "alt": "icon",
+        "text": "Wöchentliche Live-Sessions mit Tutor*innen "
+      },
+      {
+        "icon": "device-desktop",
+        "alt": "icon",
+        "text": "Interaktive Lernplattform"
+      },
+      {
+        "icon": "users",
+        "alt": "icon",
+        "text": "Lernen in kleinen Gruppen für Austausch und Reflexion"
+      },
+      {
+        "icon": "message-circle-user",
+        "alt": "icon",
+        "text": "Individuelle Datensprechstunden"
+      }
+    ]
+  },
+  "praxis": {
+    "meta": {
+      "period": "Juni bis Dezember 2026"
+    },
+    "body": [
+      {
+        "icon": "heart-handshake",
+        "alt": "icon",
+        "text": "Zusammenarbeit mit einem kleinen Team von 4 bis 5 Ehrenamtlichen"
+      },
+      {
+        "icon": "code",
+        "alt": "icon",
+        "text": "Entwicklung und Umsetzung eines konkreten Datenprojekts, z. B.:",
+        "subitems": [
+          { "text": "Wirkungsmessung und Feedbacksysteme" },
+          { "text": "Datenvisualisierung und Reporting" },
+          { "text": "Automatisierungen und Dashboards" }
+        ]
+      },
+      {
+        "icon": "message-circle-user",
+        "alt": "icon",
+        "text": "Begleitende Datensprechstunden und Projektcoaching"
+      }
+    ]
+  }
+}

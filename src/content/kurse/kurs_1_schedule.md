@@ -1,4 +1,4 @@
-- Zeitraum: 12 Wochen vom 12. September bis 12. Dezember 2025
+- Zeitraum: 12 Wochen vom {period}
 - Zeitaufwand: 2 bis 4 Stunden / Woche
 - Format: Integriertes Lernformat mit
   - interaktiver Lernplattform,

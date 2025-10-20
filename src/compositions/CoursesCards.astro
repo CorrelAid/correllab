@@ -5,18 +5,18 @@ import ColumnsSection from '@components/sections/ColumnsSection.astro';
 import SvgGlobIcon from '@components/SvgGlobIcon.astro';
 
 import * as KostenContent from '@content/landing/kosten.md';
-import bullets from '@data/landing-bullets.json';
+import phasen from '@data/phasen.json';
 ---
 
 <ColumnsSection>
   <h2 slot="title">Euer Weg ins CorrelLAB</h2>
   <CardPlain slot="col1">
     <Fragment slot="card-title">Phase 1: Kursphase</Fragment>
-    <Fragment slot="subtitle">September bis November 2025</Fragment>
+    <Fragment slot="subtitle" set:text={phasen.kurse.meta.period} />
     <Fragment slot="content">
       <dl>
         {
-          bullets.phase1.body.map((bullet) => (
+          phasen.kurse.body.map((bullet) => (
             <li>
               {bullet?.icon && <SvgGlobIcon icon={bullet.icon} alt={bullet.alt} />}
               <span set:html={bullet.text} />
@@ -38,18 +38,18 @@ import bullets from '@data/landing-bullets.json';
 
     <Fragment slot="footer">
       <div class="flex cols wrap gap-2 align-start">
-        <LabLinkButton href="/kurse/kurs-daten-verstehen/">Daten verstehen</LabLinkButton>
-        <LabLinkButton href="/kurse/kurs-daten-nutzen/">Daten nutzen</LabLinkButton>
+        <LabLinkButton href="/kurse/kurs-daten-verstehen/">Kurs 1: Daten verstehen</LabLinkButton>
+        <LabLinkButton href="/kurse/kurs-daten-nutzen/">Kurs 2: Daten nutzen</LabLinkButton>
       </div>
     </Fragment>
   </CardPlain>
   <CardPlain slot="col2">
     <Fragment slot="card-title">Phase 2: Praxisphase</Fragment>
-    <Fragment slot="subtitle">Dezember 2025 bis August 2026</Fragment>
+    <Fragment slot="subtitle" set:text={phasen.praxis.meta.period} />
     <Fragment slot="content">
       <dl>
         {
-          bullets.phase2.body.map((bullet) => (
+          phasen.praxis.body.map((bullet) => (
             <li>
               {bullet?.icon && <SvgGlobIcon icon={bullet.icon} alt={bullet.alt} />}
               <span>

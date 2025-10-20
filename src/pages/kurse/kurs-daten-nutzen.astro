@@ -18,7 +18,7 @@ const CarouselBackground = await getImage({
 
 import FlyerKurs from '@assets/images/correllab-flyer-kurs2.png';
 import * as KostenContent from '@content/landing/kosten.md';
-import kurs2 from '@data/kurs2.json';
+import phasen from '@data/phasen.json';
 import quotes from '@data/quotes.json';
 import { people } from '@data/people';
 
@@ -85,7 +85,12 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
   <section class="prose">
     <CardPlain>
       <Fragment slot="card-title">Wie läuft der Kurs ab?</Fragment>
-      <Fragment slot="content" set:html={await KursSchedule.compiledContent()} />
+      <Fragment
+        slot="content"
+        set:html={await KursSchedule.compiledContent().then((content) =>
+          content.replace('{period}', phasen.kurse.meta.kurs2.period)
+        )}
+      />
     </CardPlain>
   </section>
 
@@ -108,12 +113,14 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
               <table slot="content" id="kurs-timeline">
                 <tbody>
                   {
-                    kurs2.map((item) => (
-                      <tr>
-                        <td>{item.date}</td>
-                        <td>{item.topic}</td>
-                      </tr>
-                    ))
+                    phasen.kurse.meta.kurs2.timeline.map(
+                      (item: { date: string; topic: string }) => (
+                        <tr>
+                          <td>{item.date}</td>
+                          <td>{item.topic}</td>
+                        </tr>
+                      )
+                    )
                   }
                 </tbody>
               </table>

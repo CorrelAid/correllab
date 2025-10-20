@@ -1,5 +1,5 @@
 ---
-import { getImage, Image } from 'astro:assets';
+import { getImage, Image, Picture } from 'astro:assets';
 
 import Blockquote from '@/components/Blockquote.astro';
 import CardPlain from '@components/cards/CardPlain.astro';
@@ -16,7 +16,7 @@ const CarouselBackground = await getImage({
   format: 'webp',
 });
 
-import FlyerKurs from '@assets/images/correllab-flyer-kurs2.png';
+import FlyerKurs from '@assets/images/correllab-flyer-kurs-daten-nutzen.png';
 import * as KostenContent from '@content/landing/kosten.md';
 import phasen from '@data/phasen.json';
 import quotes from '@data/quotes.json';
@@ -97,7 +97,12 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
   <section class="pt-0">
     <figure aria-describedby="kurs-timeline">
       <a href="/assets/CorrelLAB_Daten_nutzen_Onepager.pdf" target="_blank" download>
-        <Image src={FlyerKurs} alt="Flyer Kurs: Daten nutzen" widths={[600, 900, 1200, 1600]} /></a
+        <Image
+          src={FlyerKurs}
+          alt="Flyer Kurs: Daten nutzen"
+          widths={[600, 900, 1200, 1600]}
+          formats={['webp', 'avif']}
+        /></a
       >
       <figcaption class="contained">
         <div>
@@ -107,7 +112,7 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
         </div>
         <details>
           <summary>Die Themen in Tabellenform</summary>
-          <div class="subsection prose cap pt-4" style="color: var(--color-gray-800)">
+          <div class="subsection prose cap pt-4">
             <CardPlain>
               <Fragment slot="card-title">Die Themen</Fragment>
               <table slot="content" id="kurs-timeline">
@@ -149,4 +154,8 @@ import * as KursSchedule from '@content/kurse/kurs_2_schedule.md';
   </div>
 </KursLayout>
 
-<style></style>
+<style>
+  .subsection {
+    color: var(--color-gray-800);
+  }
+</style>

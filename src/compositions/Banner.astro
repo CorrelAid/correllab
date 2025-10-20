@@ -1,26 +1,35 @@
 ---
 import CorrelLabKompaktDynamic from '@assets/branding/lab/Monochrom/CorrelLab kompakt_dynamic_fill.svg';
+import CorrelLabLogoMin from '@assets/branding/lab/Monochrom/CorrelLab C.svg';
 import LinkButton from '@components/LinkButton.astro';
 import MailIcon from '@assets/svg/icons/mail.svg';
 ---
 
 <div class="container">
   <div class="brand">
-    <CorrelLabKompaktDynamic height={'80'} color="var(--color-lab-muted)" />
+    <CorrelLabKompaktDynamic class="logo-desktop" height={'80'} color="var(--color-lab-muted)" />
+    <CorrelLabLogoMin class="logo-mobile" width={'24'} color="var(--color-lab-muted)" />
   </div>
   <div class="prose content-box narrow">
     <h2 class="light"><slot name="title">Fragen zum Stipendium?</slot></h2>
     <div class="body">
       <slot name="body">
         <p class="light">
-          Ihr habt Fragen, z. B. zum Stipendienticket oder wollt direkt im CorrelLAB durchstarten?
-          Schreibt uns einfach eine kurze Nachricht, wir freuen uns auf euch!
+          Ihr habt Fragen, z. B. zum Stipendienticket oder wollt direkt im CorrelLAB durchstarten?<br
+          />
+          Schreibt uns einfach eine kurze <a href="mailto:lab@correlaid.org?subject=CorrelLAB"
+            >Nachricht</a
+          > oder kommt in die <a href="https://zeeg.me/correlaid/correllab?month=2025-10"
+            >Datensprechstunde</a
+          >, wir freuen uns auf euch!
         </p>
       </slot>
     </div>
     <slot name="cta">
-      <LinkButton variant="btn-light" href="mailto:lab@correlaid.org" classes="btn-icon"
-        ><MailIcon height={'20'} /> Nachricht schreiben</LinkButton
+      <LinkButton
+        variant="btn-light"
+        href="mailto:lab@correlaid.org?subject=CorrelLAB"
+        classes="btn-icon"><MailIcon height={'20'} /> Nachricht schreiben</LinkButton
       ></slot
     >
   </div>
@@ -29,6 +38,7 @@ import MailIcon from '@assets/svg/icons/mail.svg';
 <style>
   .container {
     background: var(--color-lab-blue-dark);
+    container: banner / inline-size;
     width: 100%;
     color: var(--color-white);
     display: grid;
@@ -44,6 +54,30 @@ import MailIcon from '@assets/svg/icons/mail.svg';
       justify-content: flex-start;
       align-items: flex-start;
       gap: 1rem;
+    }
+
+    & a {
+      color: var(--color-white);
+      text-decoration: underline;
+    }
+
+    & .logo-desktop {
+      display: block;
+    }
+
+    & .logo-mobile {
+      display: none;
+    }
+
+    @container banner (max-width: 450px) {
+      & .logo-desktop {
+        display: none;
+      }
+
+      & .logo-mobile {
+        display: block;
+        min-width: 24px;
+      }
     }
   }
 </style>

@@ -16,7 +16,7 @@ import bullets from '@data/landing-bullets.json';
     <Fragment slot="content">
       <dl>
         {
-          bullets.pillar1.map((bullet) => (
+          bullets.phase1.body.map((bullet) => (
             <li>
               {bullet?.icon && <SvgGlobIcon icon={bullet.icon} alt={bullet.alt} />}
               <span set:html={bullet.text} />
@@ -49,7 +49,7 @@ import bullets from '@data/landing-bullets.json';
     <Fragment slot="content">
       <dl>
         {
-          bullets.pillar2.map((bullet) => (
+          bullets.phase2.body.map((bullet) => (
             <li>
               {bullet?.icon && <SvgGlobIcon icon={bullet.icon} alt={bullet.alt} />}
               <span>

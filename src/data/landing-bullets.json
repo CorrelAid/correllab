@@ -1,57 +1,67 @@
 {
-  "pillar1": [
-    {
-      "icon": "route-square",
-      "alt": "icon",
-      "text": "12 Wochen, 12 Module (u. a. Datenschutz, -strategie, Wirkungsmessung, Visualisierung und Storytelling uvm.)"
+  "phase1": {
+    "meta": {
+      "period": "September bis November 2025"
     },
+    "body": [
+      {
+        "icon": "route-square",
+        "alt": "icon",
+        "text": "12 Wochen, 12 Module (u. a. Datenschutz, -strategie, Wirkungsmessung, Visualisierung und Storytelling uvm.)"
+      },
 
-    {
-      "icon": "hourglass-empty",
-      "alt": "icon",
-      "text": "Flexibler Zeitaufwand: 2 – 4 Stunden pro Woche"
+      {
+        "icon": "hourglass-empty",
+        "alt": "icon",
+        "text": "Flexibler Zeitaufwand: 2 – 4 Stunden pro Woche"
+      },
+      {
+        "icon": "brand-zoom",
+        "alt": "icon",
+        "text": "Wöchentliche Live-Sessions mit Tutor*innen "
+      },
+      {
+        "icon": "device-desktop",
+        "alt": "icon",
+        "text": "Interaktive Lernplattform"
+      },
+      {
+        "icon": "users",
+        "alt": "icon",
+        "text": "Lernen in kleinen Gruppen für Austausch und Reflexion"
+      },
+      {
+        "icon": "message-circle-user",
+        "alt": "icon",
+        "text": "Individuelle Datensprechstunden"
+      }
+    ]
+  },
+  "phase2": {
+    "meta": {
+      "period": "Dezember 2025 bis August 2026"
     },
-    {
-      "icon": "brand-zoom",
-      "alt": "icon",
-      "text": "Wöchentliche Live-Sessions mit Tutor*innen "
-    },
-    {
-      "icon": "device-desktop",
-      "alt": "icon",
-      "text": "Interaktive Lernplattform"
-    },
-    {
-      "icon": "users",
-      "alt": "icon",
-      "text": "Lernen in kleinen Gruppen für Austausch und Reflexion"
-    },
-    {
-      "icon": "message-circle-user",
-      "alt": "icon",
-      "text": "Individuelle Datensprechstunden"
-    }
-  ],
-  "pillar2": [
-    {
-      "icon": "heart-handshake",
-      "alt": "icon",
-      "text": "Zusammenarbeit mit einem kleinen Team von 4 bis 5 Ehrenamtlichen"
-    },
-    {
-      "icon": "code",
-      "alt": "icon",
-      "text": "Entwicklung und Umsetzung eines konkreten Datenprojekts, z. B.:",
-      "subitems": [
-        { "text": "Wirkungsmessung und Feedbacksysteme" },
-        { "text": "Datenvisualisierung und Reporting" },
-        { "text": "Automatisierungen und Dashboards" }
-      ]
-    },
-    {
-      "icon": "message-circle-user",
-      "alt": "icon",
-      "text": "Begleitende Datensprechstunden und Projektcoaching"
-    }
-  ]
+    "body": [
+      {
+        "icon": "heart-handshake",
+        "alt": "icon",
+        "text": "Zusammenarbeit mit einem kleinen Team von 4 bis 5 Ehrenamtlichen"
+      },
+      {
+        "icon": "code",
+        "alt": "icon",
+        "text": "Entwicklung und Umsetzung eines konkreten Datenprojekts, z. B.:",
+        "subitems": [
+          { "text": "Wirkungsmessung und Feedbacksysteme" },
+          { "text": "Datenvisualisierung und Reporting" },
+          { "text": "Automatisierungen und Dashboards" }
+        ]
+      },
+      {
+        "icon": "message-circle-user",
+        "alt": "icon",
+        "text": "Begleitende Datensprechstunden und Projektcoaching"
+      }
+    ]
+  }
 }

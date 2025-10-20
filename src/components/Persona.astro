@@ -1,14 +1,14 @@
 ---
-import { getImage, Image } from 'astro:assets';
+import { Image } from 'astro:assets';
 export interface Props {
   name: string;
   role: string;
-  image: string;
+  image: ImageMetadata;
   email?: string;
 }
 
-import LinkButton from '@components/LinkButton.astro';
 import MailIcon from '@assets/svg/icons/mail.svg';
+import LinkButton from '@components/LinkButton.astro';
 
 const { name, role, image, email } = Astro.props;
 ---

@@ -1,5 +1,7 @@
 # Correlab
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0c78916e-9d2b-455e-a7f8-81a394199e5e/deploy-status)](https://app.netlify.com/projects/correllab/deploys)
+
 ## Setup
 
 ### Stack

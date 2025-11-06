@@ -1,6 +1,6 @@
 <h2 class="text-center">Kurskosten & Förderungen</h2>
 
-Dank aktueller Förderungen kostet die Kursphase in der zweiten Kohorte für euch 2.900 € pro Teilnehmer*in.
+Dank aktueller Förderungen kostet die Kursphase in der zweiten Kohorte für euch 3.200 € pro Teilnehmer*in.
 
 Wir unterstützen euch bei der Suche nach **Fördermöglichkeiten** und haben auch eine begrenzte Anzahl an **Stipendien** – sprecht uns gerne an oder lasst euch unverbindlich in unserer [**Datensprechstunde**](https://zeeg.me/correlaid/correllab?month=2025-10) beraten!
 

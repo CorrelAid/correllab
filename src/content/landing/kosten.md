@@ -1,6 +1,6 @@
 <h2 class="text-center">Kurskosten & Förderungen</h2>
 
-Für 3.200 € pro Teilnehmer*in seid ihr dabei.
+Die Teilnahme an einem unserer Kurse “Daten nutzen” oder “Daten verstehen” kostet **2.900 €** pro Person, mit zusätzlicher Abschlussprüfung und Zertifikat kostet die Teilnahme 3.200 € pro Person.
 
 Wir unterstützen euch bei der Suche nach **Fördermöglichkeiten** und haben auch eine begrenzte Anzahl an **Stipendien** – sprecht uns gerne an oder lasst euch unverbindlich in unserer [**Datensprechstunde**](https://zeeg.me/correlaid/correllab?month=2025-10) beraten!
 

@@ -3,6 +3,10 @@ const { pathname } = Astro.url;
 import AidLinkButton from '@/components/AidLinkButton.astro';
 import EventTeaser from '@/components/EventTeaser.astro';
 import CorrelLabLogoWide from '@assets/branding/lab/Main/CorrelLab horizontal.svg';
+
+const date = new Date();
+const eventDate = new Date('2026-01-19T12:00:00');
+const showEventTeaser = date <= eventDate;
 ---
 
 <header>
@@ -11,11 +15,12 @@ import CorrelLabLogoWide from '@assets/branding/lab/Main/CorrelLab horizontal.sv
       <CorrelLabLogoWide height={'36'} alt="CorrelLab Logo" />
     </a>
   </div>
-  {
-    /* <div class="desktop">
-    <EventTeaser />
-  </div> */
-  }
+  {showEventTeaser && (
+    <div class="desktop">
+      <EventTeaser />
+    </div>
+  )}
+  
   {/* <NavigationMain /> */}
   {/* <NavigationCompact /> */}
   <div class="corner">

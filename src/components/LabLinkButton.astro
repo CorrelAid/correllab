@@ -1,10 +1,10 @@
 ---
 import LinkButton from './LinkButton.astro';
 import CorrelLabLogo from '@assets/branding/lab/Main/CorrelLab C.svg';
-const { href, variant = '', classes = '', children } = Astro.props;
+const { href, variant = '', classes = '', target = "_self", children } = Astro.props;
 ---
 
-<LinkButton href={href} variant={variant} classes={[...classes, 'btn-icon btn-icon-lab']}>
+<LinkButton href={href} variant={variant} target={target} classes={[...classes, 'btn-icon btn-icon-lab']}>
   <CorrelLabLogo class="btn-icon-svg lab-logo-btn" alt="CorrelLAB Logo" />
   <span class="btn-text"><slot /></span>
 </LinkButton>

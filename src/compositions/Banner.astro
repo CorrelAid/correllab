@@ -2,7 +2,7 @@
 import CorrelLabKompaktDynamic from '@assets/branding/lab/Monochrom/CorrelLab kompakt_dynamic_fill.svg';
 import CorrelLabLogoMin from '@assets/branding/lab/Monochrom/CorrelLab C.svg';
 import LinkButton from '@components/LinkButton.astro';
-import MailIcon from '@assets/svg/icons/mail.svg';
+import Icon from '@assets/svg/icons/calendar.svg';
 ---
 
 <div class="container">
@@ -15,15 +15,16 @@ import MailIcon from '@assets/svg/icons/mail.svg';
     <div class="body">
       <slot name="body">
         <p class="light">
-          Kontaktiert uns gerne für ein unverbindliches Erstgespräch.
+          Bucht gerne ein unverbindliches Erstgespräch bei uns.
         </p>
       </slot>
     </div>
     <slot name="cta">
       <LinkButton
         variant="btn-light"
-        href="mailto:lab@correlaid.org?subject=CorrelLAB"
-        classes="btn-icon"><MailIcon height={'20'} /> Nachricht schreiben</LinkButton
+        href="https://zeeg.me/correlaid/correllab?month=2026-1&back=1"
+        target="_blank"
+        classes="btn-icon"><Icon height={'20'} width={'20'}/> Termin buchen</LinkButton
       ></slot
     >
   </div>

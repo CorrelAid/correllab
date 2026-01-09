@@ -1,9 +1,10 @@
 ---
-const { href, variant = '', classes = '', children } = Astro.props;
+const { href, variant = '', classes = '', target = "_self", children } = Astro.props;
 ---
 
 <a
   class="btn"
+  target={target}
   href={href}
   class:list={[variant, classes]}
   data-astro-prefetch={href?.startsWith('/') ? 'hover' : null}><slot /></a

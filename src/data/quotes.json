@@ -6,31 +6,82 @@
         "name": "Elke Schilling",
         "role": "Silbernetz e.V."
       },
+      "image": "schilling-elke",
       "k": 2
     },
     {
-      "quote": "Was ich zukünftigen Teilnehmenden mit auf den Weg geben würde? Dass  Fehlermeldungen die Pflastersteine auf dem Weg zum Erfolgserlebnis sind. Und KI-Chatbots einem überraschend gut helfen können, Code zu korrigieren oder Fehlermeldungen besser zu verstehen.",
+      "quote": "CorrelAid hat mir geholfen, anzufangen. Ich hab das Thema Wirkungsmessung ewig vor mir hergeschoben, weil ich nie einen Einstieg oder Ansatzpunkt gefunden habe. Das Thema erschien zu groß und umfassend, um Zugang zu finden. Mit dem Kurs habe ich jetzt einige Ideen, wo und wie ich loslegen kann.",
       "cite": {
-        "name": "Paul Meerkamp",
-        "role": "Netzwerk Klimajournalismus Deutschland"
+        "name": "Alexander Mihm",
+        "role": "Teach First Community e. V."
       },
+       "image": "mihm-alexander",
       "k": 2
     },
     {
-      "quote": "Datenkompetenz bedeutet für mich, eine grundlegende Ressource der Gemeinwesenarbeit zu verstehen – und dadurch Handlungsfähigkeit aufzubauen.",
+      "quote": "CorrelAid ist für mich der perfekte Begleiter, um unsere Arbeit mit Daten besser zu machen.",
       "cite": {
-        "name": "Adriano Schwanke",
-        "role": "Dachverband der Migrant*innenorganisationen in Ostdeutschland e. V."
+        "name": "Veronica Kuls",
+        "role": "Deutsches Youth For Understanding Komitee e.V."
       },
+        "image": "kuls-veronica",
       "k": 1
     },
     {
-      "quote": "Besonders geholfen hat mir der Exkurs in die Statistik. Zwar hatte ich das theoretische schon mal im Studium, aber die Verbindung zur Praxis hat mir damals gefehlt. Mit dem Kurs konnte ich nun Bedarfe konkret adressieren und argumentieren, warum ich bestimmte Vorgehensweisen für sinnvoll erachte.",
+      "quote": "CorrelAid ist für mich ein essentieller Baustein für Professionalisierung.",
       "cite": {
-        "name": "Susanne Laudahn",
-        "role": "GermanWatch e. V."
+        "name": "Thilo Pätzolt",
+        "role": "Lernzeit gUG"
       },
+      "image": "paetzolt-tilo",
       "k": 1
+    }
+  ],
+  "deepdive_ki": [
+    {
+      "quote": "CorrelAid hat mir eine solide Grundlage in verschiedenen Themen und Tools vermittelt, gezeigt, wie man diese effizient einsetzt, und mir aufgezeigt, wo ich weiterlernen kann.",
+      "cite": {
+        "name": "Seyed Ajayebi",
+        "role": "Hacker School e.V."
+      },
+      "image": "ajayebi-seyed"
+    }
+  ],
+  "fokuskurs_kommunizieren": [
+    {
+      "quote": "CorrelAid hat mir dabei geholfen zu verstehen, dass schön aufbereitete Zahlen, die in ein Verhältnis zueinander gebracht werden, ein perfektes Mittel sind, um Ehrenamtler*innen und Spender*innen von unserer Arbeit zu überzeugen.",
+      "cite": {
+        "name": "Susanne Herda",
+        "role": "Der Kinderschutzbund Bezirksverband Frankfurt a.M. / Main-Taunus"
+      },
+      "image": "herda-susanne"
+    },
+    {
+      "quote": "Ich habe gelernt, dass gute Datengeschichten lange vor der Datenerhebung beginnen – und dass Überschriften, Kontext und Visualisierung entscheidend für das Verständnis sind.",
+      "cite": {
+        "name": "Katrin Heim",
+        "role": "Malteser Werke gGmbH"
+      },
+      "image": "placeholder"
+    }
+  ],
+  "grundkurs": [
+    {
+      "quote": "Am CorrelLAB schätze ich am meisten den Austausch mit anderen Non-Profits, um Erfahrungen, Herausforderungen und Best Practices vertrauensvoll teilen zu können und voneinander zu lernen.",
+      "cite": {
+        "name": "Claus Caspari",
+        "role": "Dare2Care gUG"
+      },
+      "image": "caspari-claus",
+      "credit": "Bennet Rietdorf"
+    },
+    {
+      "quote": "Mein bisher größter Aha-Moment im Kurs war die Erkenntnis, wie viele unterschiedliche Facetten der Umgang mit Daten tatsächlich umfasst.",
+      "cite": {
+        "name": "Ulya Tütüncübasi",
+        "role": "InSL e. V."
+      },
+      "image": "tuetuencuebasi-ulya"
     }
   ]
 }

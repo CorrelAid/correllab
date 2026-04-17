@@ -12,7 +12,7 @@ const images = Object.keys(imagesGlob).reduce((acc, path) => {
   const filename = path
     .split("/")
     .pop()
-    .replace(/\.(jpg|jpeg|png)$/, "");
+    .replace(/\.(jpg|jpeg|png|webp)$/, "");
   acc[filename] = imagesGlob[path].default;
   return acc;
 }, {});
@@ -28,7 +28,7 @@ export const people = {
     name: "Zoé Wolter",
     role: "Geschäftsführung und Bildung",
     image: images["wolter-zoe"],
-    email: "lab@correlaid.org?subject=CorrelLAB&body=Hi%20Ann-Kristin%2C",
+    email: "lab@correlaid.org?subject=CorrelLAB&body=Hi%20Zo%C3%A9%2C",
   },
   antje: {
     name: "Antje Relitz",
@@ -59,5 +59,11 @@ export const people = {
     role: "Werkstudentin Bildung",
     image: images["vasetska-lisa"],
     email: "lab@correlaid.org?subject=CorrelLAB&body=Hi%20Lisa%2C",
+  },
+  leo: {
+    name: "Leo Preu",
+    role: "Beratung & Projektkoordination",
+    image: images["preu-leo"] ?? images["placeholder"],
+    email: "lab@correlaid.org?subject=CorrelLAB&body=Hi%20Leo%2C",
   },
 };

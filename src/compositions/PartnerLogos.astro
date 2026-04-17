@@ -1,0 +1,238 @@
+---
+import { Image } from 'astro:assets';
+import { partners } from '@data/partners.js';
+
+const slides = [...partners, ...partners];
+---
+
+  <div class="content-box  subsection partner-logos-box">
+    <div class="columns-header text-center">
+      <h4>Bisher waren unter anderem dabei:</h4>
+    </div>
+    <div
+      class="carousel-container"
+      role="group"
+      aria-roledescription="carousel"
+      aria-label="Partner"
+      data-partner-carousel-container
+    >
+      <div class="carousel" aria-hidden="true" data-partner-carousel>
+        {
+          slides.map((partner) => (
+            <div class="carousel-slide">
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                widths={[240, 480]}
+                sizes="240px"
+                class="partner-logo"
+              />
+            </div>
+          ))
+        }
+      </div>
+      <ul class="sr-only">
+        {partners.map((partner) => <li>{partner.name}</li>)}
+      </ul>
+    </div>
+  </div>
+
+<style>
+  .partner-logos-box {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: 140px;
+    cursor: grab;
+    width: min(100vw, 1500px);
+    justify-self: center;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 4rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        white 0%,
+        rgba(255, 255, 255, 0.9) 20%,
+        transparent 100%
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+        to left,
+        white 0%,
+        rgba(255, 255, 255, 0.9) 20%,
+        transparent 100%
+      );
+    }
+  }
+
+  .carousel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+    padding-inline: 1rem;
+    will-change: transform;
+    user-select: none;
+  }
+
+  .carousel-slide {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .carousel-slide :global(.partner-logo) {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.65;
+    transition:
+      filter 0.2s ease,
+      opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  .carousel-slide:hover :global(.partner-logo) {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>('[data-partner-carousel]')
+    .forEach((carousel) => {
+      const container = carousel.parentElement!;
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+      const speed = 0.5;
+      let offset = 0;
+      let autoPlay = !prefersReducedMotion;
+      let isDragging = false;
+      let startX = 0;
+      let dragOffset = 0;
+      let hasDragged = false;
+
+      function getHalfWidth() {
+        return carousel.scrollWidth / 2;
+      }
+
+      function wrapOffset() {
+        const half = getHalfWidth();
+        if (half <= 0) return;
+        offset = ((offset % half) - half) % half;
+      }
+
+      function render() {
+        carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
+      }
+
+      function tick() {
+        if (autoPlay && !isDragging) {
+          offset -= speed;
+          wrapOffset();
+          render();
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function onPointerDown(e: PointerEvent) {
+        if (e.button !== 0) return;
+        isDragging = true;
+        hasDragged = false;
+        startX = e.clientX;
+        dragOffset = offset;
+        container.setPointerCapture(e.pointerId);
+      }
+
+      function onPointerMove(e: PointerEvent) {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 3) hasDragged = true;
+        offset = dragOffset + dx;
+        wrapOffset();
+        render();
+      }
+
+      function onPointerUp(e: PointerEvent) {
+        if (!isDragging) return;
+        isDragging = false;
+        container.releasePointerCapture(e.pointerId);
+      }
+
+      carousel.addEventListener(
+        'click',
+        (e) => {
+          if (hasDragged) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        },
+        true
+      );
+
+      container.addEventListener('mouseenter', () => {
+        autoPlay = false;
+      });
+      container.addEventListener('mouseleave', () => {
+        if (!isDragging && !prefersReducedMotion) autoPlay = true;
+      });
+
+      container.addEventListener('pointerdown', onPointerDown);
+      container.addEventListener('pointermove', onPointerMove);
+      container.addEventListener('pointerup', onPointerUp);
+      container.addEventListener('pointercancel', onPointerUp);
+
+      container.addEventListener(
+        'touchmove',
+        (e) => {
+          if (isDragging) e.preventDefault();
+        },
+        { passive: false }
+      );
+
+      requestAnimationFrame(tick);
+    });
+</script>

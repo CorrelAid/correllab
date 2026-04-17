@@ -13,7 +13,7 @@ let { center_title = true, section = true, glue = false, subsection = false } = 
 let Element = section ? 'section' : 'div';
 ---
 
-<Element class:list={['content-box', subsection && 'subsection']}>
+<Element class:list={['content-box ', subsection && 'subsection']}>
   {
     Astro.slots.has('title') && (
       <div class="columns-header" class:list={[center_title && 'text-center']}>
@@ -34,7 +34,7 @@ let Element = section ? 'section' : 'div';
 </Element>
 
 <style>
-  .content-box {
+  .content-box  {
     --content-width: 1200px;
 
     & .columns-header {

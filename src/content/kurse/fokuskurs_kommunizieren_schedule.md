@@ -1,0 +1,7 @@
+- Zeitraum: {period}
+- Format: Flipped Classroom Lernformat mit
+  - interaktiver Lernplattform mit Videos, Infos und Quizzes,
+  - Online-Livesessions mit datenwissenschaftlichen Tutor\*innen,
+  - Arbeit in Lerntandems und
+  - individuellem Sprechstundenangebot.
+- Du erhältst eine Teilnahmebestätigung.

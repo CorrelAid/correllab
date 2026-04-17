@@ -1,31 +1,31 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage } from "astro:assets";
 
-import Blockquote from '@components/Blockquote.astro';
-import Carousel from '@components/Carousel.astro';
-import LabLinkButton from '@components/LabLinkButton.astro';
-import Persona from '@components/Persona.astro';
-import BackgroundSection from '@components/sections/BackgroundSection.astro';
-import ColumnsSection from '@components/sections/ColumnsSection.astro';
-import Banner from '@compositions/Banner.astro';
-import CoursesCards from '@compositions/CoursesCards.astro';
-import Hero from '@compositions/Hero.astro';
-import Layout from '@layouts/Layout.astro';
+import Blockquote from "@components/Blockquote.astro";
+import Carousel from "@components/Carousel.astro";
+import LabLinkButton from "@components/LabLinkButton.astro";
+import Persona from "@components/Persona.astro";
+import BackgroundSection from "@components/sections/BackgroundSection.astro";
+import ColumnsSection from "@components/sections/ColumnsSection.astro";
+import Banner from "@compositions/Banner.astro";
+import CoursesCards from "@compositions/CoursesCards.astro";
+import Hero from "@compositions/Hero.astro";
+import Layout from "@layouts/Layout.astro";
 
-import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
+import carouselBackgroundSvg from "@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg";
 
 const CarouselBackground = await getImage({
   src: carouselBackgroundSvg,
-  format: 'webp',
+  format: "webp",
 });
 
-import * as HeroContent from '@content/landing/hero.md';
-import * as IntroContent from '@content/landing/intro.md';
-import * as IntroColumnsContent1 from '@content/landing/intro_columns_1.md';
-import * as IntroColumnsContent2 from '@content/landing/intro_columns_2.md';
-import quotes from '@data/quotes.json';
-import { strip_tag } from '@utils/md';
-import { people } from '@data/people';
+import * as HeroContent from "@content/landing/hero.md";
+import * as IntroContent from "@content/landing/intro.md";
+import * as IntroColumnsContent1 from "@content/landing/intro_columns_1.md";
+import * as IntroColumnsContent2 from "@content/landing/intro_columns_2.md";
+import { quotes } from "@data/quotes.js";
+import { strip_tag } from "@utils/md";
+import { people } from "@data/people";
 ---
 
 <Layout title="CorrelLAB">
@@ -38,11 +38,11 @@ import { people } from '@data/people';
     <div class="container">
       <ColumnsSection center_title={false}>
         <h2 slot="title" class="title">Willkommen im CorrelLAB</h2>
-        <div slot="pre">
+        <!-- <div slot="pre">
           <Blockquote wide bare>
             <Fragment set:text={await strip_tag(IntroContent.compiledContent)} />
           </Blockquote>
-        </div>
+        </div> -->
         <div slot="col1" class="flex rows gap-2">
           <Fragment set:html={await IntroColumnsContent1.compiledContent()} />
         </div>
@@ -53,16 +53,20 @@ import { people } from '@data/people';
 
       <BackgroundSection
         options={{ content_grid: true, center: true }}
-        asset={{ src: CarouselBackground.src, position: 'bottom right' }}
+        asset={{ src: CarouselBackground.src, position: "bottom right" }}
       >
         <Carousel slides={quotes.landing} id="carousel">
           {
             quotes.landing.map((quote, index) => (
               <div class="carousel-content" data-step-id={index + 1}>
-                <Blockquote id={index + 1}>
+                <Blockquote
+                  id={index + 1}
+                  image={quote.image}
+                  imageAlt={quote.cite.name}
+                >
                   <Fragment>{quote.quote}</Fragment>
                   <Fragment slot="cite">
-                    {' '}
+                    {" "}
                     <span class="name txt-italic">{quote.cite.name}</span>
                     <span class="role">{quote.cite.role}</span>
                   </Fragment>
@@ -96,8 +100,7 @@ import { people } from '@data/people';
       </ColumnsSection>
 
       <div class="flex cols center gap-2 pt-0 pad-8 wrap">
-        <LabLinkButton href="/kurse/kurs-daten-verstehen/">Kurs: Daten verstehen</LabLinkButton>
-        <LabLinkButton href="/kurse/kurs-daten-nutzen/">Kurs: Daten nutzen</LabLinkButton>
+        <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungs-Abo</LabLinkButton>
         <LabLinkButton href="/praxisphase/">Praxisphase</LabLinkButton>
       </div>
     </div>

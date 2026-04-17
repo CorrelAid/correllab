@@ -3,15 +3,15 @@ import CardPlain from '@components/cards/CardPlain.astro';
 import LabLinkButton from '@components/LabLinkButton.astro';
 import ColumnsSection from '@components/sections/ColumnsSection.astro';
 import SvgGlobIcon from '@components/SvgGlobIcon.astro';
+import PartnerLogos from '@compositions/PartnerLogos.astro';
 
-import * as KostenContent from '@content/landing/kosten.md';
 import phasen from '@data/phasen.json';
 ---
 
 <ColumnsSection>
-  <h2 slot="title">Euer Weg ins CorrelLAB</h2>
+  <h2 slot="title">Dein Weg ins CorrelLAB</h2>
   <CardPlain slot="col1">
-    <Fragment slot="card-title">Phase 1: Kursphase</Fragment>
+    <Fragment slot="card-title">Phase 1: Weiterbildung</Fragment>
     <Fragment slot="subtitle" set:text={phasen.kurse.meta.period} />
     <Fragment slot="content">
       <dl>
@@ -32,14 +32,15 @@ import phasen from '@data/phasen.json';
         }
       </dl>
       <p>
-        <strong>Ziel:</strong> Strategisches Datenverständnis aufbauen und erste Projektidee entwickeln
+       <strong>Ziel:</strong> Du baust strategisches Datenverständnis auf und entwickelst erste Projektideen.
       </p>
     </Fragment>
 
     <Fragment slot="footer">
-      <div class="flex cols wrap gap-2 align-start">
-        <LabLinkButton href="/kurse/kurs-daten-verstehen/">Kurs: Daten verstehen</LabLinkButton>
-        <LabLinkButton href="/kurse/kurs-daten-nutzen/">Kurs: Daten nutzen</LabLinkButton>
+      <div>
+        <LabLinkButton href="/kurse/abo/" classes="btn-secondary"
+          >Mehr zum Bildungs-Abo</LabLinkButton
+        >
       </div>
     </Fragment>
   </CardPlain>
@@ -67,7 +68,7 @@ import phasen from '@data/phasen.json';
         }
       </dl>
       <p>
-        <strong>Ziel:</strong> Datenprojekte nachhaltig in der Organisation verankern und Wirkung steigern
+        <strong>Ziel:</strong> Du setzt ein Praxisprojekt um, wie z.&nbsp;B. eine Auswertung, ein automatisiertes Reporting oder ein Dashboard.
       </p>
     </Fragment>
     <Fragment slot="footer">
@@ -78,9 +79,7 @@ import phasen from '@data/phasen.json';
       </div>
     </Fragment>
   </CardPlain>
-  <div class="subsection content-box narrow flex rows align-center">
-    <Fragment set:html={await KostenContent.compiledContent()} />
-  </div>
+  <PartnerLogos />
 </ColumnsSection>
 
 <style>

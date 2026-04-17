@@ -1,15 +1,28 @@
 ---
 import ProjectSection from './ScrollColumns/Column.astro';
 
-const { stages } = Astro.props;
+interface Stage {
+  title: string;
+  icon?: string;
+  body: string[];
+}
+
+interface Props {
+  stages: Stage[];
+}
+
+const { stages } = Astro.props as Props;
 ---
 
 <div class="stages-container">
-  <div class="stages-header">
-    <h3>Wie läuft die Praxisphase ab?</h3>
-  </div>
-
   <div class="stages-list">
+    {
+      Astro.slots.has('intro') && (
+        <div class="stages-intro">
+          <slot name="intro" />
+        </div>
+      )
+    }
     {
       stages.map((stage, index) => (
         <div class="stage-wrapper">
@@ -56,6 +69,13 @@ const { stages } = Astro.props;
       outline: 2px dashed;
       padding: var(--padding);
       border-radius: 1rem;
+
+      & .stages-intro {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0 1rem;
+      }
 
       & .stage-wrapper {
         position: relative;

@@ -1,66 +1,69 @@
 ---
 export interface Props {
-  color: string;
+  color?: string;
 }
 
 const { color = 'var(--color-key)' } = Astro.props;
 
-const icons = import.meta.glob('../assets/svg/social/*.svg', { eager: true }) as Record<
-  string,
-  { default: string }
->;
+type AstroSVGComponent = {
+  (props: { fill?: string; alt?: string; style?: string; class?: string }): any;
+};
 
-// FIXME: config! move to higher scrope
-const dict_links = {
-  // github: {
-  //   name: 'GitHub',
-  //   url: 'https://github.com/correlaid',
-  // },
+const icons = import.meta.glob('../assets/svg/social/*.svg', {
+  eager: true,
+}) as Record<string, { default: AstroSVGComponent }>;
+
+const SocialIcons: Record<string, AstroSVGComponent> = Object.entries(
+  icons,
+).reduce((acc, [path, module]) => {
+  const icon = module.default;
+  const id = path.split('/').pop()?.split('.').shift();
+  return id ? { ...acc, [id]: icon } : acc;
+}, {});
+
+const dict_links: Record<string, { name: string; url: string }> = {
   instagram: {
     name: 'Instagram',
     url: 'https://www.instagram.com/correlaid',
   },
-  // mastodon: {
-  //   name: 'Mastodon',
-  //   url: 'https://masto.ai/@correlaid',
-  // },
   linkedin: {
     name: 'LinkedIn',
     url: 'https://de.linkedin.com/company/correlaid',
-  },
-  youtube: {
-    name: 'Youtube',
-    url: 'https://www.youtube.com/channel/UCs_k9roCuWLy17xxpigrWbg',
   },
   facebook: {
     name: 'Facebook',
     url: 'https://facebook.com/WeAreCorrelAid',
   },
-  // rss: {
-  //   url: 'https://correlaid.org/rss.xml',
-  //   name: 'RSS',
-  //   type: 'application/rss+xml',
-  // },
+  mastodon: {
+    name: 'Mastodon',
+    url: 'https://masto.ai/@correlaid',
+  },
+  rss: {
+    name: 'RSS',
+    url: 'https://correlaid.org/rss.xml',
+  },
 };
-
-const socialIcons = Object.entries(icons).reduce((acc, [path, module]) => {
-  const icon = module.default;
-  const id = path.split('/').pop().split('.').shift();
-  return { ...acc, [id]: { icon } };
-}, {});
 ---
 
 <div class="social-icons">
   {
-    Object.keys(dict_links).map((id) => (
-      <a
-        href={dict_links[id].url}
-        aria-label={`Link to CorrelAid ${dict_links[id].name}`}
-        target="_blank"
-      >
-        <socialIcons[id].icon fill={color} alt={`Logo ${dict_links[id].name}`} style="--size: 28px" class="svg-icon" />
-      </a>
-    ))
+    Object.keys(dict_links).map((id) => {
+      const IconComponent = SocialIcons[id];
+      return (
+        <a
+          href={dict_links[id].url}
+          aria-label={`Link to CorrelAid ${dict_links[id].name}`}
+          target="_blank"
+        >
+          <IconComponent
+            fill={color}
+            alt={`Logo ${dict_links[id].name}`}
+            style="--size: 28px"
+            class="svg-icon"
+          />
+        </a>
+      );
+    })
   }
 </div>
 
@@ -70,6 +73,14 @@ const socialIcons = Object.entries(icons).reduce((acc, [path, module]) => {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: var(--padding);
+    gap: 32px;
+
+    @container footer (max-width: 620px) {
+      gap: 24px !important;
+    }
+
+    @container footer (max-width: 520px) {
+      gap: 16px !important;
+    }
   }
 </style>

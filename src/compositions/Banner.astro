@@ -10,23 +10,31 @@ import Icon from '@assets/svg/icons/calendar.svg';
     <CorrelLabKompaktDynamic class="logo-desktop" height={'80'} color="var(--color-lab-muted)" />
     <CorrelLabLogoMin class="logo-mobile" width={'24'} color="var(--color-lab-muted)" />
   </div>
-  <div class="prose content-box narrow">
-    <h2 class="light"><slot name="title">Ihr habt Fragen?</slot></h2>
+  <div class="prose content-box  narrow">
+    <h2 class="light"><slot name="title">Du hast Fragen?</slot></h2>
     <div class="body">
       <slot name="body">
         <p class="light">
-          Bucht gerne ein unverbindliches Erstgespräch bei uns.
+          Buche gerne ein unverbindliches Erstgespräch bei uns oder komm zur nächsten Info-Veranstaltung.
         </p>
       </slot>
     </div>
     <slot name="cta">
-      <LinkButton
-        variant="btn-light"
-        href="https://zeeg.me/correlaid/correllab?month=2026-1&back=1"
-        target="_blank"
-        classes="btn-icon"><Icon height={'20'} width={'20'}/> Termin buchen</LinkButton
-      ></slot
-    >
+      <div class="cta-buttons">
+        <LinkButton
+          variant="btn-light"
+          href="https://zeeg.me/correlaid/correllab"
+          target="_blank"
+          classes="btn-icon"><Icon height={'20'} width={'20'}/> Termin buchen</LinkButton
+        >
+        <LinkButton
+          variant="btn-light"
+          href="https://pretix.eu/correlaid/correllab-info/"
+          target="_blank"
+          classes="btn-icon"><Icon height={'20'} width={'20'}/> Info-Veranstaltung</LinkButton
+        >
+      </div>
+    </slot>
   </div>
 </div>
 
@@ -49,6 +57,12 @@ import Icon from '@assets/svg/icons/calendar.svg';
       justify-content: flex-start;
       align-items: flex-start;
       gap: 1rem;
+    }
+
+    & .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
     }
 
     & a {

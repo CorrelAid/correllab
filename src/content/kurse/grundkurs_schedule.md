@@ -1,0 +1,8 @@
+- Zeitraum: 12 Wochen vom {period}
+- Zeitaufwand: 3 bis 5 Stunden / Woche
+- Format: Integriertes Lernformat mit
+  - interaktiver Lernplattform,
+  - wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor\*innen, immer freitags zu den unten genannten Terminen von 11:30 bis 12:30 Uhr,
+  - gemeinsamem Lernen in kleinen Gruppen,
+  - individueller Beratung in Datensprechstunden zu den Herausforderungen deiner eigenen Organisation.
+- Nach bestandener Abschlussprüfung erhältst du ein Zertifikat.

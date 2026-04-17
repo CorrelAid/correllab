@@ -177,7 +177,7 @@ figure {
   margin: 0 auto;
 }
 
-.content-box {
+.content-box  {
   display: grid;
   gap: 1.5rem;
   width: 100%;
@@ -250,7 +250,7 @@ a.btn {
     border-color 0.1s ease-in-out;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     --color: var(--color-white);
     --bg-color: var(--color-key);
     --border-color: var(--color-key);
@@ -262,7 +262,7 @@ a.btn {
     --bg-color: var(--color-primary-500);
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       background-color: var(--color-primary-700);
       border-color: var(--color-primary-700);
       /* transform: translateY(-1px); */
@@ -277,7 +277,7 @@ a.btn {
     --border-width: 1px;
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       --color: var(--color-primary-900);
       --border-color: var(--color-primary-900);
     }
@@ -288,7 +288,7 @@ a.btn {
     --border-color: transparent;
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       --color: var(--color-primary-700);
       --bg-color: inherit;
       --border-color: var(--color-primary-700);
@@ -303,7 +303,7 @@ a.btn {
     white-space: nowrap; /* TODO: make util */
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       --color: var(--color-white);
       --bg-color: var(--color-primary-700);
       --border-color: var(--color-primary-700);
@@ -338,7 +338,7 @@ a.btn {
 
     &:hover,
     &:active,
-    &:focus {
+    &:focus-visible {
       --btn-hover-color: white;
     }
   }
@@ -350,7 +350,7 @@ a.btn {
 
     &:hover,
     &:active,
-    &:focus {
+    &:focus-visible {
       --bg-color: var(--color-key);
       --color: white;
       --border-color: var(--color-key);

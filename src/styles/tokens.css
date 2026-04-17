@@ -1,12 +1,7 @@
 /** Design Tokens */
 
-@import "@fontsource/roboto/400.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
-@import "@fontsource/inter/800.css";
-@import "@fontsource/inter/900.css";
+@import "@fontsource-variable/roboto";
+@import "@fontsource-variable/inter";
 
 :root {
   /* WIP */
@@ -54,12 +49,27 @@
 
   /* Typography */
   --font-family-inter:
-    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
-  --font-family-roboto: "Roboto", var(--font-family-inter);
+    "Inter Variable", "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  --font-family-accent: var(--font-family-inter);
+  --font-family-roboto: "Roboto Variable", "Roboto", var(--font-family-inter);
   --font-family-mono:
     ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
     "DejaVu Sans Mono", monospace;
+
+  /* Spacing (website parity) */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-base: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+
+  /* Layout (website parity) */
+  --layout-content-max: 1100px;
 
   /* Font Sizes */
   --font-size-xs: 0.75rem;

@@ -1,0 +1,4 @@
+- Datum: {period}
+- Format: 12-stündiger Deep Dive mit kurzen Inputs, praxisnahen Übungen und Peer-Learning in Kleingruppen.
+- Du erhältst eine Teilnahmebestätigung.
+- Keine Vorkenntnisse über KI erforderlich!

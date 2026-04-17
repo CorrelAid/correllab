@@ -3,18 +3,37 @@ export interface Props {
   id?: string | number | null;
   wide?: boolean;
   bare?: boolean;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  imageCredit?: string | null;
 }
 
+import { Image } from 'astro:assets';
 import QuoteIcon from '@assets/svg/icons/quote.svg';
-const { id, wide, bare } = Astro.props;
+const { id, wide, bare, image, imageAlt, imageCredit } = Astro.props;
 ---
 
-<blockquote data-step-id={id || null} class:list={[wide && 'wide', bare && 'bare']}>
-  {!bare && <QuoteIcon width="96" height="96" class="marker" />}
-  <div class="quote"><slot /></div>
-  <cite>
-    <slot name="cite" />
-  </cite>
+<blockquote
+  data-step-id={id || null}
+  class:list={[wide && 'wide', bare && 'bare', image && 'with-avatar']}
+>
+  {
+    image && (
+      <div class="avatar-block">
+        <div class="avatar vignette">
+          <Image src={image} alt={imageAlt ?? ''} width={320} height={320} />
+        </div>
+        {imageCredit && <span class="avatar-credit">© {imageCredit}</span>}
+      </div>
+    )
+  }
+  <div class="body">
+    {!bare && <QuoteIcon width="96" height="96" class="marker" />}
+    <div class="quote"><slot /></div>
+    <cite>
+      <slot name="cite" />
+    </cite>
+  </div>
 </blockquote>
 
 <style define:vars={{ iconurl: `url(${QuoteIcon.src})` }}>
@@ -32,27 +51,114 @@ const { id, wide, bare } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
 
-    &.wide {
-      max-width: 100%;
+  blockquote.wide {
+    max-width: 100%;
+  }
+
+  blockquote .body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  blockquote.with-avatar {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    max-width: var(--content-width);
+  }
+
+  blockquote .avatar-block {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  blockquote .avatar {
+    width: 160px;
+    position: relative;
+    margin: 10px;
+  }
+
+  blockquote .avatar-credit {
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--color-gray-700, #555);
+    text-align: center;
+    line-height: 1.2;
+    font-weight: var(--font-weight-light);
+  }
+
+  blockquote .avatar :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  blockquote .vignette::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    padding: 10px;
+    background: linear-gradient(
+      45deg,
+      var(--color-lab-pink-medium),
+      var(--color-lab-blue-medium)
+    );
+    mask:
+      linear-gradient(#000 0 0) content-box ,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  blockquote:not(.bare) cite {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  blockquote:not(.bare) cite :global(.name) {
+    font-weight: var(--font-weight-bold);
+  }
+
+  blockquote:not(.bare) .marker {
+    transform: translateX(-0.5rem) scaleX(-1) scaleY(-1);
+  }
+
+  @media (max-width: 768px) {
+    blockquote {
+      font-size: var(--font-size-xl);
     }
 
-    &:not(.bare) {
-      & cite {
-        font-size: var(--font-size-base);
-        font-weight: var(--font-weight-light);
-        display: flex;
-        flex-direction: column;
-        gap: 0;
+    blockquote.with-avatar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
 
-        & .name {
-          font-weight: var(--font-weight-bold);
-        }
-      }
+    blockquote.with-avatar .avatar-block {
+      align-self: center;
+    }
 
-      & .marker {
-        transform: translateX(-0.5rem) scaleX(-1) scaleY(-1);
-      }
+    blockquote.with-avatar .avatar {
+      width: 110px;
+    }
+
+    blockquote.with-avatar :global(.marker) {
+      width: 64px;
+      height: 64px;
     }
   }
 </style>

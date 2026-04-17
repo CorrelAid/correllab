@@ -1,11 +1,11 @@
 ---
 import Persona from '@components/Persona.astro';
 
-const { people } = Astro.props;
+const { people, title = 'Das ist unser Team' } = Astro.props;
 ---
 
 <section>
-  <h3 class="text-center">Das ist unser Team</h3>
+  <h3 class="text-center">{title}</h3>
   <div class="subsection">
     {
       people.map((person) => (

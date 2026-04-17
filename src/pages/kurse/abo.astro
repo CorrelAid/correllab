@@ -1,0 +1,165 @@
+---
+import { getImage } from 'astro:assets';
+
+import Blockquote from '@/components/Blockquote.astro';
+import LabLinkButton from '@components/LabLinkButton.astro';
+import BackgroundSection from '@components/sections/BackgroundSection.astro';
+import ColumnsSection from '@components/sections/ColumnsSection.astro';
+import Persona from '@components/Persona.astro';
+import Banner from '@compositions/Banner.astro';
+import KursLayout from '@layouts/KursLayout.astro';
+
+import carouselBackgroundSvg from '@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg';
+const CarouselBackground = await getImage({
+  src: carouselBackgroundSvg,
+  format: 'webp',
+});
+
+import { people } from '@data/people';
+
+import * as AboForYou from '@content/kurse/abo_for_you.md';
+
+const grundkurs = { title: 'CorrelLAB Grundkurs', href: '/kurse/grundkurs/' };
+
+const courseSections = [
+  {
+    heading: 'Fokuskurse:',
+    items: [{ title: 'Kommunizieren mit Daten', href: '/kurse/fokuskurs-kommunizieren/' }],
+  },
+  {
+    heading: 'Deep Dives:',
+    items: [
+      {
+        title: 'Umfragen richtig konzipieren und durchführen',
+        href: '/kurse/deepdive-umfragen/',
+      },
+      { title: 'Künstliche Intelligenz', href: '/kurse/deepdive-ki/' },
+    ],
+  },
+];
+---
+
+<KursLayout title="CorrelLAB: Bildungs-Abo">
+  <Fragment slot="subtitle">
+    CorrelLAB Bildungs-Abo<br />&ndash;&nbsp;<strong>Lerne was du brauchst, wenn du es
+    brauchst.</strong>
+  </Fragment>
+  <p slot="teaser">
+    Mit dem CorrelLAB Bildungs-Abo erhältst du für ein Jahr Zugang zu allen Weiterbildungen,
+    damit du genau die Datenkompetenzen aufbauen kannst, die du gerade brauchst.
+  </p>
+  <Fragment slot="cta">
+    <LabLinkButton href="#start">Abo-Übersicht</LabLinkButton>
+    <LabLinkButton href="/">Zur Startseite</LabLinkButton>
+  </Fragment>
+
+  <ColumnsSection center_title>
+    <Fragment slot="pre">
+      <Blockquote bare wide>
+       Das CorrelLAB Bildungs-Abo ist dein Schlüssel zu einem Jahr voller Lernmöglichkeiten – ohne zusätzliche Kosten pro Kurs. Für einen Festpreis von 3.200 EUR erhältst du uneingeschränkten Zugang zu unserem gesamten Weiterbildungsangebot. 
+      <br /><br />
+      Ob du deine Skills systematisch ausbauen oder gezielt Lücken schließen möchtest – das Abo gibt dir die Freiheit, individuell zu lernen, Kosten zu sparen und praktisches Wissen direkt anzuwenden. 
+
+      </Blockquote>
+    </Fragment>
+        <div class="flex rows gap-2" slot="col1">
+      <h4>Im Abo enthalten:</h4>
+     
+      <div class="course-sections">
+        <div class="course-buttons">
+          <LabLinkButton href={grundkurs.href}>{grundkurs.title}</LabLinkButton>
+        </div>
+        {courseSections.map((section) => (
+          <div class="course-section">
+            <h6 class="course-section-heading">{section.heading}</h6>
+            <div class="course-buttons">
+              {section.items.map((course) => (
+                <LabLinkButton href={course.href}>{course.title}</LabLinkButton>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="flex rows gap-2" slot="col2">
+      <h4>Das Abo ist für dich, wenn…</h4>
+      <Fragment set:html={await AboForYou.compiledContent()} />
+    </div>
+
+
+  </ColumnsSection>
+
+
+
+  <BackgroundSection
+    options={{ content_grid: true, center: true }}
+    asset={{ src: CarouselBackground.src, position: 'bottom right' }}
+  >
+    <Blockquote>
+      <Fragment>
+        Wir merken in unserer Arbeit, dass viele Organisationen und Vereine mit denselben
+        Herausforderungen kämpfen. Fängt man an, seinen Datenschutz oder seine Datenvisualisierungen
+        anzugehen, merkt man schnell, dass es am Datenmanagement oder der Dateninfrastruktur hakt.
+        Das CorrelLAB Bildungs-Abo soll genau das abfangen: 1 Jahr, 1 Preis, alle Kurse – damit
+        nichts liegen bleibt.
+      </Fragment>
+      <Fragment slot="cite">
+        <span class="name txt-italic">Nora Cremille &amp; Zoé Wolter</span>
+        <span class="role">CorrelAid Bildung</span>
+      </Fragment>
+    </Blockquote>
+  </BackgroundSection>
+
+  <section class="sticky sticky-bottom abo-cta">
+    <LabLinkButton href="https://pretix.eu/correlaid/abo-cl/">
+      Hier das Bildungs-Abo abschließen!
+    </LabLinkButton>
+  </section>
+
+  <ColumnsSection center_title glue>
+    <h2 slot="title">Fragen? Melde dich bei uns!</h2>
+    <Persona
+      name={people.zoe.name}
+      role={people.zoe.role}
+      image={people.zoe.image}
+      email={people.zoe.email}
+      slot="col1"
+    />
+    <Persona
+      name={people.nora.name}
+      role={people.nora.role}
+      image={people.nora.image}
+      email={people.nora.email}
+      slot="col2"
+    />
+  </ColumnsSection>
+
+  <div class="flex cols center gap-2 pad-8 wrap" slot="footer-links">
+    <LabLinkButton href="/">Zur Startseite</LabLinkButton>
+    <LabLinkButton href="/praxisphase/">Zur Praxisphase</LabLinkButton>
+  </div>
+</KursLayout>
+
+<style>
+  .abo-cta {
+    margin-top: calc(var(--padding) * 2);
+  }
+
+  .course-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .course-section-heading {
+    margin: 0 0 0.5rem;
+    color: var(--color-lab-blue-dark);
+  }
+
+  .course-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+</style>

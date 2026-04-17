@@ -6,41 +6,55 @@ import SocialLinks from '@compositions/SocialLinks.astro';
 
 const footer_links = [
   {
-    title: 'Daten nutzen',
+    title: 'Projekte',
+    titleUrl: 'https://correlaid.org/projekte',
     links: [
-      { href: 'https://correlaid.org/daten-nutzen/projekte', label: 'Data4Good Projekte' },
-      { href: 'https://correlaid.org/daten-nutzen/projektdatenbank', label: 'Projektdatenbank' },
-      { href: 'https://correlaid.org/daten-nutzen/beratung', label: 'Beratung' },
-      { href: 'https://correlaid.org/daten-nutzen/hackathons', label: 'Hackathons & Datendialoge' },
+      {
+        href: 'https://correlaid.org/projekte/projektdatenbank',
+        label: 'Projektdatenbank',
+      },
+      {
+        href: 'https://correlaid.org/projekte/events-vor-ort',
+        label: 'Events vor Ort',
+      },
     ],
   },
   {
     title: 'Bildung',
+    titleUrl: 'https://correlaid.org/bildung',
     links: [
-      { href: 'https://correlaid.org/bildung/grundkurs-daten', label: 'Grundkurs Daten' },
-      { href: 'https://correlaid.org/bildung/r-lernen', label: 'R Lernen' },
-      { href: 'https://correlaid.org/bildung/mentoring', label: 'Mentoring' },
-      { href: 'https://correlaid.org/bildung/tidy-tuesday', label: 'Tidy Tuesday' },
-      { href: 'https://correlaid.org/bildung/ressourcen', label: 'Bildungsresourcen' },
+      { href: 'https://correlaid.org/bildung/kurse', label: 'Kurse' },
+      {
+        href: 'https://correlaid.org/bildung/fuer-volunteers',
+        label: 'Für Volunteers',
+      },
+      { href: 'https://correlaid.org/bildung/workshops', label: 'Workshops' },
     ],
   },
   {
     title: 'Mitmachen',
+    titleUrl: 'https://correlaid.org/mitmachen',
     links: [
-      { href: 'https://correlaid.org/mitmachen/correlaidx', label: 'Engagiere dich vor Ort' },
-      { href: 'https://correlaid.org/mitmachen/volunteer-teams', label: 'Trete einem Team bei' },
+      { href: 'https://correlaid.org/mitmachen/online', label: 'Online' },
       {
-        href: 'https://easyverein.com/public/correlaid/applicationform/7737',
-        label: 'Vereinsmitglied werden',
+        href: 'https://correlaid.org/mitmachen/correlaidx',
+        label: 'Engagiere dich vor Ort',
       },
-      { href: 'https://correlaid.org/mitmachen/lc-gruenden', label: 'Gründe eine Lokalgruppe' },
+      {
+        href: 'https://correlaid.org/mitmachen/verein',
+        label: 'CorrelAid e.V.',
+      },
     ],
   },
   {
-    title: 'Über uns',
+    title: 'Über Uns',
+    titleUrl: 'https://correlaid.org/ueber',
     links: [
-      { href: 'https://correlaid.org/ueber/wirkung', label: 'Unsere Wirkung' },
       { href: 'https://correlaid.org/ueber/team', label: 'Team' },
+      {
+        href: 'https://correlaid.org/ueber/wirkung',
+        label: 'Unsere Wirkung',
+      },
       { href: 'https://correlaid.org/ueber/werte', label: 'Unsere Werte' },
       { href: 'https://correlaid.org/ueber/partner', label: 'Partner' },
     ],
@@ -49,34 +63,39 @@ const footer_links = [
 
 const footer_footer_links = [
   { href: 'https://correlaid.org/impressum', label: 'Impressum' },
-  { href: 'https://correlaid.org/codeofconduct', label: 'Code of Conduct' },
-  { href: 'https://correlaid.org/codeofethics', label: 'Code of Ethics' },
-  { href: 'https://correlaid.org/ueber/team', label: 'Team' },
-  { href: 'https://correlaid.org/jobs', label: 'Jobs' },
+  {
+    href: 'https://correlaid.org/datenschutzinformationen',
+    label: 'Datenschutzinformationen',
+  },
+  { href: 'https://correlaid.org/coc', label: 'Code of Conduct' },
+  { href: 'https://correlaid.org/coe', label: 'Code of Ethics' },
+  { href: 'https://correlaid.org/jobs', label: 'Stellenangebote' },
 ];
 ---
 
-<footer class="content-box">
+<footer class="content-box ">
+  <!-- Footer Top Row -->
   <div class="footer-inner">
-    <div class="column flex rows pb-4">
-      <a href="https://correlaid.org" aria-label="CorrelAid Homepage"
-        ><CorrelAidLogoMuted alt="CorrelAid Logo" /></a
+    <div class="column">
+      <a href="https://correlaid.org" aria-label="CorrelAid Homepage" id="FooterLogo"
+        ><CorrelAidLogoMuted fill="#3c3c3b" /></a
       >
-      <SocialLinks color="var(--color-gray-600)" />
+      <SocialLinks color="#3c3c3b" />
+      <nav>
+        <a class="footer-cell" href="https://correlaid.org/blog">Blog</a>
+        <a class="footer-cell" href="https://correlaid.org/veranstaltungen">Events</a>
+        <a class="footer-cell" href="https://correlaid.org/newsletter">Newsletter</a>
+      </nav>
     </div>
     <div class="column">
       <Columns>
-        <LinksSection section={footer_links[0]} />
-        <LinksSection section={footer_links[1]} />
-        <LinksSection section={footer_links[2]} />
-        <LinksSection section={footer_links[3]} />
+        {footer_links.map((section) => <LinksSection section={section} />)}
       </Columns>
     </div>
   </div>
   <div class="footer-footer">
     <div class="copyright">CorrelAid. © {new Date().getFullYear()}</div>
     <aside>
-      {/* <span>Deutsch</span>*/}
       {footer_footer_links.map((link) => <a href={link.href}>{link.label}</a>)}
     </aside>
   </div>
@@ -84,31 +103,67 @@ const footer_footer_links = [
 
 <style>
   footer {
+    /* Scope website-parity colors to the footer — overrides correllab globals */
+    --color-gray-muted: #374151;
+    --color-primary: #00468a;
+
+    position: relative;
+    width: 100%;
+    margin-top: 96px;
+    max-width: var(--layout-content-max);
+    margin-inline: auto;
     container: footer / inline-size;
-    padding: 0 var(--padding);
-    /* display: flex; */
-    /* flex-direction: column; */
-    gap: calc(var(--padding) * 2);
-    font-size: 1rem;
+    padding: 0 32px;
+    gap: 64px;
+    font-size: 16px;
     line-height: 1;
 
     & .footer-inner {
-      padding-top: calc(var(--padding) * 2);
+      padding-block: 32px;
       border-top: 2px solid var(--color-gray-muted);
       display: grid;
-      /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-      /* 2 columns, first has a max width of 200px, second should be auto */
       grid-template-columns: minmax(150px, 250px) auto;
-      gap: var(--padding);
+      gap: 16px;
 
       & .column {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 16px;
+        padding-block-end: 32px;
       }
 
       @container footer (width < 400px) {
         grid-template-columns: 1fr;
+      }
+
+      & nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      & nav .footer-cell {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        padding: 0 0.5em;
+        font-size: 0.8em;
+        line-height: 1;
+        border-radius: 9999px;
+        background: transparent;
+        color: var(--color-primary);
+        border: 2px solid transparent;
+        text-decoration: none;
+        font-family: var(--font-family-accent);
+        white-space: nowrap;
+        transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      & nav .footer-cell:hover,
+      & nav .footer-cell:focus-visible {
+        border-color: var(--color-primary);
+        text-decoration: none;
       }
     }
 
@@ -117,18 +172,14 @@ const footer_footer_links = [
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap-reverse;
-      gap: 1rem;
-      padding: 1rem 0;
-      /* border-top: 2px solid var(--color-gray-muted); */
-
-      & .copyright {
-      }
+      gap: 16px;
+      padding-bottom: 24px;
 
       & aside {
         display: flex;
-        gap: 0.2rem 1rem;
+        gap: 0.2em 1em;
         flex-wrap: wrap;
-        font-size: 0.8rem;
+        font-size: 0.8em;
 
         & a {
           color: var(--color-gray-muted);
@@ -136,4 +187,5 @@ const footer_footer_links = [
       }
     }
   }
+
 </style>

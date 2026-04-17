@@ -1,0 +1,4 @@
+- Datum: {period}
+- Format: 6-stündiger Deep Dive mit kurzen Inputs, praxisnahen Übungen und Peer-Learning in Kleingruppen.
+- Du erhältst eine Teilnahmebestätigung.
+- Keine Vorkenntnisse in Umfragemethodik oder empirischer Sozialforschung erforderlich!

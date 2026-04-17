@@ -1,9 +1,32 @@
 {
   "kurse": {
     "meta": {
-      "period": "Februar bis Mai 2026",
+      "deepdive_umfragen": {
+        "period": "13.05.2026, 09:00 – 15:30 Uhr"
+      },
+      "deepdive_ki": {
+        "period": "02. – 03.06.2026, 09:00 – 16:00 Uhr"
+      },
+      "fokuskurs_kommunizieren": {
+        "period": "20.10. – 24.11.2026, wöchentliche Livesession dienstags 11:00 – 12:30 Uhr"
+      },
+      "grundkurs": {
+        "period": "18. September bis 11. Dezember 2026",
+        "topics": [
+          "Datenprojekte und Wirkungsmanagement",
+          "Datenquellen und -erhebung",
+          "Datenschutz und Datenethik",
+          "Effizientes Datenmanagement",
+          "Datenqualität und -bereinigung",
+          "Dateninfrastruktur und Automatisierung",
+          "Statistische Grundlagen und Tools für die Datenanalyse",
+          "Künstliche Intelligenz",
+          "Datenvisualisierung",
+          "Datenkommunikation",
+          "Nachhaltige Datenprojekte"
+        ]
+      },
       "kurs1": {
-        "period": "06. Februar bis 08. Mai",
         "timeline": [
           { "date": "06.02", "topic": "Kick-Off & Einführung" },
           {
@@ -69,62 +92,51 @@
     },
     "body": [
       {
-        "icon": "route-square",
+        "icon": "bulb",
         "alt": "icon",
-        "text": "12 Wochen, 12 Module (u. a. Datenschutz, -strategie, Wirkungsmessung, Visualisierung und Storytelling uvm.)"
-      },
-
-      {
-        "icon": "hourglass-empty",
-        "alt": "icon",
-        "text": "Flexibler Zeitaufwand: 2 – 4 Stunden pro Woche"
+        "text": "Wir glauben, dass es Wissen und Kompetenzen benötigt, um nachhaltige Verbesserungen in Organisationen zu erreichen."
       },
       {
-        "icon": "brand-zoom",
+        "icon": "school",
         "alt": "icon",
-        "text": "Wöchentliche Live-Sessions mit Tutor*innen "
+        "text": "Unser Kursangebot bietet dafür zahlreiche Möglichkeiten:"
       },
       {
-        "icon": "device-desktop",
+        "icon": "seedling",
         "alt": "icon",
-        "text": "Interaktive Lernplattform"
+        "text": "Im <strong>Grundkurs</strong> kannst du Basiswissen aufbauen, um zu verstehen, wie verschiedene Themen ineinandergreifen, dein Problem zu identifizieren und es systematisch anzugehen."
       },
       {
-        "icon": "users",
+        "icon": "zoom",
         "alt": "icon",
-        "text": "Lernen in kleinen Gruppen für Austausch und Reflexion"
-      },
-      {
-        "icon": "message-circle-user",
-        "alt": "icon",
-        "text": "Individuelle Datensprechstunden"
+        "text": "In unseren <strong>Deep Dives</strong> und <strong>Fokuskursen</strong> kannst du dich zu spezifischen Problemen weiterbilden, um dein Verständnis, dein Vokabular und deine Fähigkeiten in diesem Feld zu erweitern."
       }
     ]
   },
   "praxis": {
     "meta": {
-      "period": "Juni bis Dezember 2026"
+    
     },
     "body": [
       {
-        "icon": "heart-handshake",
+        "icon": "settings-cog",
         "alt": "icon",
-        "text": "Zusammenarbeit mit einem kleinen Team von 4 bis 5 Ehrenamtlichen"
+        "text": "Dein neues Wissen kann durch ein Praxisprojekt direkt nachhaltig in deiner Organisation verankert werden."
       },
       {
-        "icon": "code",
+        "icon": "heart-handshake",
         "alt": "icon",
-        "text": "Entwicklung und Umsetzung eines konkreten Datenprojekts, z. B.:",
-        "subitems": [
-          { "text": "Wirkungsmessung und Feedbacksysteme" },
-          { "text": "Datenvisualisierung und Reporting" },
-          { "text": "Automatisierungen und Dashboards" }
-        ]
+        "text": "In der Praxisphase helfen dir unsere ehrenamtlichen Data Scientists neue Infrastrukturen, Workflows oder Tools aufzusetzen oder analysieren deine Daten."
       },
       {
         "icon": "message-circle-user",
         "alt": "icon",
-        "text": "Begleitende Datensprechstunden und Projektcoaching"
+        "text": "Mit deiner neu gewonnenen Expertise kannst du dein Problem den Data Scientists fachgerecht erklären und eure Ziele und Prioritäten kommunizieren."
+      },
+      {
+        "icon": "chart-bar-popular",
+        "alt": "icon",
+        "text": "Gleichzeitig bist du gerüstet, technische Vorschläge zu bewerten, selbst umzusetzen und langfristig zu pflegen – damit deine Organisation souverän im Umgang mit Daten wird."
       }
     ]
   }

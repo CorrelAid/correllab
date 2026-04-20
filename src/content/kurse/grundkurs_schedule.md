@@ -1,5 +1,5 @@
 - Zeitraum: 12 Wochen vom {period}
-- Zeitaufwand: 3 bis 5 Stunden / Woche
+- Zeitaufwand: 3 bis 5 Stunden pro Woche
 - Format: Integriertes Lernformat mit
   - interaktiver Lernplattform,
   - wöchentlicher Online-Livesession mit datenwissenschaftlichen Tutor\*innen, immer freitags zu den unten genannten Terminen von 11:30 bis 12:30 Uhr,

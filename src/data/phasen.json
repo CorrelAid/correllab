@@ -8,22 +8,65 @@
         "period": "02. – 03.06.2026, 09:00 – 16:00 Uhr"
       },
       "fokuskurs_kommunizieren": {
-        "period": "20.10. – 24.11.2026, wöchentliche Livesession dienstags 11:00 – 12:30 Uhr"
+        "period": "20.10. – 24.11.2026, wöchentliche Livesession dienstags 11:00 – 12:30 Uhr",
+        "topics": [
+          { "topic": "Motivation" },
+          { "topic": "Wirkung" },
+          { "topic": "Datenquellen" },
+          { "topic": "Grafiktypen" },
+          { "topic": "Wahrnehmung & Gestaltung" },
+          { "topic": "Farben & Decluttering" },
+          { "topic": "Storytelling" }
+        ]
       },
       "grundkurs": {
         "period": "18. September bis 11. Dezember 2026",
         "topics": [
-          "Datenprojekte und Wirkungsmanagement",
-          "Datenquellen und -erhebung",
-          "Datenschutz und Datenethik",
-          "Effizientes Datenmanagement",
-          "Datenqualität und -bereinigung",
-          "Dateninfrastruktur und Automatisierung",
-          "Statistische Grundlagen und Tools für die Datenanalyse",
-          "Künstliche Intelligenz",
-          "Datenvisualisierung",
-          "Datenkommunikation",
-          "Nachhaltige Datenprojekte"
+          { "date": "18.09.", "topic": "Kickoff" },
+          {
+            "date": "25.09.",
+            "topic": "Datenprojekte in der Zivilgesellschaft: Von der Planung zur Wirkung"
+          },
+          {
+            "date": "02.10.",
+            "topic": "Datenquellen und -erhebung: Umfragen, Open Data und APIs"
+          },
+          {
+            "date": "09.10.",
+            "topic": "Datenschutz in der Praxis: DSGVO, Anonymisierung und Datenethik"
+          },
+          {
+            "date": "16.10.",
+            "topic": "Effizientes Datenmanagement: Von der Dateninventur zur Dateiorganisation"
+          },
+          {
+            "date": "23.10.",
+            "topic": "Datenqualität und -bereinigung: Von fehlenden Werten zu Tidy Data"
+          },
+          {
+            "date": "06.11.",
+            "topic": "Dateninfrastruktur: Von Excel zur Datenplattform"
+          },
+          {
+            "date": "13.11.",
+            "topic": "Statistische Grundlagen und Tools für die Daten-Analyse: Von Zahlen zu Erkenntnissen"
+          },
+          {
+            "date": "20.11.",
+            "topic": "Künstliche Intelligenz verstehen: Von Algorithmen zu Alltagshelfern"
+          },
+          {
+            "date": "27.11.",
+            "topic": "Daten visualisieren: Von der Tabelle zur überzeugenden Grafik"
+          },
+          {
+            "date": "04.12.",
+            "topic": "Daten erfolgreich kommunizieren: Data Storytelling, Dashboards und Reports"
+          },
+          {
+            "date": "11.12.",
+            "topic": "Daten nachhaltig nutzen: Datenstrategie und Daten-Sharing"
+          }
         ]
       },
       "kurs1": {
@@ -136,7 +179,7 @@
       {
         "icon": "chart-bar-popular",
         "alt": "icon",
-        "text": "Gleichzeitig bist du gerüstet, technische Vorschläge zu bewerten, selbst umzusetzen und langfristig zu pflegen – damit deine Organisation souverän im Umgang mit Daten wird."
+        "text": "Gleichzeitig bist du gerüstet, technische Vorschläge zu bewerten, umzusetzen und langfristig zu pflegen – damit deine Organisation souverän im Umgang mit Daten wird."
       }
     ]
   }

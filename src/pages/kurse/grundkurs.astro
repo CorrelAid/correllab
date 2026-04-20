@@ -1,5 +1,5 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 
 import Blockquote from '@/components/Blockquote.astro';
 import CardPlain from '@components/cards/CardPlain.astro';
@@ -16,6 +16,8 @@ const CarouselBackground = await getImage({
   format: 'webp',
 });
 
+import FlyerKurs from '@assets/images/correllab-flyer-grundkurs.png';
+
 import phasen from '@data/phasen.json';
 import { quotes } from '@data/quotes.js';
 import { people } from '@data/people';
@@ -28,15 +30,15 @@ import * as KostenContent from '@content/kurse/grundkurs_kosten.md';
 
 <KursLayout title="CorrelLAB: Grundkurs">
   <Fragment slot="subtitle">
-    CorrelLAB Grundkurs<br />&ndash;&nbsp;<strong>Wie können Daten deine Probleme lösen?</strong>
+    <strong></strong>CorrelLAB Grundkurs</strong>
   </Fragment>
   <p slot="teaser">
-    Daten helfen erst, wenn man sie richtig nutzt. Aber wie startest du? Welche Tools sind gut für
+    Wie können Daten deine Probleme lösen? Daten helfen erst, wenn man sie richtig nutzt. Aber wie startest du? Welche Tools sind gut für
     den Anfang?
   </p>
   <Fragment slot="cta">
     <LabLinkButton href="#start">Kursüberblick</LabLinkButton>
-    <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungs-Abo</LabLinkButton>
+    <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungsabo</LabLinkButton>
   </Fragment>
 
   <ColumnsSection center_title>
@@ -44,7 +46,7 @@ import * as KostenContent from '@content/kurse/grundkurs_kosten.md';
       <Blockquote bare wide>
         Wer richtig mit Daten arbeitet, erzielt mehr Wirkung bei weniger Aufwand. Aber was bedeutet
         dieses „richtig“? In diesem Grundkurs lernst du, wie du das Potential von Daten für dich
-        nutzbar machen kannst.<br /><br />
+        nutzbar machst.<br /><br />
         Dabei geht es um die Erhebung, das Management, die Bereinigung, Analyse oder Kommunikation
         von Daten, aber auch um Themengebiete wie Künstliche Intelligenz (KI) und Datenschutz.<br
         /><br />
@@ -89,19 +91,67 @@ import * as KostenContent from '@content/kurse/grundkurs_kosten.md';
   <section class="prose">
     <CardPlain>
       <Fragment slot="content">
-        
         <h4 class="kurs-heading">Wie läuft der Kurs ab?</h4>
         <Fragment
           set:html={await KursSchedule.compiledContent().then((content) =>
             content.replace('{period}', phasen.kurse.meta.grundkurs.period)
           )}
         />
-      <h4 class="kurs-heading">Die Themen</h4>
-        <ul class="topics-list">
-          {phasen.kurse.meta.grundkurs.topics.map((topic) => <li>{topic}</li>)}
-        </ul>
       </Fragment>
     </CardPlain>
+  </section>
+
+  <section class="pt-0">
+    <figure class="onepager">
+      <a href="/assets/CorrelLAB_Grundkurs_Onepager.pdf" target="_blank" download>
+        <Image
+          src={FlyerKurs}
+          alt="Flyer CorrelLAB Grundkurs"
+          widths={[600, 900, 1200, 1600]}
+          formats={['webp', 'avif']}
+        />
+      </a>
+      <figcaption class="contained">
+        <div>
+          <a href="/assets/CorrelLAB_Grundkurs_Onepager.pdf" target="_blank" download>
+            Link zum One-Pager (PDF)
+          </a>
+        </div>
+        <details>
+          <summary>Die Themen in Tabellenform</summary>
+          <div class="subsection prose cap pt-4">
+            <CardPlain>
+              {
+                phasen.kurse.meta.grundkurs.topics.some(
+                  (t: { date?: string }) => t.date,
+                ) ? (
+                  <table slot="content" id="kurs-timeline">
+                    <tbody>
+                      {phasen.kurse.meta.grundkurs.topics.map(
+                        (item: { date?: string; topic: string }) => (
+                          <tr>
+                            <td>{item.date}</td>
+                            <td>{item.topic}</td>
+                          </tr>
+                        ),
+                      )}
+                    </tbody>
+                  </table>
+                ) : (
+                  <ul slot="content" class="topics-list">
+                    {phasen.kurse.meta.grundkurs.topics.map(
+                      (item: { topic: string }) => (
+                        <li>{item.topic}</li>
+                      ),
+                    )}
+                  </ul>
+                )
+              }
+            </CardPlain>
+          </div>
+        </details>
+      </figcaption>
+    </figure>
   </section>
 
   <section class="pt-0">
@@ -119,30 +169,72 @@ import * as KostenContent from '@content/kurse/grundkurs_kosten.md';
   <PeopleSection title="Fragen? Melde dich bei uns!" people={[people.zoe, people.nora]} />
 
   <div class="flex cols center gap-2 pad-8 wrap" slot="footer-links">
-    <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungs-Abo</LabLinkButton>
+    <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungsabo</LabLinkButton>
     <LabLinkButton href="/praxisphase/">Zur Praxisphase</LabLinkButton>
   </div>
 </KursLayout>
 
 <style>
-  .topics-list {
-    columns: 2;
-    column-gap: 2rem;
-  }
-
-  .topics-list :global(li) {
-    break-inside: avoid;
-  }
-
   .kurs-heading {
     margin: 0;
     color: var(--color-grey-900);
     font-weight: var(--font-weight-bold);
   }
 
-  @media (max-width: 600px) {
-    .topics-list {
-      columns: 1;
-    }
+  .onepager {
+    max-width: var(--content-width, 1200px);
+    margin: 0 auto;
+    text-align: center;
   }
+
+  .onepager img {
+    width: 100%;
+    height: auto;
+  }
+
+  .onepager figcaption {
+    margin-top: 0.75rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .onepager figcaption summary {
+    cursor: pointer;
+  }
+
+  .subsection {
+    color: var(--color-gray-800);
+  }
+
+  .topics-list {
+    text-align: left;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+
+  .topics-list :global(li) {
+    margin-bottom: 0.25rem;
+  }
+
+  #kurs-timeline {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  #kurs-timeline :global(td) {
+    padding: 0.5rem 0.75rem;
+    vertical-align: top;
+  }
+
+  #kurs-timeline :global(td:first-child) {
+    width: 5rem;
+    white-space: nowrap;
+    color: var(--color-gray-700, #555);
+    font-variant-numeric: tabular-nums;
+  }
+
+  #kurs-timeline :global(tr + tr td) {
+    border-top: 1px solid var(--color-gray-200, #e5e7eb);
+  }
+
 </style>

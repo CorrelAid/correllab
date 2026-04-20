@@ -1,5 +1,5 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 
 import Blockquote from '@/components/Blockquote.astro';
 import CardPlain from '@components/cards/CardPlain.astro';
@@ -14,6 +14,8 @@ const CarouselBackground = await getImage({
   src: carouselBackgroundSvg,
   format: 'webp',
 });
+
+import FlyerKurs from '@assets/images/correllab-flyer-fokuskurs-kommunizieren.png';
 
 import phasen from '@data/phasen.json';
 import { quotes } from '@data/quotes.js';
@@ -36,7 +38,7 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
   </p>
   <Fragment slot="cta">
     <LabLinkButton href="#start">Kursüberblick</LabLinkButton>
-    <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungs-Abo</LabLinkButton>
+    <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungsabo</LabLinkButton>
   </Fragment>
 
   <ColumnsSection center_title>
@@ -108,6 +110,59 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
   </section>
 
   <section class="pt-0">
+    <figure class="onepager">
+      <a href="/assets/CorrelLAB_Fokuskurs_Kommunizieren_Onepager.pdf" target="_blank" download>
+        <Image
+          src={FlyerKurs}
+          alt="Flyer CorrelLAB Fokuskurs: Kommunizieren mit Daten"
+          widths={[600, 900, 1200, 1600]}
+          formats={['webp', 'avif']}
+        />
+      </a>
+      <figcaption class="contained">
+        <div>
+          <a href="/assets/CorrelLAB_Fokuskurs_Kommunizieren_Onepager.pdf" target="_blank" download>
+            Link zum One-Pager (PDF)
+          </a>
+        </div>
+        <details>
+          <summary>Die Themen in Tabellenform</summary>
+          <div class="subsection prose cap pt-4">
+            <CardPlain>
+              {
+                phasen.kurse.meta.fokuskurs_kommunizieren.topics.some(
+                  (t: { date?: string }) => t.date,
+                ) ? (
+                  <table slot="content" id="kurs-timeline">
+                    <tbody>
+                      {phasen.kurse.meta.fokuskurs_kommunizieren.topics.map(
+                        (item: { date?: string; topic: string }) => (
+                          <tr>
+                            <td>{item.date}</td>
+                            <td>{item.topic}</td>
+                          </tr>
+                        ),
+                      )}
+                    </tbody>
+                  </table>
+                ) : (
+                  <ul slot="content" class="topics-list">
+                    {phasen.kurse.meta.fokuskurs_kommunizieren.topics.map(
+                      (item: { topic: string }) => (
+                        <li>{item.topic}</li>
+                      ),
+                    )}
+                  </ul>
+                )
+              }
+            </CardPlain>
+          </div>
+        </details>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="pt-0">
     <div class="prose">
       <Fragment set:html={await KostenContent.compiledContent()} />
     </div>
@@ -122,7 +177,7 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
   <PeopleSection title="Fragen? Melde dich bei uns!" people={[people.zoe, people.nora]} />
 
   <div class="flex cols center gap-2 pad-8 wrap" slot="footer-links">
-    <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungs-Abo</LabLinkButton>
+    <LabLinkButton href="/kurse/abo/">CorrelLAB Bildungsabo</LabLinkButton>
     <LabLinkButton href="/">Zur Startseite</LabLinkButton>
   </div>
 </KursLayout>
@@ -136,5 +191,60 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
 
   .cooperation-note {
     font-size: var(--font-size-sm);
+  }
+
+  .onepager {
+    max-width: var(--content-width, 1200px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .onepager img {
+    width: 100%;
+    height: auto;
+  }
+
+  .onepager figcaption {
+    margin-top: 0.75rem;
+  }
+
+  .onepager figcaption summary {
+    cursor: pointer;
+  }
+
+  .subsection {
+    color: var(--color-gray-800);
+  }
+
+  .topics-list {
+    text-align: left;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+
+  .topics-list :global(li) {
+    margin-bottom: 0.25rem;
+  }
+
+  #kurs-timeline {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  #kurs-timeline :global(td) {
+    padding: 0.5rem 0.75rem;
+    vertical-align: top;
+  }
+
+  #kurs-timeline :global(td:first-child) {
+    width: 5rem;
+    white-space: nowrap;
+    color: var(--color-gray-700, #555);
+    font-variant-numeric: tabular-nums;
+  }
+
+  #kurs-timeline :global(tr + tr td) {
+    border-top: 1px solid var(--color-gray-200, #e5e7eb);
   }
 </style>

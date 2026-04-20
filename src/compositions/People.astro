@@ -4,25 +4,42 @@ import Persona from '@components/Persona.astro';
 const { people, title = 'Das ist unser Team' } = Astro.props;
 ---
 
-<section>
-  <h3 class="text-center">{title}</h3>
-  <div class="subsection">
+<section class="content-box">
+  <div class="columns-header text-center">
+    <h3>{title}</h3>
+  </div>
+  <div class="persona-grid">
     {
       people.map((person) => (
-        <Persona name={person.name} role={person.role} image={person.image} email={person.email} />
+        <div class="columns-content">
+          <Persona
+            name={person.name}
+            role={person.role}
+            image={person.image}
+            email={person.email}
+          />
+        </div>
       ))
     }
   </div>
 </section>
 
 <style>
-  .subsection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    /* enforce same height */
-    align-items: stretch;
+  .content-box {
+    --content-width: 1200px;
+  }
+
+  .columns-header {
+    grid-column: 1 / -1;
+  }
+
+  .persona-grid {
     width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 0;
+    justify-content: center;
+    align-items: stretch;
   }
 </style>

@@ -32,23 +32,21 @@ const stepArray = Array.from({ length: n_steps }, (_, i) => i + 1);
   </div>
 </aside>
 
-<script define:vars={{ containerId }} data-astro-rerun>
-  const btns = document.querySelectorAll('.step-circle');
-  const container = document.getElementById(containerId);
-
-  btns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      clear_state();
-      if (container) {
-        container.dataset.current = e.currentTarget.dataset.slide;
-      }
-      e.currentTarget.classList.add('active');
-    });
-  });
-
-  function clear_state() {
-    btns.forEach((btn) => {
-      btn.classList.remove('active');
+<script>
+  // Delegated click handler on document — survives view transitions since
+  // event delegation doesn't care which DOM nodes exist at bind time. No
+  // per-page init needed.
+  if (!window.__stepperBound) {
+    window.__stepperBound = true;
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.step-circle');
+      if (!btn) return;
+      const carousel = btn.closest('.carousel');
+      if (!carousel) return;
+      carousel.dataset.current = btn.dataset.slide;
+      carousel.querySelectorAll('.step-circle').forEach((b) => {
+        b.classList.toggle('active', b === btn);
+      });
     });
   }
 </script>

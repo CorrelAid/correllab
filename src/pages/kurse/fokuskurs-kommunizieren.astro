@@ -162,10 +162,8 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
     </figure>
   </section>
 
-  <section class="pt-0">
-    <div class="prose">
-      <Fragment set:html={await KostenContent.compiledContent()} />
-    </div>
+  <section class="prose pt-0">
+    <Fragment set:html={await KostenContent.compiledContent()} />
   </section>
 
   <section class="sticky sticky-bottom">

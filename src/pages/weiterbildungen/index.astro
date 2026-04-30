@@ -18,6 +18,7 @@ const CarouselBackground = await getImage({
 import { people } from "@data/people";
 
 import * as AboForYou from "@content/kurse/abo_for_you.md";
+import CardPlain from "@/components/cards/CardPlain.astro";
 
 const grundkurs = {
   title: "CorrelLAB-Grundkurs",
@@ -80,13 +81,13 @@ const courseSectionsRight = [
     <LabLinkButton href="/">Zur Startseite</LabLinkButton>
   </Fragment>
 
-  <ColumnsSection center_title>
+  <ColumnsSection >
     <Fragment slot="pre">
       <Blockquote bare wide>
         Wir bieten viele verschiedene Weiterbildungen an. Von 1- bis 2-tägigen
         Deep Dives, über 1-6 wöchigen Fokus-Kursen bis hin zum 12-wöchigen
         Grundkurs ist alles mit dabei. Alle Weiterbildungen können einzeln oder
-        im Bildungsabo gebucht werden.
+        im <a class="invert" href="/weiterbildungen/#bildungsabo">Bildungsabo</a> gebucht werden.
       </Blockquote>
       <!-- <h4>Unsere Weiterbildungen:</h4> -->
     </Fragment>
@@ -115,6 +116,7 @@ const courseSectionsRight = [
             </div>
           ))
         }
+      
       </div>
     </div>
     <div class="flex rows gap-2" slot="col2">
@@ -134,15 +136,25 @@ const courseSectionsRight = [
           ))
         }
       </div>
+        <small class="abo-note">
+          
+        </small>
     </div>
   </ColumnsSection>
-  <ColumnsSection center_title>
+  <ColumnsSection glue no_padding_top>
     <div class="flex rows gap-2" slot="col1">
-      <h4>Lerne was du brauchst, wenn du es brauchst.</h4>
+      <h4 id="bildungsabo">Das CorrelLAB-Bildungsabo</h4>
       <p>
-        Mit dem CorrelLAB Bildungsabo erhältst du für ein Jahr Zugang zu allen
-        Weiterbildungen, damit du genau die Datenkompetenzen aufbauen kannst,
-        die du gerade brauchst.
+        Das CorrelLAB-Bildungsabo ist dein Schlüssel zu einem Jahr voller
+        Lernmöglichkeiten – ohne zusätzliche Kosten pro Kurs. Für einen
+        Festpreis von 3.200 EUR erhältst du uneingeschränkten Zugang zu unserem
+        gesamten Weiterbildungsangebot. Ob du deine Skills systematisch ausbauen
+        oder gezielt Lücken schließen möchtest – das Abo gibt dir die Freiheit,
+        individuell zu lernen, Kosten zu sparen und praktisches Wissen direkt
+        anzuwenden.
+      </p>
+      <p>
+        Das CorrelLAB-Bildungsabo kannst du direkt bei dem Workshop- oder Kursangebot buchen, mit dem du einsteigst. 
       </p>
     </div>
     <div class="flex rows gap-2" slot="col2">

@@ -4,16 +4,17 @@ export interface Props {
   center_title?: boolean;
   glue?: boolean;
   subsection?: boolean;
+  no_padding_top?:boolean;
 }
 
 import Columns from '@/components/Columns.astro';
 
-let { center_title = true, section = true, glue = false, subsection = false } = Astro.props;
+let { center_title = true, section = true, glue = false, subsection = false, no_padding_top = false } = Astro.props;
 
 let Element = section ? 'section' : 'div';
 ---
 
-<Element class:list={['content-box ', subsection && 'subsection']}>
+<Element class:list={['content-box ', subsection && 'subsection', no_padding_top && 'pt-0']}>
   {
     Astro.slots.has('title') && (
       <div class="columns-header" class:list={[center_title && 'text-center']}>

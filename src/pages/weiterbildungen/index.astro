@@ -1,0 +1,225 @@
+---
+import { getImage } from "astro:assets";
+
+import Blockquote from "@/components/Blockquote.astro";
+import LabLinkButton from "@components/LabLinkButton.astro";
+import BackgroundSection from "@components/sections/BackgroundSection.astro";
+import ColumnsSection from "@components/sections/ColumnsSection.astro";
+import Persona from "@components/Persona.astro";
+import Banner from "@compositions/Banner.astro";
+import KursLayout from "@layouts/KursLayout.astro";
+
+import carouselBackgroundSvg from "@assets/branding/agentur/CL-Zitat-BackgroundGradient-.svg";
+const CarouselBackground = await getImage({
+  src: carouselBackgroundSvg,
+  format: "webp",
+});
+
+import { people } from "@data/people";
+
+import * as AboForYou from "@content/kurse/abo_for_you.md";
+
+const grundkurs = {
+  title: "CorrelLAB-Grundkurs",
+  href: "/weiterbildungen/grundkurs",
+};
+
+const courseSections = [
+  {
+    heading: "Fokuskurse:",
+    items: [
+      {
+        title: "Kommunizieren mit Daten",
+        href: "/weiterbildungen/fokuskurs-kommunizieren/",
+      },
+    ],
+  },
+  {
+    heading: "Deep Dives:",
+    items: [
+      {
+        title: "Umfragen richtig konzipieren und durchführen",
+        href: "/weiterbildungen/deepdive-umfragen/",
+      },
+      {
+        title: "Künstliche Intelligenz",
+        href: "/weiterbildungen/deepdive-ki/",
+      },
+    ],
+  },
+];
+
+const courseSectionsRight = [
+  {
+    heading: "Summer Schools:",
+    items: [
+      {
+        title: "Rein in die digitale Welt",
+        href: "/weiterbildungen/summerschool-digitale-welt/",
+      },
+      {
+        title: "Raus aus dem Datenchaos",
+        href: "/weiterbildungen/summerschool-raus-datenchaos/",
+      },
+    ],
+  },
+];
+---
+
+<KursLayout title="CorrelLAB-Weiterbildungen">
+  <Fragment slot="subtitle">
+    <strong>CorrelLAB-Weiterbildungen</strong>
+  </Fragment>
+  <p slot="teaser">
+    Deine Organisation will Wissen und Kompetenzen aufbauen, um
+    Organisationsstrukturen und -prozesse zu verbessern und nachhaltig zu
+    verankern? Dann seid ihr hier genau richtig!
+  </p>
+  <Fragment slot="cta">
+    <LabLinkButton href="#start">Übersicht</LabLinkButton>
+    <LabLinkButton href="/">Zur Startseite</LabLinkButton>
+  </Fragment>
+
+  <ColumnsSection center_title>
+    <Fragment slot="pre">
+      <Blockquote bare wide>
+        Wir bieten viele verschiedene Weiterbildungen an. Von 1- bis 2-tägigen
+        Deep Dives, über 1-6 wöchigen Fokus-Kursen bis hin zum 12-wöchigen
+        Grundkurs ist alles mit dabei. Alle Weiterbildungen können einzeln oder
+        im Bildungsabo gebucht werden.
+      </Blockquote>
+      <!-- <h4>Unsere Weiterbildungen:</h4> -->
+    </Fragment>
+
+    <div class="flex rows gap-2" slot="col1">
+      <div class="course-sections">
+        <div class="course-section">
+          <h6 class="course-section-heading">Einstieg:</h6>
+          <div class="course-buttons">
+            <LabLinkButton href={grundkurs.href}
+              >{grundkurs.title}</LabLinkButton
+            >
+          </div>
+        </div>
+        {
+          courseSections.map((section) => (
+            <div class="course-section">
+              <h6 class="course-section-heading">{section.heading}</h6>
+              <div class="course-buttons">
+                {section.items.map((course) => (
+                  <LabLinkButton href={course.href}>
+                    {course.title}
+                  </LabLinkButton>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="flex rows gap-2" slot="col2">
+      <div class="course-sections">
+        {
+          courseSectionsRight.map((section) => (
+            <div class="course-section">
+              <h6 class="course-section-heading">{section.heading}</h6>
+              <div class="course-buttons">
+                {section.items.map((course) => (
+                  <LabLinkButton href={course.href}>
+                    {course.title}
+                  </LabLinkButton>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </ColumnsSection>
+  <ColumnsSection center_title>
+    <div class="flex rows gap-2" slot="col1">
+      <h4>Lerne was du brauchst, wenn du es brauchst.</h4>
+      <p>
+        Mit dem CorrelLAB Bildungsabo erhältst du für ein Jahr Zugang zu allen
+        Weiterbildungen, damit du genau die Datenkompetenzen aufbauen kannst,
+        die du gerade brauchst.
+      </p>
+    </div>
+    <div class="flex rows gap-2" slot="col2">
+      <h4>Das Abo ist für dich, wenn…</h4>
+      <Fragment set:html={await AboForYou.compiledContent()} />
+    </div>
+  </ColumnsSection>
+  <BackgroundSection
+    options={{ content_grid: true, center: true }}
+    asset={{ src: CarouselBackground.src, position: "bottom right" }}
+  >
+    <Blockquote>
+      <Fragment>
+        Wir merken in unserer Arbeit, dass viele Organisationen und Vereine mit
+        denselben Herausforderungen kämpfen. Fängt man an, seinen Datenschutz
+        oder seine Datenvisualisierungen anzugehen, merkt man schnell, dass es
+        am Datenmanagement oder der Dateninfrastruktur hakt. Das
+        CorrelLAB-Bildungsabo soll genau das abfangen: 1 Jahr, 1 Preis, alle
+        Kurse – damit nichts liegen bleibt.
+      </Fragment>
+      <Fragment slot="cite">
+        <span class="name txt-italic">Nora Cremille &amp; Zoé Wolter</span>
+        <span class="role">CorrelAid Bildung</span>
+      </Fragment>
+    </Blockquote>
+  </BackgroundSection>
+
+  <ColumnsSection center_title glue>
+    <h2 slot="title">Fragen? Melde dich bei uns!</h2>
+    <Persona
+      name={people.zoe.name}
+      role={people.zoe.role}
+      image={people.zoe.image}
+      email={people.zoe.email}
+      slot="col1"
+    />
+    <Persona
+      name={people.nora.name}
+      role={people.nora.role}
+      image={people.nora.image}
+      email={people.nora.email}
+      slot="col2"
+    />
+  </ColumnsSection>
+
+  <div class="flex cols center gap-2 pad-8 wrap" slot="footer-links">
+    <LabLinkButton href="/">Zur Startseite</LabLinkButton>
+    <LabLinkButton href="/praxisphase/">Zur Praxisphase</LabLinkButton>
+  </div>
+</KursLayout>
+
+<style>
+  .abo-cta {
+    margin-top: calc(var(--padding) * 2);
+  }
+
+  .course-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .course-section-heading {
+    margin: 0 0 0.5rem;
+    color: var(--color-lab-blue-dark);
+  }
+
+  .course-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .abo-note {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-700, #555);
+    margin-top: 0.5rem;
+  }
+</style>

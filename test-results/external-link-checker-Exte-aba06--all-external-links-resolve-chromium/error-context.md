@@ -13,7 +13,7 @@
 
 ```
 Error: Found 5 broken external link(s) out of 43 checked:
-  404 https://pretix.eu/correlaid/abo-cl/ (found on /kurse/abo/)
+  404 https://pretix.eu/correlaid/abo-cl/ (found on /weiterbildungen)
   403 https://pretix.eu/correlaid/fokuskurs-ds/ (found on /kurse/fokuskurs-kommunizieren/)
   403 https://pretix.eu/correlaid/deepdive-ki/ (found on /kurse/deepdive-ki/)
   403 https://pretix.eu/correlaid/correllab-gk/ (found on /kurse/grundkurs/)

@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/kurse/abo/"
-  to = "/weiterbildungen/#bildungsabo"
+  to = "/weiterbildungen/"
   status = 301
 
 [[redirects]]

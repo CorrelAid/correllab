@@ -1,10 +1,6 @@
 [[redirects]]
-  from = "/news"
-  to = "/blog"
-
-[[redirects]]
   from = "/kurse/abo/"
-  to = "/weiterbildungen/"
+  to = "/weiterbildungen/#bildungsabo"
   status = 301
 
 [[redirects]]

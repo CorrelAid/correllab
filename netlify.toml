@@ -1,0 +1,38 @@
+[[redirects]]
+  from = "/news"
+  to = "/blog"
+
+[[redirects]]
+  from = "/kurse/abo/"
+  to = "/weiterbildungen/"
+  status = 301
+
+[[redirects]]
+  from = "/kurse/grundkurs/"
+  to = "/weiterbildungen/grundkurs/"
+  status = 301
+
+[[redirects]]
+  from = "/kurse/deepdive-umfragen/"
+  to = "/weiterbildungen/deepdive-umfragen/"
+  status = 301
+
+[[redirects]]
+  from = "/kurse/deepdive-ki/"
+  to = "/weiterbildungen/deepdive-ki/"
+  status = 301
+
+[[redirects]]
+  from = "/kurse/summer-school-1/"
+  to = "/weiterbildungen/summerschool-digitale-welt/"
+  status = 301
+
+[[redirects]]
+  from = "/kurse/summer-school-2/"
+  to = "/weiterbildungen/summerschool-raus-datenchaos/"
+  status = 301
+
+[[redirects]]
+  from = "/kurse/fokuskurs-kommunizieren/"
+  to = "/weiterbildungen/fokuskurs-kommunizieren/"
+  status = 301

@@ -23,14 +23,16 @@ let Element = section ? 'section' : 'div';
     )
   }
   <slot name="pre" />
-  <Columns glue={glue}>
-    <Fragment slot="col1">
-      <slot name="col1" />
-    </Fragment>
-    <Fragment slot="col2">
-      <slot name="col2" />
-    </Fragment>
-  </Columns>
+  { (Astro.slots.has('col1') || Astro.slots.has('col2')) && (
+    <Columns glue={glue}>
+      <Fragment slot="col1">
+        <slot name="col1" />
+      </Fragment>
+      <Fragment slot="col2">
+        <slot name="col2" />
+      </Fragment>
+    </Columns>
+  )}
   <slot />
 </Element>
 

@@ -18,53 +18,8 @@ const CarouselBackground = await getImage({
 import { people } from "@data/people";
 
 import * as AboForYou from "@content/kurse/abo_for_you.md";
-import CardPlain from "@/components/cards/CardPlain.astro";
+import HoneycombGrid from "@components/svelte/HoneycombGrid.svelte";
 
-const grundkurs = {
-  title: "CorrelLAB-Grundkurs",
-  href: "/weiterbildungen/grundkurs",
-};
-
-const courseSections = [
-  {
-    heading: "Fokuskurse:",
-    items: [
-      {
-        title: "Kommunizieren mit Daten",
-        href: "/weiterbildungen/fokuskurs-kommunizieren/",
-      },
-    ],
-  },
-  {
-    heading: "Deep Dives:",
-    items: [
-      {
-        title: "Umfragen richtig konzipieren und durchführen",
-        href: "/weiterbildungen/deepdive-umfragen/",
-      },
-      {
-        title: "Künstliche Intelligenz",
-        href: "/weiterbildungen/deepdive-ki/",
-      },
-    ],
-  },
-];
-
-const courseSectionsRight = [
-  {
-    heading: "Summer Schools:",
-    items: [
-      {
-        title: "Rein in die digitale Welt",
-        href: "/weiterbildungen/summerschool-digitale-welt/",
-      },
-      {
-        title: "Raus aus dem Datenchaos",
-        href: "/weiterbildungen/summerschool-raus-datenchaos/",
-      },
-    ],
-  },
-];
 ---
 
 <KursLayout title="CorrelLAB-Weiterbildungen">
@@ -92,53 +47,18 @@ const courseSectionsRight = [
       <!-- <h4>Unsere Weiterbildungen:</h4> -->
     </Fragment>
 
-    <div class="flex rows gap-2" slot="col1">
-      <div class="course-sections">
-        <div class="course-section">
-          <h6 class="course-section-heading">Einstieg:</h6>
-          <div class="course-buttons">
-            <LabLinkButton href={grundkurs.href}
-              >{grundkurs.title}</LabLinkButton
-            >
-          </div>
-        </div>
-        {
-          courseSections.map((section) => (
-            <div class="course-section">
-              <h6 class="course-section-heading">{section.heading}</h6>
-              <div class="course-buttons">
-                {section.items.map((course) => (
-                  <LabLinkButton href={course.href}>
-                    {course.title}
-                  </LabLinkButton>
-                ))}
-              </div>
-            </div>
-          ))
-        }
-      
-      </div>
-    </div>
-    <div class="flex rows gap-2" slot="col2">
-      <div class="course-sections">
-        {
-          courseSectionsRight.map((section) => (
-            <div class="course-section">
-              <h6 class="course-section-heading">{section.heading}</h6>
-              <div class="course-buttons">
-                {section.items.map((course) => (
-                  <LabLinkButton href={course.href}>
-                    {course.title}
-                  </LabLinkButton>
-                ))}
-              </div>
-            </div>
-          ))
-        }
-      </div>
-        <small class="abo-note">
-          
-        </small>
+    <div>
+      <HoneycombGrid 
+        client:idle
+        items={[
+          { title: "CorrelLAB-<br>Grundkurs", href: "/weiterbildungen/grundkurs/" },
+          { title: "Fokuskurs:<br>Kommunizieren mit Daten", href: "/weiterbildungen/fokuskurs-kommunizieren/" },
+          { title: "Deep Dive:<br>Künstliche Intelligenz", href: "/weiterbildungen/deepdive-ki/" },
+          { title: "Deep Dive:<br>Umfragen richtig konzipieren und durchführen", href: "/weiterbildungen/deepdive-umfragen/" },
+          { title: "Summer School:<br>Rein in die digitale Welt", href: "/weiterbildungen/summerschool-digitale-welt/" },
+          { title: "Summer School:<br>Raus aus dem Datenchaos", href: "/weiterbildungen/summerschool-raus-datenchaos/" }
+        ]} 
+      />
     </div>
   </ColumnsSection>
   <ColumnsSection glue no_padding_top>

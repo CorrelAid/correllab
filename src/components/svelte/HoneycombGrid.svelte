@@ -187,56 +187,49 @@
 			grid-column: 4 / span 2;
 		}
 
-		/* Rows: groups of 2, hardcoded translateY and z-index per absolute position */
+		/* Rows: groups of 2. Negative margin-block-start on rows 2+ pulls them up into prior row (interlock) AND shrinks grid container so no trailing gap. */
+		&:nth-child(n + 3) {
+			margin-block-start: calc(-1 * var(--interlock-step));
+		}
 		&:nth-child(1),
 		&:nth-child(2) {
 			z-index: 10;
-			transform: translateY(0);
 		}
 		&:nth-child(3),
 		&:nth-child(4) {
 			z-index: 9;
-			transform: translateY(calc(-1 * var(--interlock-step)));
 		}
 		&:nth-child(5),
 		&:nth-child(6) {
 			z-index: 8;
-			transform: translateY(calc(-2 * var(--interlock-step)));
 		}
 		&:nth-child(7),
 		&:nth-child(8) {
 			z-index: 7;
-			transform: translateY(calc(-3 * var(--interlock-step)));
 		}
 		&:nth-child(9),
 		&:nth-child(10) {
 			z-index: 6;
-			transform: translateY(calc(-4 * var(--interlock-step)));
 		}
 		&:nth-child(11),
 		&:nth-child(12) {
 			z-index: 5;
-			transform: translateY(calc(-5 * var(--interlock-step)));
 		}
 		&:nth-child(13),
 		&:nth-child(14) {
 			z-index: 4;
-			transform: translateY(calc(-6 * var(--interlock-step)));
 		}
 		&:nth-child(15),
 		&:nth-child(16) {
 			z-index: 3;
-			transform: translateY(calc(-7 * var(--interlock-step)));
 		}
 		&:nth-child(17),
 		&:nth-child(18) {
 			z-index: 2;
-			transform: translateY(calc(-8 * var(--interlock-step)));
 		}
 		&:nth-child(19),
 		&:nth-child(20) {
 			z-index: 1;
-			transform: translateY(calc(-9 * var(--interlock-step)));
 		}
 
 		/* -- DESKTOP: period = 6 (3 in Row A, 3 shifted in Row B) -- */
@@ -269,38 +262,36 @@
 				grid-column: 3 / span 2 !important;
 			}
 
-			/* Rows: groups of 3, hardcoded translateY and z-index per absolute position */
+			/* Rows: groups of 3. Reset mobile margin and apply per desktop rows. */
+			&:nth-child(n + 3) {
+				margin-block-start: 0;
+			}
+			&:nth-child(n + 4) {
+				margin-block-start: calc(-1 * var(--interlock-step));
+			}
 			&:nth-child(-n + 3) {
 				z-index: 10;
-				transform: translateY(0);
 			}
 			&:nth-child(n + 4):nth-child(-n + 6) {
 				z-index: 9;
-				transform: translateY(calc(-1 * var(--interlock-step)));
 			}
 			&:nth-child(n + 7):nth-child(-n + 9) {
 				z-index: 8;
-				transform: translateY(calc(-2 * var(--interlock-step)));
 			}
 			&:nth-child(n + 10):nth-child(-n + 12) {
 				z-index: 7;
-				transform: translateY(calc(-3 * var(--interlock-step)));
 			}
 			&:nth-child(n + 13):nth-child(-n + 15) {
 				z-index: 6;
-				transform: translateY(calc(-4 * var(--interlock-step)));
 			}
 			&:nth-child(n + 16):nth-child(-n + 18) {
 				z-index: 5;
-				transform: translateY(calc(-5 * var(--interlock-step)));
 			}
 			&:nth-child(n + 19):nth-child(-n + 21) {
 				z-index: 4;
-				transform: translateY(calc(-6 * var(--interlock-step)));
 			}
 			&:nth-child(n + 22):nth-child(-n + 24) {
 				z-index: 3;
-				transform: translateY(calc(-7 * var(--interlock-step)));
 			}
 		}
 	}

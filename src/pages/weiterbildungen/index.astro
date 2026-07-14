@@ -20,6 +20,23 @@ import { people } from "@data/people";
 import * as AboForYou from "@content/kurse/abo_for_you.md";
 import HoneycombGrid from "@components/svelte/HoneycombGrid.svelte";
 
+// `start` (ISO) is the sort key only; `date` is the label shown on the tile.
+// Courses without a fixed date (start: null) sort to the end.
+const courses = [
+  { title: "CorrelLAB-<br>Grundkurs", href: "/weiterbildungen/grundkurs/", date: "18.09. – 11.12.2026", start: "2026-09-18" },
+  { title: "Fokuskurs:<br>Kommunizieren mit Daten", href: "/weiterbildungen/fokuskurs-kommunizieren/", date: "20.10. – 24.11.2026", start: "2026-10-20" },
+  { title: "Fokuskurs:<br>Datenerhebung mit Kindern und Jugendlichen", href: "/weiterbildungen/fokuskurs-kinder-jugend/", date: "22.09. – 06.10.2026", start: "2026-09-22" },
+  { title: "Deep Dive:<br>Künstliche Intelligenz", href: "/weiterbildungen/deepdive-ki/", date: "25. + 26.11.2026", start: "2026-11-25" },
+  { title: "Deep Dive:<br>Umfragen richtig konzipieren und durchführen", href: "/weiterbildungen/deepdive-umfragen/", date: "01.10.2026", start: "2026-10-01" },
+  { title: "Summer School:<br>Rein in die digitale Welt", href: "/weiterbildungen/summerschool-digitale-welt/", date: "Termin in Planung", start: null },
+  { title: "Summer School:<br>Raus aus dem Datenchaos", href: "/weiterbildungen/summerschool-raus-datenchaos/", date: "Termin in Planung", start: null }
+];
+
+const sortedCourses = courses.slice().sort((a, b) => {
+  if (!a.start) return 1;
+  if (!b.start) return -1;
+  return a.start.localeCompare(b.start);
+});
 ---
 
 <KursLayout title="CorrelLAB-Weiterbildungen">
@@ -45,17 +62,9 @@ import HoneycombGrid from "@components/svelte/HoneycombGrid.svelte";
     </Fragment>
 
     <div>
-      <HoneycombGrid 
+      <HoneycombGrid
         client:idle
-        items={[
-          { title: "CorrelLAB-<br>Grundkurs", href: "/weiterbildungen/grundkurs/" },
-          { title: "Fokuskurs:<br>Kommunizieren mit Daten", href: "/weiterbildungen/fokuskurs-kommunizieren/" },
-          { title: "Fokuskurs:<br>Datenerhebung mit Kindern und Jugendlichen", href: "/weiterbildungen/fokuskurs-kinder-jugend/" },
-          { title: "Deep Dive:<br>Künstliche Intelligenz", href: "/weiterbildungen/deepdive-ki/" },
-          { title: "Deep Dive:<br>Umfragen richtig konzipieren und durchführen", href: "/weiterbildungen/deepdive-umfragen/" },
-          { title: "Summer School:<br>Rein in die digitale Welt", href: "/weiterbildungen/summerschool-digitale-welt/" },
-          { title: "Summer School:<br>Raus aus dem Datenchaos", href: "/weiterbildungen/summerschool-raus-datenchaos/" }
-        ]} 
+        items={sortedCourses}
       />
     </div>
   </ColumnsSection>

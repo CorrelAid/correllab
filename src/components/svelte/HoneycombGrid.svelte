@@ -7,6 +7,7 @@
 	interface Item {
 		title?: string
 		content?: string
+		date?: string
 		href?: string
 		target?: string
 		rel?: string
@@ -121,6 +122,9 @@
 					{theme}>
 					<div class="tile-content">
 						<strong>{@html item.title || item.content}</strong>
+						{#if item.date}
+							<span class="tile-date">{item.date}</span>
+						{/if}
 					</div>
 				</HoneycombTile>
 			</div>
@@ -312,6 +316,16 @@
 
 		@media (width > 500px) {
 			font-size: 1rem;
+		}
+	}
+
+	.tile-date {
+		font-style: italic;
+		font-size: 0.7rem;
+		opacity: 0.9;
+
+		@media (width > 500px) {
+			font-size: 0.85rem;
 		}
 	}
 </style>

@@ -110,6 +110,7 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
   </section>
 
   <section class="pt-0">
+    <h2 class="text-center onepager-heading">Alles auf einen Blick</h2>
     <figure class="onepager">
       <a href="/assets/CorrelLAB_Fokuskurs_Kommunizieren_Onepager.pdf" target="_blank" download>
         <Image
@@ -125,39 +126,6 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
             Link zum One-Pager (PDF)
           </a>
         </div>
-        <details>
-          <summary>Die Themen in Tabellenform</summary>
-          <div class="subsection prose cap pt-4">
-            <CardPlain>
-              {
-                phasen.kurse.meta.fokuskurs_kommunizieren.topics.some(
-                  (t: { date?: string }) => t.date,
-                ) ? (
-                  <table slot="content" id="kurs-timeline">
-                    <tbody>
-                      {phasen.kurse.meta.fokuskurs_kommunizieren.topics.map(
-                        (item: { date?: string; topic: string }) => (
-                          <tr>
-                            <td>{item.date}</td>
-                            <td>{item.topic}</td>
-                          </tr>
-                        ),
-                      )}
-                    </tbody>
-                  </table>
-                ) : (
-                  <ul slot="content" class="topics-list">
-                    {phasen.kurse.meta.fokuskurs_kommunizieren.topics.map(
-                      (item: { topic: string }) => (
-                        <li>{item.topic}</li>
-                      ),
-                    )}
-                  </ul>
-                )
-              }
-            </CardPlain>
-          </div>
-        </details>
       </figcaption>
     </figure>
   </section>
@@ -191,6 +159,10 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
     font-size: var(--font-size-sm);
   }
 
+  .onepager-heading {
+    margin-bottom: 1.5rem;
+  }
+
   .onepager {
     max-width: var(--content-width, 1200px);
     margin: 0 auto;
@@ -204,45 +176,5 @@ import * as KostenContent from '@content/kurse/fokuskurs_kommunizieren_kosten.md
 
   .onepager figcaption {
     margin-top: 0.75rem;
-  }
-
-  .onepager figcaption summary {
-    cursor: pointer;
-  }
-
-  .subsection {
-    color: var(--color-gray-800);
-  }
-
-  .topics-list {
-    text-align: left;
-    padding-left: 1.25rem;
-    list-style: disc;
-  }
-
-  .topics-list :global(li) {
-    margin-bottom: 0.25rem;
-  }
-
-  #kurs-timeline {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-  }
-
-  #kurs-timeline :global(td) {
-    padding: 0.5rem 0.75rem;
-    vertical-align: top;
-  }
-
-  #kurs-timeline :global(td:first-child) {
-    width: 5rem;
-    white-space: nowrap;
-    color: var(--color-gray-700, #555);
-    font-variant-numeric: tabular-nums;
-  }
-
-  #kurs-timeline :global(tr + tr td) {
-    border-top: 1px solid var(--color-gray-200, #e5e7eb);
   }
 </style>

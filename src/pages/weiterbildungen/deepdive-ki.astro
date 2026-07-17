@@ -1,5 +1,5 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 
 import Blockquote from '@/components/Blockquote.astro';
 import CardPlain from '@components/cards/CardPlain.astro';
@@ -14,6 +14,8 @@ const CarouselBackground = await getImage({
   src: carouselBackgroundSvg,
   format: 'webp',
 });
+
+import FlyerKurs from '@assets/images/correllab-flyer-deepdive-ki.png';
 
 import phasen from '@data/phasen.json';
 import { quotes } from '@data/quotes.js';
@@ -108,6 +110,27 @@ import * as KostenContent from '@content/kurse/deepdive_ki_kosten.md';
     </CardPlain>
   </section>
 
+  <section class="pt-0">
+    <h2 class="text-center onepager-heading">Alles auf einen Blick</h2>
+    <figure class="onepager">
+      <a href="/assets/CorrelLAB_DeepDive_KI_Onepager.pdf" target="_blank" download>
+        <Image
+          src={FlyerKurs}
+          alt="Flyer CorrelLAB Deep Dive: Künstliche Intelligenz"
+          widths={[600, 900, 1200, 1600]}
+          formats={['webp', 'avif']}
+        />
+      </a>
+      <figcaption class="contained">
+        <div>
+          <a href="/assets/CorrelLAB_DeepDive_KI_Onepager.pdf" target="_blank" download>
+            Link zum One-Pager (PDF)
+          </a>
+        </div>
+      </figcaption>
+    </figure>
+  </section>
+
   <section class="prose pt-0">
     <Fragment set:html={await KostenContent.compiledContent()} />
   </section>
@@ -133,4 +156,22 @@ import * as KostenContent from '@content/kurse/deepdive_ki_kosten.md';
     font-weight: var(--font-weight-bold);
   }
 
+  .onepager-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .onepager {
+    max-width: var(--content-width, 1200px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .onepager img {
+    width: 100%;
+    height: auto;
+  }
+
+  .onepager figcaption {
+    margin-top: 0.75rem;
+  }
 </style>

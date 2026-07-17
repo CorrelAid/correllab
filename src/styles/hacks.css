@@ -1,3 +1,9 @@
+/* alt text renders in the image's text color while a lazy image is still
+   fetching — make it invisible so slow loads don't flash the alt string */
+img[loading='lazy'] {
+  color: transparent;
+}
+
 header .brand img {
   height: 100%;
   max-height: 40px;

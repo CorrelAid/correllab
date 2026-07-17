@@ -315,7 +315,9 @@
 			0 2px 4px color-mix(in srgb, var(--color-black), transparent 90%);
 
 		@media (width > 500px) {
-			font-size: 1rem;
+			/* Scale with hex size so long titles fit inside the clip on narrow
+			   containers (e.g. tablets), capped at the regular desktop size. */
+			font-size: clamp(0.7rem, calc(var(--hex-width) * 0.068), 1rem);
 		}
 	}
 
@@ -325,7 +327,7 @@
 		opacity: 0.9;
 
 		@media (width > 500px) {
-			font-size: 0.85rem;
+			font-size: clamp(0.6rem, calc(var(--hex-width) * 0.058), 0.85rem);
 		}
 	}
 </style>

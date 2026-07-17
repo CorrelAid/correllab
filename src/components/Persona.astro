@@ -15,7 +15,8 @@ const { name, role, image, email } = Astro.props;
 
 <div class="persona">
   <div class="persona-image vignette">
-    {image && <Image class="" src={image} alt={name} widths={[300, 600]} />}
+    {/* .persona caps at 400px minus 2rem padding each side → image never exceeds ~336px */}
+    {image && <Image class="" src={image} alt={name} widths={[300, 600]} sizes="336px" />}
     {!image && <div class="persona-image-placeholder vignette" />}
   </div>
   <div class="persona-content">

@@ -6,11 +6,14 @@ export interface Props {
   image?: ImageMetadata;
   imageAlt?: string;
   imageCredit?: string | null;
+  loading?: 'lazy' | 'eager';
 }
 
 import { Image } from 'astro:assets';
 import QuoteIcon from '@assets/svg/icons/quote.svg';
-const { id, wide, bare, image, imageAlt, imageCredit } = Astro.props;
+/* avatars are small and often sit in display:none carousel slides, where
+   lazy loading only starts on reveal — eager by default */
+const { id, wide, bare, image, imageAlt, imageCredit, loading = 'eager' } = Astro.props;
 ---
 
 <blockquote
@@ -21,7 +24,7 @@ const { id, wide, bare, image, imageAlt, imageCredit } = Astro.props;
     image && (
       <div class="avatar-block">
         <div class="avatar vignette">
-          <Image src={image} alt={imageAlt ?? ''} width={320} height={320} />
+          <Image src={image} alt={imageAlt ?? ''} width={320} height={320} {loading} />
         </div>
         {imageCredit && <span class="avatar-credit">© {imageCredit}</span>}
       </div>

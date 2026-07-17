@@ -12,18 +12,9 @@
 # Error details
 
 ```
-Error: Found 5 broken external link(s) out of 43 checked:
-  404 https://pretix.eu/correlaid/abo-cl/ (found on /weiterbildungen)
-  403 https://pretix.eu/correlaid/fokuskurs-ds/ (found on /kurse/fokuskurs-kommunizieren/)
-  403 https://pretix.eu/correlaid/deepdive-ki/ (found on /kurse/deepdive-ki/)
-  403 https://pretix.eu/correlaid/correllab-gk/ (found on /kurse/grundkurs/)
-  err: apiRequestContext.fetch: read ECONNRESET
-Call log:
-  - → HEAD https://initiative-wirkungsmanagement.de/
-    - user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
-    - accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
-    - accept-encoding: gzip,deflate,br
- https://initiative-wirkungsmanagement.de/ (found on /kurse/fokuskurs-kommunizieren/)
+Error: Found 2 broken external link(s) out of 45 checked:
+  403 https://pretix.eu/correlaid/summer-school/4925698/ (found on /weiterbildungen/summerschool-digitale-welt/)
+  403 https://pretix.eu/correlaid/summer-school/4925701/ (found on /weiterbildungen/summerschool-raus-datenchaos/)
 ```
 
 # Test source
@@ -130,7 +121,7 @@ Call log:
   125 |         .map((b) => `  ${b.status} ${b.url} (found on ${b.foundOn})`)
   126 |         .join("\n");
 > 127 |       throw new Error(
-      |             ^ Error: Found 5 broken external link(s) out of 43 checked:
+      |             ^ Error: Found 2 broken external link(s) out of 45 checked:
   128 |         `Found ${broken.length} broken external link(s) out of ${urls.length} checked:\n${report}`,
   129 |       );
   130 |     }

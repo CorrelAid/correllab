@@ -2,7 +2,35 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:correlaid.org)",
-      "Bash(node screenshot-footer.mjs)"
+      "Bash(node screenshot-footer.mjs)",
+      "Bash(npm view *)",
+      "Bash(pnpm --version)",
+      "Bash(pnpm install *)",
+      "Bash(pnpm test:links)",
+      "Bash(timeout 20 pnpm dev)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321)",
+      "Bash(echo \"---exit: $?\")",
+      "Bash(git -C /home/jstet/Code/CorrelAid/correllab status --short)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4321)",
+      "Bash(git commit -m 'Upgrade to Astro 7 and update dependencies *)",
+      "Bash(git commit -m 'Remove summer school registration links and mark dates as in planning *)",
+      "Bash(git push *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L \"https://calendar.app.google/Kgm7Ne2mJh5gxZaU7\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(git commit *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:4399/weiterbildungen)",
+      "Bash(sed -i \"s#/home/jstet/Code/CorrelAid/correllab/node_modules/playwright/index.mjs#/home/jstet/Code/CorrelAid/correllab/node_modules/@playwright/test/index.mjs#\" shot.mjs)",
+      "Bash(node shot.mjs before.png)",
+      "Bash(ls /home/jstet/.cache/ms-playwright/ 2>/dev/null)",
+      "Read(//home/jstet/.cache/ms-playwright/**)",
+      "Bash(sed -i \"s#const browser = await chromium.launch\\(\\)#const browser = await chromium.launch\\({ executablePath: '/home/jstet/.cache/ms-playwright/chromium-1217/chrome-linux/chrome' }\\)#\" shot.mjs)",
+      "Bash(find /home/jstet/.cache/ms-playwright/chromium-1217 /home/jstet/.cache/ms-playwright/chromium_headless_shell-1217 -maxdepth 3 -type f -name \"chrome*\" 2>/dev/null; which chromium chromium-browser google-chrome-stable 2>/dev/null)",
+      "Read(//home/jstet/.cache/ms-playwright/chromium-1217/**)",
+      "Bash(sed -i \"s#chromium-1217/chrome-linux/chrome#chromium-1217/chrome-linux64/chrome#\" shot.mjs)",
+      "Bash(node shot-mobile.mjs mobile-before.png)",
+      "Bash(node shot.mjs after.png)",
+      "Bash(node shot-560.mjs after-560.png)",
+      "Bash(node shot-1280.mjs after-1280.png)"
     ]
   }
 }

@@ -30,7 +30,9 @@
       "Bash(node shot-mobile.mjs mobile-before.png)",
       "Bash(node shot.mjs after.png)",
       "Bash(node shot-560.mjs after-560.png)",
-      "Bash(node shot-1280.mjs after-1280.png)"
+      "Bash(node shot-1280.mjs after-1280.png)",
+      "mcp__claude_ai_CorrelAid_Directus_MCP_User_Claude__items",
+      "Bash(curl -s https://correlaid.org/veranstaltungen/ -o /tmp/claude-1000/-home-jstet-Code-CorrelAid-correllab/ffeb8086-bcd1-49af-b8e1-87296fdbb94d/scratchpad/events.html)"
     ]
   }
 }

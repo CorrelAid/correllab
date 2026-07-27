@@ -2,8 +2,8 @@
 
 Damit wir gemeinsam gut arbeiten können, ist die Teilnehmendenzahl begrenzt – sichere dir am besten frühzeitig deinen Platz:
 
-- Ermäßigt für gemeinnützige Organisationen: **250 EUR**
-- Regulär: **380 EUR**
+- Ermäßigt für gemeinnützige Organisationen: **300 EUR**
+- Regulär: **450 EUR**
 
 **Du kannst diesen Deep Dive auch als Teil des [CorrelLAB-Bildungsabos](/weiterbildungen/#bildungsabo) besuchen!**
 

@@ -2,8 +2,17 @@
 
 Damit wir gemeinsam gut arbeiten können, ist die Teilnehmendenzahl begrenzt – sichere dir am besten frühzeitig deinen Platz:
 
+**Kombi-Ticket für alle drei Workshop-Tage:**
+
 - Ermäßigt für gemeinnützige Organisationen: **300 EUR**
 - Regulär: **450 EUR**
+
+**Stipendienplätze für Non-Profits:**
+
+Dank einer Förderung können wir eine begrenzte Anzahl an Stipendienplätzen zu stark vergünstigten Konditionen anbieten – ausschließlich für gemeinnützige Organisationen:
+
+- Einzelner Workshop-Tag: **65 EUR**
+- Alle drei Tage im Kombi-Paket: **145 EUR**
 
 **Du kannst diesen Deep Dive auch als Teil des [CorrelLAB-Bildungsabos](/weiterbildungen/#bildungsabo) besuchen!**
 

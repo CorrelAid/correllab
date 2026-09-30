@@ -1,4 +1,5 @@
 - Datum: {period}
 - Format: 3-tägiger Deep Dive mit kurzen Inputs, praxisnahen Übungen und Peer-Learning in Kleingruppen.
 - Du erhältst eine Teilnahmebestätigung.
+- Der Kurs ist als Bildungszeit anerkannt (Bildungsurlaub für Arbeitnehmer\*innen von Berliner Organisationen).
 - Keine Vorkenntnisse über KI erforderlich!
